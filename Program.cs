@@ -57,12 +57,7 @@ class Program
         }
 
 
-
-
-
     }
-
-
 
     static void CreateUser(string connectionString, string username, string email, string password)
     {
@@ -150,6 +145,10 @@ class Program
 
 
     }
+
+
+
+    // create a void function in which we are finding user by its email and then delete if found otherwise say "no user Found!
 
 
 
