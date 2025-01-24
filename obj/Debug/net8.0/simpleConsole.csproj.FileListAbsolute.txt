@@ -1,0 +1,14 @@
+/home/irfan_usuf/coding /dotnet console/simpleConsole/bin/Debug/net8.0/simpleConsole
+/home/irfan_usuf/coding /dotnet console/simpleConsole/bin/Debug/net8.0/simpleConsole.deps.json
+/home/irfan_usuf/coding /dotnet console/simpleConsole/bin/Debug/net8.0/simpleConsole.runtimeconfig.json
+/home/irfan_usuf/coding /dotnet console/simpleConsole/bin/Debug/net8.0/simpleConsole.dll
+/home/irfan_usuf/coding /dotnet console/simpleConsole/bin/Debug/net8.0/simpleConsole.pdb
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/simpleConsole.GeneratedMSBuildEditorConfig.editorconfig
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/simpleConsole.AssemblyInfoInputs.cache
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/simpleConsole.AssemblyInfo.cs
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/simpleConsole.csproj.CoreCompileInputs.cache
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/simpleConsole.dll
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/refint/simpleConsole.dll
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/simpleConsole.pdb
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/simpleConsole.genruntimeconfig.cache
+/home/irfan_usuf/coding /dotnet console/simpleConsole/obj/Debug/net8.0/ref/simpleConsole.dll
