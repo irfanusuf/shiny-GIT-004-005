@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
+using SqlDbConsole.Interfaces;
 
 namespace SqlDbConsole.Services;
 
@@ -13,13 +14,15 @@ namespace SqlDbConsole.Services;
 
 
 // base class 
-public class SqlService
+public class SqlService : ISqlService
 {
-    private readonly string _connectionString;
+    private readonly string _connectionString;     // feild   // encapsulation // class ki state ko store kertay hai 
 
-    public SqlService(string connectionString)
+
+    // constructorr
+    public SqlService(string connectionStringParam)
     {
-        _connectionString = connectionString;
+        _connectionString = connectionStringParam;
     }
 
 
@@ -161,5 +164,17 @@ public class SqlService
 
     }
 
+    public void EditUsername (string Email , string Username){
+            Console.WriteLine($"{Email + Username }");
+    }
 
+    public void ForgotPassword(string Email)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ForgotPassword(string Email, string newPass)
+    {
+        throw new NotImplementedException();
+    }
 }

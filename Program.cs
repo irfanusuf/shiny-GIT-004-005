@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Data.SqlClient;
-using SqlDbConsole.Services;  // Ado
+using SqlDbConsole.Services;
+using SqlDbConsole.Structs;  // Ado
 
 class Program
 {
@@ -20,6 +21,7 @@ class Program
  
         SqlService sqlService = new(connectionString);
 
+     
 
         if (option == "1")
         {
@@ -89,6 +91,7 @@ class Program
         }
         else
         {
+            // SqlService.EditUsername("irfanusuf33@gmail.com" , "username" );
             Console.WriteLine("Kindly Select an appropriate option! ");
 
         }
