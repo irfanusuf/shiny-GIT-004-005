@@ -1,7 +1,5 @@
-using System;
-using System.Data;
+
 using Microsoft.Data.SqlClient;
-using Microsoft.Identity.Client;
 using SqlDbConsole.Interfaces;
 
 namespace SqlDbConsole.Services;
@@ -11,8 +9,6 @@ namespace SqlDbConsole.Services;
 // class tempeltae hai object ka 
 
 // object hamesha inheritance leta hai class se
-
-
 // base class 
 public class SqlService : ISqlService
 {

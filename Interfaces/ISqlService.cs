@@ -4,7 +4,6 @@ namespace SqlDbConsole.Interfaces;
 
 public interface ISqlService 
 {
-
   public void CreateUser(string username, string email, string password);
   public void FindUser(string email);
   public void DeleteUser(string email);

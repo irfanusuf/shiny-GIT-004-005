@@ -67,3 +67,4 @@
 /home/irfan_usuf/coding /Dotnet Sql Console App/SqlDbConsole/obj/Debug/net8.0/SqlDbConsole.csproj.CopyComplete
 /home/irfan_usuf/coding /Dotnet Sql Console App/SqlDbConsole/bin/Debug/net8.0/BCrypt.Net-Next.dll
 /home/irfan_usuf/coding /Dotnet Sql Console App/SqlDbConsole/obj/Debug/net8.0/SqlDbConsole.sourcelink.json
+/home/irfan_usuf/coding /Dotnet Sql Console App/SqlDbConsole/bin/Debug/net8.0/dotenv.net.dll

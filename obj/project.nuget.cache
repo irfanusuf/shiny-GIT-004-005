@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "KBxE8st4/rk7S4UT9SfihSCULVBDhk6kEcZYKgTDle3dJPrsFoG258hgMqrh+EbFIVC2Pv1HVOhATlhk5XvTKQ==",
+  "dgSpecHash": "F5PCJk0ycr8uTuvxnnRBCGihB87Y4frU1aNODdRVMAJXpDIS82JfVLf6R21z8L+m7pgzHXw7IHbdrTJLjdOqAQ==",
   "success": true,
   "projectFilePath": "/home/irfan_usuf/coding /Dotnet Sql Console App/SqlDbConsole/SqlDbConsole.csproj",
   "expectedPackageFiles": [
     "/home/irfan_usuf/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/home/irfan_usuf/.nuget/packages/dotenv.net/3.2.1/dotenv.net.3.2.1.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/microsoft.bcl.cryptography/9.0.0/microsoft.bcl.cryptography.9.0.0.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/microsoft.data.sqlclient/6.0.0-preview3.24332.3/microsoft.data.sqlclient.6.0.0-preview3.24332.3.nupkg.sha512",

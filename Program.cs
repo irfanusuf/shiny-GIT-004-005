@@ -1,27 +1,33 @@
 ﻿
-using Microsoft.Data.SqlClient;
+using dotenv.net;
 using SqlDbConsole.Services;
-using SqlDbConsole.Structs;  // Ado
+using SqlDbConsole.Structs;
+
 
 class Program
 {
 
     static void Main(string[] args)
     {
-        Console.WriteLine("Data base CRUD Console App.... intializing");
+
+        Console.WriteLine("Data base CRUD Console App");     
+        Console.WriteLine("Intailizing ......");     
+        Console.WriteLine("Loading Environment Variables.......");
+
+
+        EnvService envService = new();    // ccopy of EnvService Struct is intailized in stack memory 
+
+        string connectionString = envService.LoadEnv();
+    
+        SqlService sqlService = new(connectionString);
+
+
         Console.WriteLine("Option 1 : Create User!  press 1");
         Console.WriteLine("Option 2 : Get User! press 2");
         Console.WriteLine("Option 3 : Delete User! press 3");
         Console.WriteLine("Option 4 : Edit Your Account press 4");
         Console.WriteLine("Kindly Select Your Option!");
-
         string option = Console.ReadLine();
-
-        string connectionString = "";
- 
-        SqlService sqlService = new(connectionString);
-
-     
 
         if (option == "1")
         {
