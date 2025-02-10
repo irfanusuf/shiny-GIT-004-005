@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SqlDbConsole
-build_property.ProjectDir = /home/irfan_usuf/coding/GIT 08/SqlDbConsole/
+build_property.ProjectDir = /home/irfan_usuf/coding/GIT08/P1_SqlDbConsole/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

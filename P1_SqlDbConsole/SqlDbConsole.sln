@@ -1,10 +1,9 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlDbConsole", "SqlDbConsole.csproj", "{3EF4411D-126B-F3EE-D993-0602DB685773}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApI", "WebApI\WebApI.csproj", "{68584101-E2F5-4476-893F-5271EF78046C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +15,6 @@ Global
 		{3EF4411D-126B-F3EE-D993-0602DB685773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF4411D-126B-F3EE-D993-0602DB685773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF4411D-126B-F3EE-D993-0602DB685773}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68584101-E2F5-4476-893F-5271EF78046C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68584101-E2F5-4476-893F-5271EF78046C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68584101-E2F5-4476-893F-5271EF78046C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68584101-E2F5-4476-893F-5271EF78046C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
