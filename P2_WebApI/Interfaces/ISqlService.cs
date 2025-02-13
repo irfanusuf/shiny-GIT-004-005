@@ -1,11 +1,12 @@
 using System;
+using WebApI.Models;
 
 namespace WebApI.Interfaces;
 
 public interface ISqlService 
 {
   public bool CreateUser(string username, string email, string password);
-  public void FindUser(string email);
+  public User FindUser(string email);
   public void DeleteUser(string email);
   public void EditUserAccount(string email, string username, string password);
   public void EditUsername (string Email , string Username);

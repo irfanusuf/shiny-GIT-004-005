@@ -1,6 +1,7 @@
 
 using Microsoft.Data.SqlClient;
 using WebApI.Interfaces;
+using WebApI.Models;
 
 namespace WebApI.Services;
 
@@ -18,7 +19,7 @@ public class SqlService : ISqlService
     // constructorr
     public SqlService(IConfiguration configuration)
     {
-        _connectionString = configuration.GetConnectionString("main");
+        _connectionString = configuration.GetConnectionString("main") ;
     }
 
 
@@ -26,7 +27,7 @@ public class SqlService : ISqlService
     {
         try
         {
-   
+
             using SqlConnection connection = new(_connectionString);  // intiliazing a connection  and creatimng a new instance of Sql Connection 
 
             connection.Open();
@@ -43,14 +44,14 @@ public class SqlService : ISqlService
 
             if (rowsAffected > 0)
             {
-                 Console.WriteLine("User Saved Succesfully !");
+                Console.WriteLine("User Saved Succesfully !");
                 return true;
-               
+
             }
             else
             {
                 Console.WriteLine("Query Not Executed");
-                   return false;
+                return false;
             }
 
 
@@ -60,19 +61,24 @@ public class SqlService : ISqlService
         {
 
             Console.WriteLine(error.Message);
-                       return false;
+            return false;
         }
     }
 
-    public void FindUser(string email)
+    public User FindUser(string email)
     {
+
+        var EmptyUser = new User
+        {
+
+            Username = "",
+            Email = "",
+            Password = ""
+
+        };
 
         try
         {
-            // string mewooo = $"meowowo ${connectionString}";
-
-            // string query = $"SELECT FROM Users WHERE Email = ${email}";
-
             string query = "SELECT * FROM Users WHERE Email = @Email";
 
             using SqlConnection connection = new(_connectionString);
@@ -88,24 +94,29 @@ public class SqlService : ISqlService
 
             if (reader.Read())
             {
-                Console.WriteLine("User Found! Below are the Details of User");
-                Console.WriteLine(reader["Username"].ToString());
-                Console.WriteLine(reader["Email"].ToString());
-                Console.WriteLine(reader["Password"].ToString());
 
+                var User = new User
+                {
+                    Username = reader["Username"].ToString(),
+                    Email = reader["Email"].ToString(),
+                    Password = reader["Password"].ToString()
+
+                };
+
+                return User;
             }
             else
             {
-                Console.WriteLine("No User Found With this Email!");
+                return EmptyUser;
             }
-
 
 
         }
         catch (Exception error)
         {
-
             Console.WriteLine(error.Message);
+            return EmptyUser;
+
         }
 
 
@@ -163,8 +174,9 @@ public class SqlService : ISqlService
 
     }
 
-    public void EditUsername (string Email , string Username){
-            Console.WriteLine($"{Email + Username }");
+    public void EditUsername(string Email, string Username)
+    {
+        Console.WriteLine($"{Email + Username}");
     }
 
     public void ForgotPassword(string Email)
