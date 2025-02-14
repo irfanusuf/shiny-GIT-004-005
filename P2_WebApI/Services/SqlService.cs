@@ -74,9 +74,7 @@ public class SqlService : ISqlService
             Username = "",
             Email = "",
             Password = ""
-
         };
-
         try
         {
             string query = "SELECT * FROM Users WHERE Email = @Email";
@@ -122,7 +120,7 @@ public class SqlService : ISqlService
 
     }
     // create a void function in which we are finding user by its email and then delete if found otherwise say "no user Found!
-    public void DeleteUser(string email)
+    public bool DeleteUser(string email)
     {
 
         try
@@ -142,18 +140,18 @@ public class SqlService : ISqlService
 
             if (rowsDeleted > 0)
             {
-                Console.WriteLine("User Deleted Succesfully!");
+               return true;
             }
             else
             {
-                Console.WriteLine("User Not Found!");
+              return false;
             }
 
         }
         catch (Exception ex)
         {
-
             Console.WriteLine(ex.Message);
+            return false;
         }
 
     }

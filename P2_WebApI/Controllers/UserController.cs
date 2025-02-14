@@ -13,11 +13,14 @@ namespace WebApI.Controllers
 
 
         private readonly ISqlService _sqlService;    // private feild 
+        private readonly ITokenService _tokenService;    // private feild 
+
 
         // primary constructor
-        public UserController(ISqlService sqlService)
+        public UserController(ISqlService sqlService , ITokenService tokenService)
         {
             _sqlService = sqlService;
+            _tokenService =  tokenService;
         }
 
         [HttpPost("Register")]
@@ -55,6 +58,8 @@ namespace WebApI.Controllers
             }
         }
 
+
+
         [HttpPost("Login")]
         public IActionResult Login(Login user)
         {
@@ -73,11 +78,14 @@ namespace WebApI.Controllers
                 {
                     var checkPass = BCrypt.Net.BCrypt.Verify(user.Password, existingUser.Password);
 
+                    var token =  _tokenService.CreateToken(existingUser.Id.ToString() , existingUser.Email , existingUser.Username);
+
                     if (checkPass)
                     {
                         return StatusCode(200, new
                         {
-                            message = "Logged In SuccesfullY!"
+                            message = "Logged In SuccesfullY!",
+                            token 
                         });
 
                     }
@@ -92,6 +100,50 @@ namespace WebApI.Controllers
             }
             catch (Exception error)
             {
+                return StatusCode(500, new
+                {
+                    message = error.Message
+                });
+            }
+        }
+
+
+
+        [HttpDelete("Delete")]
+        public IActionResult DeleteAccount(Login deleteUser)
+        {
+            try
+            {
+                var user = _sqlService.FindUser(deleteUser.Email);
+
+                if (user.Email == "")
+                {
+                    return StatusCode(400, new
+                    {
+                        message = "No User Found"
+                    });
+                }
+                var passVerify = BCrypt.Net.BCrypt.Verify(deleteUser.Password, user.Password);
+
+                if (passVerify)
+                {
+                    var delete = _sqlService.DeleteUser(deleteUser.Email);
+
+                    return StatusCode(200, new
+                    {
+                        message = "User Account Deleted succesfully!"
+                    });
+                }
+                else
+                {
+                    return StatusCode(400, new
+                    {
+                        message = "Pass incorrect"
+                    });
+                }
+            }
+            catch (Exception error)
+            {
 
                 return StatusCode(500, new
                 {
@@ -100,7 +152,13 @@ namespace WebApI.Controllers
             }
         }
 
-       
+
+
+
+
+
+
+
         [HttpGet("Dashboard")]
 
         public void Dashboard(User user)

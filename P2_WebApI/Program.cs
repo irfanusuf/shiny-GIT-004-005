@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 builder.Services.AddSingleton<ISqlService , SqlService>();    // dependency injection 
+builder.Services.AddSingleton<ITokenService , TokenService>();    // dependency injection 
 // builder.Services.AddTransient<ISqlService , SqlService>();    // dependency injection 
 // builder.Services.AddScoped<ISqlService , SqlService>();    // dependency injection 
 
