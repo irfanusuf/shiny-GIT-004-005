@@ -6,9 +6,7 @@ using WebApI.Models;
 namespace WebApI.Services;
 
 
-
 // class tempeltae hai object ka 
-
 // object hamesha inheritance leta hai class se ya inteerfcae se
 // base class 
 public class SqlService : ISqlService
@@ -155,6 +153,12 @@ public class SqlService : ISqlService
         }
 
     }
+
+
+
+
+
+
 
     public void EditUserAccount(string email, string username, string password)
     {

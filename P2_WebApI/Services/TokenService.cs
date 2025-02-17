@@ -11,7 +11,7 @@ using WebApI.Interfaces;
 public class TokenService : ITokenService   // inheritance 
 
 {
-    private readonly string _secretKey;     // 
+    private readonly string _secretKey;     // private feild 
 
     public TokenService(IConfiguration configuration)
     {
@@ -23,9 +23,11 @@ public class TokenService : ITokenService   // inheritance
     {
         var tokenHandler = new JwtSecurityTokenHandler();   // intializing new instance of  JwtSecurityTokenHandler
 
-        var key = Encoding.ASCII.GetBytes(_secretKey);
+        var key = Encoding.ASCII.GetBytes(_secretKey);  /// secret in ascii format 
 
-        var tokenDescriptor = new SecurityTokenDescriptor      // sign contract 
+
+
+        var payload = new SecurityTokenDescriptor      // creation of payload
         {
             Subject = new ClaimsIdentity(
             [
@@ -33,13 +35,17 @@ public class TokenService : ITokenService   // inheritance
                 new Claim(ClaimTypes.Email, email),
                 new Claim(ClaimTypes.Name, username)
             ]),
+            
             Expires = DateTime.UtcNow.AddHours(24),
 
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
-        var token = tokenHandler.CreateToken(tokenDescriptor);
 
-        return tokenHandler.WriteToken(token);
+
+
+        var token = tokenHandler.CreateToken(payload);     // creation of token 
+
+        return tokenHandler.WriteToken(token);        // returning of token 
     }
 
 

@@ -17,10 +17,10 @@ namespace WebApI.Controllers
 
 
         // primary constructor
-        public UserController(ISqlService sqlService , ITokenService tokenService)
+        public UserController(ISqlService sqlService, ITokenService tokenService)
         {
             _sqlService = sqlService;
-            _tokenService =  tokenService;
+            _tokenService = tokenService;
         }
 
         [HttpPost("Register")]
@@ -78,14 +78,15 @@ namespace WebApI.Controllers
                 {
                     var checkPass = BCrypt.Net.BCrypt.Verify(user.Password, existingUser.Password);
 
-                    var token =  _tokenService.CreateToken(existingUser.Id.ToString() , existingUser.Email , existingUser.Username);
-
                     if (checkPass)
                     {
+
+                        var token = _tokenService.CreateToken(existingUser.Id.ToString(), existingUser.Email, existingUser.Username);
+
                         return StatusCode(200, new
                         {
                             message = "Logged In SuccesfullY!",
-                            token 
+                            token
                         });
 
                     }
@@ -93,7 +94,7 @@ namespace WebApI.Controllers
                     {
                         return StatusCode(400, new
                         {
-                            message = "PassWord Incoreeect!"
+                            message = "PassWord Incorrect!"
                         });
                     }
                 }
@@ -153,9 +154,44 @@ namespace WebApI.Controllers
         }
 
 
+        [HttpPost("Forgot-pass")]
+
+        public IActionResult ForgotPass(string email)
+        {
+
+            try
+            {
+
+                var findUser = _sqlService.FindUser(email);
+
+                if (findUser.Email == "")
+                {
+                    return StatusCode(400, new
+                    {
+                        message = "User Not Found!"
+                    });
+                }
 
 
+                return Ok(new
+                {
 
+                    link = "link is sent to your email"
+                });
+
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, new
+                {
+
+                    message = "server Error"
+                });
+            }
+
+
+        }
 
 
 
