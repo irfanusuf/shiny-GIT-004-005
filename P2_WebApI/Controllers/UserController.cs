@@ -10,17 +10,16 @@ namespace WebApI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-
-
         private readonly ISqlService _sqlService;    // private feild 
         private readonly ITokenService _tokenService;    // private feild 
-
+        private readonly IMailService _mailService;
 
         // primary constructor
-        public UserController(ISqlService sqlService, ITokenService tokenService)
+        public UserController(ISqlService sqlService, ITokenService tokenService, IMailService mailService)
         {
             _sqlService = sqlService;
             _tokenService = tokenService;
+            _mailService = mailService;
         }
 
         [HttpPost("Register")]
@@ -57,7 +56,6 @@ namespace WebApI.Controllers
                 });
             }
         }
-
 
 
         [HttpPost("Login")]
@@ -109,7 +107,6 @@ namespace WebApI.Controllers
         }
 
 
-
         [HttpDelete("Delete")]
         public IActionResult DeleteAccount(Login deleteUser)
         {
@@ -155,13 +152,10 @@ namespace WebApI.Controllers
 
 
         [HttpPost("Forgot-pass")]
-
-        public IActionResult ForgotPass(string email)
+        public async Task<IActionResult> ForgotPass(string email)
         {
-
             try
             {
-
                 var findUser = _sqlService.FindUser(email);
 
                 if (findUser.Email == "")
@@ -172,25 +166,22 @@ namespace WebApI.Controllers
                     });
                 }
 
+                // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
+                // but the main thread will not remain blocked for other requests .....
+                await _mailService.SendEmailAsync(email, "Forgot password Link ", "This is link ", true);
 
                 return Ok(new
                 {
-
                     link = "link is sent to your email"
                 });
-
             }
             catch (Exception)
             {
-
                 return StatusCode(500, new
                 {
-
                     message = "server Error"
                 });
             }
-
-
         }
 
 

@@ -3,6 +3,7 @@ using WebApI.Interfaces;
 using WebApI.Services;
 
 
+
 var builder = WebApplication.CreateBuilder(args);       // container
 
 // conatiner ke ander service add / actiavte 
@@ -16,6 +17,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddSingleton<ISqlService , SqlService>();    // dependency injection 
 builder.Services.AddSingleton<ITokenService , TokenService>();    // dependency injection 
+builder.Services.AddSingleton<IMailService , EmailService>();
 
 
 // builder.Services.AddTransient<ISqlService , SqlService>();    // dependency injection 
