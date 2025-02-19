@@ -19,7 +19,7 @@ public class TokenService : ITokenService   // inheritance
     }
 
 
-    public string CreateToken(string userId, string email, string username )
+    public string CreateToken(string userId, string email, string username , int time )
     {
         var tokenHandler = new JwtSecurityTokenHandler();   // intializing new instance of  JwtSecurityTokenHandler
 
@@ -36,7 +36,7 @@ public class TokenService : ITokenService   // inheritance
                 new Claim(ClaimTypes.Name, username)
             ]),
             
-            Expires = DateTime.UtcNow.AddHours(24),
+            Expires = DateTime.UtcNow.AddMinutes(time),
 
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };

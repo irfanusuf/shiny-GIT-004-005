@@ -10,16 +10,16 @@ namespace WebApI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly ISqlService _sqlService;    // private feild 
-        private readonly ITokenService _tokenService;    // private feild 
-        private readonly IMailService _mailService;
+        private readonly ISqlService sqlService;    // private feild 
+        private readonly ITokenService tokenService;    // private feild 
+        private readonly IMailService mailService;
 
         // primary constructor
         public UserController(ISqlService sqlService, ITokenService tokenService, IMailService mailService)
         {
-            _sqlService = sqlService;
-            _tokenService = tokenService;
-            _mailService = mailService;
+            this.sqlService = sqlService;
+            this.tokenService = tokenService;
+            this.mailService = mailService;
         }
 
         [HttpPost("Register")]
@@ -27,12 +27,12 @@ namespace WebApI.Controllers
         {
             try
             {
-                var existingUser = _sqlService.FindUser(user.Email);
+                var existingUser = sqlService.FindUser(user.Email);
 
                 if (existingUser.Email == "")
                 {
                     var encryptedPass = BCrypt.Net.BCrypt.HashPassword(user.Password);
-                    _sqlService.CreateUser(user.Username, user.Email, encryptedPass);
+                    sqlService.CreateUser(user.Username, user.Email, encryptedPass);
                     return Ok(new
                     {
                         message = "User Created Succesfully"
@@ -63,7 +63,7 @@ namespace WebApI.Controllers
         {
             try
             {
-                var existingUser = _sqlService.FindUser(user.Email);
+                var existingUser = sqlService.FindUser(user.Email);
 
                 if (existingUser.Email == "")
                 {
@@ -79,7 +79,7 @@ namespace WebApI.Controllers
                     if (checkPass)
                     {
 
-                        var token = _tokenService.CreateToken(existingUser.Id.ToString(), existingUser.Email, existingUser.Username);
+                        var token = tokenService.CreateToken(existingUser.Id.ToString(), existingUser.Email, existingUser.Username , 60*24);
 
                         return StatusCode(200, new
                         {
@@ -112,7 +112,7 @@ namespace WebApI.Controllers
         {
             try
             {
-                var user = _sqlService.FindUser(deleteUser.Email);
+                var user = sqlService.FindUser(deleteUser.Email);
 
                 if (user.Email == "")
                 {
@@ -125,7 +125,7 @@ namespace WebApI.Controllers
 
                 if (passVerify)
                 {
-                    var delete = _sqlService.DeleteUser(deleteUser.Email);
+                    var delete = sqlService.DeleteUser(deleteUser.Email);
 
                     return StatusCode(200, new
                     {
@@ -156,19 +156,23 @@ namespace WebApI.Controllers
         {
             try
             {
-                var findUser = _sqlService.FindUser(email);
+                var findUser = sqlService.FindUser(email);
 
-                if (findUser.Email == "")
+                if (findUser.Email == "" )
                 {
-                    return StatusCode(400, new
+                    return StatusCode(404, new
                     {
                         message = "User Not Found!"
                     });
                 }
 
+    
+                var token  =    tokenService.CreateToken(findUser.Id.ToString() , email , findUser.Username , 5);
+
+                string link = $"https://www.algoacademy.in/forgotPass/{token}";
                 // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
                 // but the main thread will not remain blocked for other requests .....
-                await _mailService.SendEmailAsync(email, "Forgot password Link ", "This is link ", true);
+                await mailService.SendEmailAsync(email, "Forgot password Link ", $"Kindly click here to reset the Password {link}", false);
 
                 return Ok(new
                 {
