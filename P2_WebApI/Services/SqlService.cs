@@ -21,22 +21,22 @@ public class SqlService : ISqlService
     }
 
 
-    public bool CreateUser(string username, string email, string password)
+    public bool CreateUser(User user)
     {
         try
         {
-
             using SqlConnection connection = new(_connectionString);  // intiliazing a connection  and creatimng a new instance of Sql Connection 
-
             connection.Open();
 
-            string query = "INSERT INTO Users (Username, Email, Password) VALUES (@Username, @Email, @Password)";
+            string query = "INSERT INTO Users (UserId , Username, Email, Password) VALUES (@UserId, @Username, @Email, @Password)";
 
             using SqlCommand command = new(query, connection);
 
-            command.Parameters.AddWithValue("@Username", username);
-            command.Parameters.AddWithValue("@Email", email);
-            command.Parameters.AddWithValue("@Password", password);
+
+            command.Parameters.AddWithValue("@UserId", user.UserId);
+            command.Parameters.AddWithValue("@Username", user.Username);
+            command.Parameters.AddWithValue("@Email", user.Email);
+            command.Parameters.AddWithValue("@Password", user.Password);
 
             int rowsAffected = command.ExecuteNonQuery();
 
@@ -117,7 +117,67 @@ public class SqlService : ISqlService
 
 
     }
-    // create a void function in which we are finding user by its email and then delete if found otherwise say "no user Found!
+  
+    public User FindUser(Guid UserId)
+    {
+
+        var EmptyUser = new User
+        {
+            Username = "",
+            Email = "",
+            Password = ""
+        };
+        try
+        {
+            string query = "SELECT * FROM Users WHERE UserId = @UserId";
+
+        
+
+            using SqlConnection connection = new(_connectionString);
+
+            connection.Open();
+
+            using SqlCommand command = new(query, connection);
+
+            command.Parameters.AddWithValue("@UserId", UserId);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.Read())
+            {
+
+                    Console.WriteLine(UserId);
+
+                var User = new User
+                {
+                    Username = reader["Username"].ToString(),
+                    Email = reader["Email"].ToString(),
+                    Password = reader["Password"].ToString()
+
+                };
+
+                
+
+                return User;
+            }
+            else
+            {
+                return EmptyUser;
+            }
+
+
+        }
+        catch (Exception error)
+        {
+            Console.WriteLine(error.Message);
+            return EmptyUser;
+
+        }
+
+
+    }
+  
     public bool DeleteUser(string email)
     {
 
@@ -155,39 +215,11 @@ public class SqlService : ISqlService
     }
 
 
+    public bool UpdatePass(string password){
 
-
-
-
-
-    public void EditUserAccount(string email, string username, string password)
-    {
-
-        try
-        {
-            /// find user and update username and password
-
-
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+        return true;
 
     }
 
-    public void EditUsername(string Email, string Username)
-    {
-        Console.WriteLine($"{Email + Username}");
-    }
 
-    public void ForgotPassword(string Email)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void ForgotPassword(string Email, string newPass)
-    {
-        throw new NotImplementedException();
-    }
 }

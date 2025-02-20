@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApI.Models;
 using WebApI.Interfaces;
 using BCrypt.Net;
+using WebApI.Models.ViewModel;
 
 namespace WebApI.Controllers
 {
@@ -32,7 +33,14 @@ namespace WebApI.Controllers
                 if (existingUser.Email == "")
                 {
                     var encryptedPass = BCrypt.Net.BCrypt.HashPassword(user.Password);
-                    sqlService.CreateUser(user.Username, user.Email, encryptedPass);
+
+                    // pass encryption updation \
+
+                    user.UserId = Guid.NewGuid();
+                    user.Password = encryptedPass;
+                    sqlService.CreateUser(user);    // in upcoming days changes this method to async
+
+
                     return Ok(new
                     {
                         message = "User Created Succesfully"
@@ -57,7 +65,6 @@ namespace WebApI.Controllers
             }
         }
 
-
         [HttpPost("Login")]
         public IActionResult Login(Login user)
         {
@@ -79,7 +86,7 @@ namespace WebApI.Controllers
                     if (checkPass)
                     {
 
-                        var token = tokenService.CreateToken(existingUser.Id.ToString(), existingUser.Email, existingUser.Username , 60*24);
+                        var token = tokenService.CreateToken(existingUser.UserId.ToString(), existingUser.Email, existingUser.Username, 60 * 24);
 
                         return StatusCode(200, new
                         {
@@ -158,7 +165,7 @@ namespace WebApI.Controllers
             {
                 var findUser = sqlService.FindUser(email);
 
-                if (findUser.Email == "" )
+                if (findUser.Email == "")
                 {
                     return StatusCode(404, new
                     {
@@ -166,8 +173,8 @@ namespace WebApI.Controllers
                     });
                 }
 
-    
-                var token  =    tokenService.CreateToken(findUser.Id.ToString() , email , findUser.Username , 5);
+
+                var token = tokenService.CreateToken(findUser.UserId.ToString(), email, findUser.Username, 5);
 
                 string link = $"https://www.algoacademy.in/forgotPass/{token}";
                 // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
@@ -189,16 +196,39 @@ namespace WebApI.Controllers
         }
 
 
+        [HttpPost("Change-password")]
 
-        [HttpGet("Dashboard")]
-
-        public void Dashboard(User user)
+        public async Task<IActionResult> ChangePassWord(string token , ChangePass updationReq )
         {
+
+            try
+            {
+
+                var userId = tokenService.VerifyTokenAndGetId(token);
+
+                var user =  sqlService.FindUser(userId);
+
+                // user ka pass word changhe kerna hai 
+                return Ok(new
+                {   user, 
+                    message = "Password updated Succesfullly"
+                });
+
+
+
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, new
+                {
+                    message = "Server Error"
+                });
+            }
 
 
 
         }
-
 
     }
 }

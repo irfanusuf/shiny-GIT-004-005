@@ -6,7 +6,9 @@ namespace WebApI.Models;
 public class User
 {
 
-    public int Id { get; set; }
+
+    [JsonIgnore]
+    public Guid UserId { get; set; } = Guid.NewGuid();
     public required string Username { get; set; }
     public required string Email { get; set; }
     public required string Password { get; set; }

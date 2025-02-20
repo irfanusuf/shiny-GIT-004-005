@@ -12,20 +12,16 @@ public class TokenService : ITokenService   // inheritance
 
 {
     private readonly string _secretKey;     // private feild 
-
     public TokenService(IConfiguration configuration)
     {
         _secretKey = configuration["Jwt:SecretKey"] ?? throw new ArgumentNullException("SecretKey is not configured.");
     }
-
 
     public string CreateToken(string userId, string email, string username , int time )
     {
         var tokenHandler = new JwtSecurityTokenHandler();   // intializing new instance of  JwtSecurityTokenHandler
 
         var key = Encoding.ASCII.GetBytes(_secretKey);  /// secret in ascii format 
-
-
 
         var payload = new SecurityTokenDescriptor      // creation of payload
         {
@@ -41,15 +37,13 @@ public class TokenService : ITokenService   // inheritance
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
 
-
-
         var token = tokenHandler.CreateToken(payload);     // creation of token 
-
         return tokenHandler.WriteToken(token);        // returning of token 
     }
 
 
-    public string VerifyTokenAndGetId(string token)
+
+    public Guid VerifyTokenAndGetId(string token)
     {
         try
         {
@@ -73,7 +67,7 @@ public class TokenService : ITokenService   // inheritance
             
             if (userIdClaim != null)
             {
-                return  userIdClaim.Value; 
+                return Guid.Parse(userIdClaim.Value) ; 
             }
             else
             {
