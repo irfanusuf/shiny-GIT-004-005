@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApI.Models;
 using WebApI.Interfaces;
-using BCrypt.Net;
 using WebApI.Models.ViewModel;
 
 namespace WebApI.Controllers
@@ -13,7 +12,7 @@ namespace WebApI.Controllers
     {
         private readonly ISqlService sqlService;    // private feild 
         private readonly ITokenService tokenService;    // private feild 
-        private readonly IMailService mailService;
+        private readonly IMailService mailService;    // private field
 
         // primary constructor
         public UserController(ISqlService sqlService, ITokenService tokenService, IMailService mailService)
@@ -24,21 +23,21 @@ namespace WebApI.Controllers
         }
 
         [HttpPost("Register")]
-        public IActionResult Register(User user)
+        public async Task<IActionResult> Register(User user)
         {
             try
             {
-                var existingUser = sqlService.FindUser(user.Email);
+                var existingUser = await sqlService.FindUser(user.Email);
 
-                if (existingUser.Email == "")
+                if (existingUser == null)
                 {
                     var encryptedPass = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
-                    // pass encryption updation \
+                    // pass encryption updation 
 
                     user.UserId = Guid.NewGuid();
                     user.Password = encryptedPass;
-                    sqlService.CreateUser(user);    // in upcoming days changes this method to async
+                    await sqlService.CreateUser(user);    // in upcoming days changes this method to async
 
 
                     return Ok(new
@@ -54,25 +53,23 @@ namespace WebApI.Controllers
                     });
                 }
             }
-            catch (Exception error)
+            catch (Exception)
             {
-
-                Console.WriteLine(error.Message);
                 return StatusCode(500, new
                 {
-                    message = error.Message
+                    message = "Server Error"
                 });
             }
         }
 
         [HttpPost("Login")]
-        public IActionResult Login(Login user)
+        public async Task<IActionResult> Login(Login user)
         {
             try
             {
-                var existingUser = sqlService.FindUser(user.Email);
+                var existingUser = await sqlService.FindUser(user.Email);
 
-                if (existingUser.Email == "")
+                if (existingUser == null)
                 {
                     return StatusCode(400, new
                     {
@@ -86,7 +83,7 @@ namespace WebApI.Controllers
                     if (checkPass)
                     {
 
-                        var token = tokenService.CreateToken(existingUser.UserId.ToString(), existingUser.Email, existingUser.Username, 60 * 24);
+                        var token = tokenService.CreateToken(existingUser.UserId, existingUser.Email, existingUser.Username, 60*24);
 
                         return StatusCode(200, new
                         {
@@ -104,24 +101,23 @@ namespace WebApI.Controllers
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
                 return StatusCode(500, new
                 {
-                    message = error.Message
+                    message = ex.Message 
                 });
             }
         }
 
-
         [HttpDelete("Delete")]
-        public IActionResult DeleteAccount(Login deleteUser)
+        public async Task<IActionResult> DeleteAccount(Login deleteUser)
         {
             try
             {
-                var user = sqlService.FindUser(deleteUser.Email);
+                var user = await sqlService.FindUser(deleteUser.Email);
 
-                if (user.Email == "")
+                if (user == null)
                 {
                     return StatusCode(400, new
                     {
@@ -132,7 +128,7 @@ namespace WebApI.Controllers
 
                 if (passVerify)
                 {
-                    var delete = sqlService.DeleteUser(deleteUser.Email);
+                    var delete = await sqlService.DeleteUser(deleteUser.Email);
 
                     return StatusCode(200, new
                     {
@@ -147,25 +143,24 @@ namespace WebApI.Controllers
                     });
                 }
             }
-            catch (Exception error)
+            catch (Exception)
             {
 
                 return StatusCode(500, new
                 {
-                    message = error.Message
+                    message = "Server Error!"
                 });
             }
         }
-
 
         [HttpPost("Forgot-pass")]
         public async Task<IActionResult> ForgotPass(string email)
         {
             try
             {
-                var findUser = sqlService.FindUser(email);
+                var findUser = await sqlService.FindUser(email);
 
-                if (findUser.Email == "")
+                if (findUser == null)
                 {
                     return StatusCode(404, new
                     {
@@ -174,7 +169,7 @@ namespace WebApI.Controllers
                 }
 
 
-                var token = tokenService.CreateToken(findUser.UserId.ToString(), email, findUser.Username, 5);
+                var token = tokenService.CreateToken(findUser.UserId, email, findUser.Username, 5);
 
                 string link = $"https://www.algoacademy.in/forgotPass/{token}";
                 // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
@@ -195,40 +190,52 @@ namespace WebApI.Controllers
             }
         }
 
-
         [HttpPost("Change-password")]
-
-        public async Task<IActionResult> ChangePassWord(string token , ChangePass updationReq )
+        public async Task<IActionResult> ChangePassWord(string token, ChangePass updationReq)
         {
-
             try
             {
-
                 var userId = tokenService.VerifyTokenAndGetId(token);
 
-                var user =  sqlService.FindUser(userId);
+                if (updationReq.Password != updationReq.ConfirmPassword)
+                {
+                    return StatusCode(400, new
+                    {
+                        message = "Password doesnot match"!
+                    });
+                }
 
-                // user ka pass word changhe kerna hai 
-                return Ok(new
-                {   user, 
-                    message = "Password updated Succesfullly"
-                });
+                var encryptedPass = BCrypt.Net.BCrypt.HashPassword(updationReq.Password);
+                var updatePass = await sqlService.UpdatePass( userId, encryptedPass);
 
-
+                if (updatePass)
+                {
+                    return Ok(new
+                    {
+                        message = "Password updated Succesfullly"
+                    });
+                }
+                else
+                {
+                    return StatusCode(500, new
+                    {
+                        message = "Some Error during updating password!"
+                    });
+                }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
+                if (ex.Message.Contains("Token has expired"))
+                {
+                    return Unauthorized(new { message = "Link Expired!" });
+                }
                 return StatusCode(500, new
                 {
                     message = "Server Error"
                 });
             }
-
-
-
         }
-
     }
 }

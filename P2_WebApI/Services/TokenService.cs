@@ -17,7 +17,7 @@ public class TokenService : ITokenService   // inheritance
         _secretKey = configuration["Jwt:SecretKey"] ?? throw new ArgumentNullException("SecretKey is not configured.");
     }
 
-    public string CreateToken(string userId, string email, string username , int time )
+    public string CreateToken(Guid userId, string email, string username, int time)
     {
         var tokenHandler = new JwtSecurityTokenHandler();   // intializing new instance of  JwtSecurityTokenHandler
 
@@ -31,7 +31,7 @@ public class TokenService : ITokenService   // inheritance
                 new Claim(ClaimTypes.Email, email),
                 new Claim(ClaimTypes.Name, username)
             ]),
-            
+
             Expires = DateTime.UtcNow.AddMinutes(time),
 
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -51,8 +51,8 @@ public class TokenService : ITokenService   // inheritance
 
             var key = Encoding.ASCII.GetBytes(_secretKey);
 
-        
-            var validationParameters = new TokenValidationParameters   // 
+
+            var validationParameters = new TokenValidationParameters   
             {
                 ValidateIssuer = false,
                 ValidateAudience = false,
@@ -60,19 +60,23 @@ public class TokenService : ITokenService   // inheritance
                 IssuerSigningKey = new SymmetricSecurityKey(key)
             };
 
-            var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+            var validatToken = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
 
-           
-            var userIdClaim = principal.FindFirst(ClaimTypes.NameIdentifier);
-            
-            if (userIdClaim != null)
+
+            var userId = validatToken.FindFirst(ClaimTypes.NameIdentifier);
+
+            if (userId != null)
             {
-                return Guid.Parse(userIdClaim.Value) ; 
+                return Guid.Parse(userId.Value);
             }
             else
             {
                 throw new Exception("User ID not found in token.");
             }
+        }
+        catch (SecurityTokenExpiredException)
+        {
+            throw new Exception("Token has expired.");
         }
         catch (Exception ex)
         {

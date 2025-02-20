@@ -2207,19 +2207,19 @@
     ]
   },
   "packageFolders": {
-    "/home/irfan_usuf/.nuget/packages/": {}
+    "/home/irfanusuf/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfan_usuf/coding/GIT08/P2_WebApI/WebApI.csproj",
+      "projectUniqueName": "/home/irfanusuf/coding/shiny-GIT-008/P2_WebApI/WebApI.csproj",
       "projectName": "WebApI",
-      "projectPath": "/home/irfan_usuf/coding/GIT08/P2_WebApI/WebApI.csproj",
-      "packagesPath": "/home/irfan_usuf/.nuget/packages/",
-      "outputPath": "/home/irfan_usuf/coding/GIT08/P2_WebApI/obj/",
+      "projectPath": "/home/irfanusuf/coding/shiny-GIT-008/P2_WebApI/WebApI.csproj",
+      "packagesPath": "/home/irfanusuf/.nuget/packages/",
+      "outputPath": "/home/irfanusuf/coding/shiny-GIT-008/P2_WebApI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/irfan_usuf/.nuget/NuGet/NuGet.Config"
+        "/home/irfanusuf/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
