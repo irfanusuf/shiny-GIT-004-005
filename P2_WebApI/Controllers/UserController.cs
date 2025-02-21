@@ -101,11 +101,11 @@ namespace WebApI.Controllers
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, new
                 {
-                    message = ex.Message 
+                    message = "Server Error"
                 });
             }
         }
@@ -169,7 +169,7 @@ namespace WebApI.Controllers
                 }
 
 
-                var token = tokenService.CreateToken(findUser.UserId, email, findUser.Username, 5);
+                var token = tokenService.CreateToken(findUser.UserId, email, findUser.Username, 1);
 
                 string link = $"https://www.algoacademy.in/forgotPass/{token}";
                 // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
@@ -178,11 +178,12 @@ namespace WebApI.Controllers
 
                 return Ok(new
                 {
-                    link = "link is sent to your email"
+                    link = "Password reset link is sent to your email"
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return StatusCode(500, new
                 {
                     message = "server Error"
@@ -206,6 +207,7 @@ namespace WebApI.Controllers
                 }
 
                 var encryptedPass = BCrypt.Net.BCrypt.HashPassword(updationReq.Password);
+
                 var updatePass = await sqlService.UpdatePass( userId, encryptedPass);
 
                 if (updatePass)
@@ -229,7 +231,7 @@ namespace WebApI.Controllers
 
                 if (ex.Message.Contains("Token has expired"))
                 {
-                    return Unauthorized(new { message = "Link Expired!" });
+                    return Unauthorized(new { message = "PassWord Reset Link Expired!" });
                 }
                 return StatusCode(500, new
                 {

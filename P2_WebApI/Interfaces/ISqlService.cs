@@ -9,6 +9,6 @@ public interface ISqlService
   Task<User?> FindUser(string mail);
   Task<User?> FindUser(Guid UserId);
   Task<bool> DeleteUser(string Email);
-  Task<bool> UpdatePass(Guid? UserId, string Password);
+  Task<bool> UpdatePass(Guid UserId, string Password);
 
 }

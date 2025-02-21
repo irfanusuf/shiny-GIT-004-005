@@ -20,7 +20,7 @@ public class SqlService : ISqlService
         {
             using SqlConnection connection = new(_connectionString);
             // connection.Open();
-            await connection.OpenAsync();
+            await connection.OpenAsync();  
 
             string query = "INSERT INTO Users (UserId, Username, Email, Password) VALUES (@UserId, @Username, @Email, @Password)";
 
@@ -130,7 +130,7 @@ public class SqlService : ISqlService
         }
     }
 
-    public async Task<bool> UpdatePass(Guid? UserId ,string Password)
+    public async Task<bool> UpdatePass(Guid UserId ,string Password)
     {
         try
         {

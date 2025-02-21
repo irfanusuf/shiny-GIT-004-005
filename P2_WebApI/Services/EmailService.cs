@@ -32,35 +32,36 @@ public class EmailService : IMailService
 
         smtpPassword = Environment.GetEnvironmentVariable("SMTP_PASSWORD") ?? throw new InvalidOperationException("SMTP_PASSWORD is not configured.");
 
-        // Console.WriteLine(smtpHost + smtpPort + smtpUsername + smtpPassword);
-    
+
     }
 
     public async Task SendEmailAsync(string to, string subject, string body, bool isHtml = false)
     {
-        using var client = new SmtpClient(smtpHost, smtpPort)
-        {
-            Credentials = new NetworkCredential(smtpUsername, smtpPassword),
-            EnableSsl = true
-        };
-
-        var mailMessage = new MailMessage
-        {   
-            From = new MailAddress(smtpUsername),
-            Subject = subject,
-            Body = body,
-            IsBodyHtml = isHtml
-        };
-        
-        mailMessage.To.Add(to);
 
         try
         {
+            using var client = new SmtpClient(smtpHost, smtpPort)
+            {
+                Credentials = new NetworkCredential(smtpUsername, smtpPassword),
+                EnableSsl = true
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(smtpUsername),
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = isHtml,
+            };
+
+            mailMessage.To.Add(to);
+
             await client.SendMailAsync(mailMessage);
         }
         catch (Exception ex)
         {
-            throw new InvalidOperationException($"Failed to send email: {ex.Message}", ex);
+            throw new Exception($"Failed to send email: {ex.Message}");
         }
+        
     }
 }
