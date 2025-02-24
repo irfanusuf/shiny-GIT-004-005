@@ -37,7 +37,7 @@ namespace WebApI.Controllers
 
                     user.UserId = Guid.NewGuid();
                     user.Password = encryptedPass;
-                    await sqlService.CreateUser(user);    // in upcoming days changes this method to async
+                    await sqlService.CreateUser(user);    
 
 
                     return Ok(new
@@ -202,7 +202,7 @@ namespace WebApI.Controllers
                 {
                     return StatusCode(400, new
                     {
-                        message = "Password doesnot match"!
+                        message = "Password doesnot match"
                     });
                 }
 

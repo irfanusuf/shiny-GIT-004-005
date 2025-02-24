@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: rgb(11, 11, 10);
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+
+  > .logo {
+    font-size: 36px;
+    padding-left: 50px;
+  }
+
+  > .brand-name {
+    font-size: 36px;
+    padding-left: 25px;
+    padding-right: 600px;
+  }
+
+  > ul {
+    list-style-type: none;
+    display: flex;
+
+    > li {
+      color: rgb(101, 101, 225);
+      font-size: 18px;
+      margin-right: 30px;
+      font-family: monospace;
+      cursor: pointer;
+    }
+  }
+}
+
+.secondDiv {
+  background-color: rgb(174, 130, 75);
+}
