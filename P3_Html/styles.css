@@ -37,5 +37,39 @@ body {
 }
 
 .secondDiv {
-  background-color: rgb(174, 130, 75);
+  background-color: rgb(20, 20, 19);
+  background-image: url(./assets/bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 140vh;
+  display: flex;
+
+  >.left {
+    width: 50%;
+    padding-left: 200px;
+    padding-top: 150px;
+
+    > h1 {
+      color: rgb(173, 178, 182);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 76px;
+      margin: 0;
+      
+    }
+
+    >h4{
+      color: rgb(90, 91, 92);
+      margin: 0;
+    }
+
+  }
+
+
+
+
+
+
+
+
 }
