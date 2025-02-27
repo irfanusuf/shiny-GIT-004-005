@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/register.css">
+    <title>register</title>
+</head>
+<body>
+    
+
+
+    <header class="navbar">
+        <div class="logo">Logo</div>
+  
+        <div class="brand-name">RoboKids</div>
+  
+        <ul>
+            <li><a href="/"> Home </a></li>
+            <li><a href="/register.html"> Register </a></li>
+            <li><a href="/login.html"> Login </a></li>
+            <li><a href="/services.html"> Services </a></li>
+            <li><a href="/about.html"> About Us </a></li>
+          </ul>
+      </header>
+
+
+
+
+      <div class="form-container">
+        <h1>Sign Up</h1>
+  
+        <form method="post" action="/api/user/register">
+          <input placeholder="Enter your Username" type="text" name="Username" />
+          <input placeholder="Enter your Email" type="email" name ="Email" />
+          <input placeholder="Enter your Password" type="password" name="Password" />
+
+
+          <p> If u already have an account kindly <a href="/login.html"> login </a>  here  </p>
+
+          <div class="check-box">
+            <input type="checkbox"  required> 
+            <span> I Agree to the <a href="#"> Terms & conditions  </a>  and accept <a href="#"> Privacy Policy</a></span>
+          </div>
+          
+  
+          <button>Submit</button>
+        </form>
+      </div>
+
+
+
+
+
+
+    
+</body>
+</html>
