@@ -42,7 +42,7 @@
 
 .hero {
   background-color: rgb(20, 20, 19);
-  background-image: url(./assets/bg.jpg);
+  background-image: url(../assets/bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
