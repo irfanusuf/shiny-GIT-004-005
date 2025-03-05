@@ -19,26 +19,38 @@
 
 // console.log(myArr);
 
-document.getElementById("Submit").addEventListener("click", async (event) => {
-  try {
-    event.preventDefault();
+// document.getElementById("Submit").addEventListener("click", async (event) => {
+//   try {
+//     event.preventDefault();
 
-    const username = document.getElementById("Username").value;
-    const email = document.getElementById("Email").value;
-    const password = document.getElementById("Email").value;
+//     const username = document.getElementById("Username").value;
+//     const email = document.getElementById("Email").value;
+//     const password = document.getElementById("Email").value;
 
-    const formBody = { username, email, password };
+//     const formBody = { username, email, password };
 
-    const response = await fetch("http://localhost:5080/api/user/regsiter", {
-      method: "POST",
-      body: formBody,
-    });
+//     const response = await fetch("http://localhost:5080/api/user/regsiter", {
+//       method: "POST",
+//       body: formBody,
+//     });
 
-    const data = await response.json();
+//     const data = await response.json();
 
-    window.alert(data.message)
+//     window.alert(data.message)
 
-  } catch (error) {
-    console.log(error);
-  }
-});
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
+
+
+
+
+document.getElementById("icon").addEventListener("click" , ()=>{
+
+
+const navlinks = document.getElementById("nav-links")
+
+navlinks.classList.toggle("link-toggle")
+
+})

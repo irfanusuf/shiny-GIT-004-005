@@ -9,36 +9,78 @@
   color: aliceblue;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100px;
+  padding-left: 13%;
+  min-height: 100px;
+}
 
-  > .logo {
-    font-size: 36px;
-    padding-left: 50px;
-  }
+.logo {
+  font-size: 36px;
+}
 
-  > .brand-name {
-    font-size: 36px;
-    padding-left: 25px;
-    padding-right: 600px;
-  }
+.brand-name {
+  font-size: calc(2rem + 1vw);
+  padding-left: 25px;
+}
 
-  > ul {
-    list-style-type: none;
-    display: flex;
 
-    > li {
-      > a {
-        color: rgb(101, 101, 225);
-        font-size: 18px;
-        margin-right: 30px;
-        font-family: monospace;
-        cursor: pointer;
-        text-decoration: none;
-      }
+.icon {
+  display: none;
+  padding-left: 100px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  padding-left: 100px;
+
+  > li {
+    > a {
+      color: rgb(101, 101, 225);
+      font-size: 18px;
+      margin-right: 30px;
+      font-family: monospace;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
 }
+
+@media only screen and (max-width: 1050px) {
+  .navbar {
+    padding-left: 45px;
+    justify-content: space-around;
+  }
+
+  .icon {
+    display: block;
+    padding-left: 100px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .link-toggle {
+    display: block;
+    position: absolute;
+    background-color: rgb(11, 11, 10);
+    top: 100px;
+    padding: 40px;
+
+    >li{
+      >a{
+        color: azure;
+      }
+    }
+  }
+ 
+
+
+}
+
+
+
+
 
 .hero {
   background-color: rgb(20, 20, 19);
@@ -75,7 +117,6 @@
 
 .cards {
 }
-
 
 .footer {
   background-color: rgb(11, 11, 10);

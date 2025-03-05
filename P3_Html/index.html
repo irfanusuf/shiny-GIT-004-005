@@ -9,25 +9,35 @@
 
     <!-- link for external css -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="./js/script.js" defer></script>
     <title>WebApi - client</title>
   </head>
 
   <body>
-
-
-
     <header class="navbar">
-      <div class="logo">Logo</div>
+      <div style="display: flex ;align-items: center;">
+        <div class="logo">Logo</div>
 
-      <div class="brand-name">RoboKids</div>
+        <div class="brand-name">RoboKids</div>
+      </div>
 
-      <ul>
-        <li><a href="/"> Home </a></li>
-        <li><a href="/pages/register.html"> Register </a></li>
-        <li><a href="/pages/login.html"> Login </a></li>
-        <li><a href="/pages/services.html"> Services </a></li>
-        <li><a href="/pages/about.html"> About Us </a></li>
-      </ul>
+      <div style="display: flex;">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/"> Home </a></li>
+          <li><a href="/pages/register.html"> Register </a></li>
+          <li><a href="/pages/login.html"> Login </a></li>
+          <li><a href="/pages/services.html"> Services </a></li>
+          <li><a href="/pages/about.html"> About Us </a></li>
+        </ul>
+
+        <div class="icon" id="icon">
+          <i class="fa fa-bars" style="font-size: 36px"></i>
+        </div>
+      </div>
     </header>
 
     <div class="hero">
@@ -35,18 +45,11 @@
         <h1>Elevate your Status</h1>
         <h4>The Car u dreamed about is here</h4>
       </div>
-
     </div>
-
-   
 
     <footer class="footer">
       <p>All Rights Reserved 2025</p>
       <p>RoboKids</p>
     </footer>
-
-
-
-
   </body>
 </html>
