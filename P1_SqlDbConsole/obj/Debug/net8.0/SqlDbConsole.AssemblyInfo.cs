@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SqlDbConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dbb12a20629d54f6cd51aa415f365c91e184435")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fd763f3abafa8e65057cd2fecbbcaef09ba9cb2")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlDbConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SqlDbConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "15cYgzMaBKKQj9ksRr3mPd6YXKMJc1mkbBNNmoEGN+d3lMPbTQfffcxcn2uQvXjSytbqbp4vXYd+XL8lEVVM8Q==",
+  "dgSpecHash": "0HyJdZ2VKQP8imImTsJi4L4f7H335EnzJnzYh+03RDMDqevLkuVNBH5jpm8KaUI0jIj28Dz9WwYLcd4IK92AfA==",
   "success": true,
-  "projectFilePath": "/home/irfan_usuf/coding/GIT 08/SqlDbConsole/SqlDbConsole.csproj",
+  "projectFilePath": "/home/irfan_usuf/ILS/GIT008/P1_SqlDbConsole/SqlDbConsole.csproj",
   "expectedPackageFiles": [
     "/home/irfan_usuf/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

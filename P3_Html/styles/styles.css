@@ -9,8 +9,14 @@
   color: aliceblue;
   display: flex;
   align-items: center;
-  padding-left: 13%;
+  padding-left: 10%;
   min-height: 100px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  width: 33%;
 }
 
 .logo {
@@ -22,38 +28,72 @@
   padding-left: 25px;
 }
 
+.nav-right {
+  display: flex;
+  width: 66%;
+}
 
-.icon {
+.menu-icon {
   display: none;
-  padding-left: 100px;
 }
 
 .nav-links {
-  list-style-type: none;
-  display: flex;
-  padding-left: 100px;
 
-  > li {
-    > a {
-      color: rgb(101, 101, 225);
-      font-size: 18px;
-      margin-right: 30px;
-      font-family: monospace;
-      cursor: pointer;
-      text-decoration: none;
+width: 100%;
+display: flex;
+justify-content: space-around;
+
+  > ul {
+    list-style-type: none;
+    display: flex;
+  
+   
+
+    > li {
+      transition: all 0.3s ease;
+      &:hover{
+        transform: scale(1.15);
+      }
+
+      > a {
+        color: rgb(101, 101, 225);
+        font-size: 18px;
+        margin-right: 30px;
+        font-family: monospace;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    
     }
   }
 }
 
+.icons-list {
+  cursor: pointer;
+  >i{
+    color: rgb(130, 134, 134);
+    font-size: 28px;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+  
+    &:hover{
+      color: rgb(101, 101, 225);
+      transform: scale(1.15);
+    }
+  }
+ 
+}
+
 @media only screen and (max-width: 1050px) {
-  .navbar {
-    padding-left: 45px;
-    justify-content: space-around;
+
+
+  .nav-right {
+    justify-content: flex-end;
+    padding-right: 50px;
   }
 
-  .icon {
+  .menu-icon {
     display: block;
-    padding-left: 100px;
   }
 
   .nav-links {
@@ -61,26 +101,37 @@
   }
 
   .link-toggle {
-    display: block;
     position: absolute;
+    display: block;
     background-color: rgb(11, 11, 10);
     top: 100px;
-    padding: 40px;
+    left: 0px;
+    width: 100%;
 
-    >li{
-      >a{
-        color: azure;
+    >ul{
+      display: block;
+      padding-left: 0px;
+      padding-bottom: 10px; 
+      >li{
+        padding-left: 10%;
+        transition: all 0.2s ease-in;
+  
+        &:hover{
+          background-color: rgb(130, 134, 134);
+          transform: scale(1.05);
+        }
       }
-    }
+    } 
   }
- 
+
+  .icons-list {
+  
+    padding-left: 10%;
+    padding-bottom: 15px;
 
 
+  }
 }
-
-
-
-
 
 .hero {
   background-color: rgb(20, 20, 19);
@@ -88,20 +139,20 @@
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 140vh;
+  height: 140vh;
   display: flex;
   color: aliceblue;
 
   > .left {
-    width: 50%;
-    padding-left: 200px;
-    padding-top: 150px;
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 5%;
 
     > h1 {
       color: rgb(173, 178, 182);
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
-      font-size: 76px;
+      font-size: calc(2rem + 5vw);
     }
 
     > h4 {
@@ -109,14 +160,9 @@
     }
   }
 
-  > .right {
-    width: 50%;
-    display: flex;
-  }
+
 }
 
-.cards {
-}
 
 .footer {
   background-color: rgb(11, 11, 10);

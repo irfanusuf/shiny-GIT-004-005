@@ -2275,11 +2275,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfan_usuf/coding/GIT 08/SqlDbConsole/SqlDbConsole.csproj",
+      "projectUniqueName": "/home/irfan_usuf/ILS/GIT008/P1_SqlDbConsole/SqlDbConsole.csproj",
       "projectName": "SqlDbConsole",
-      "projectPath": "/home/irfan_usuf/coding/GIT 08/SqlDbConsole/SqlDbConsole.csproj",
+      "projectPath": "/home/irfan_usuf/ILS/GIT008/P1_SqlDbConsole/SqlDbConsole.csproj",
       "packagesPath": "/home/irfan_usuf/.nuget/packages/",
-      "outputPath": "/home/irfan_usuf/coding/GIT 08/SqlDbConsole/obj/",
+      "outputPath": "/home/irfan_usuf/ILS/GIT008/P1_SqlDbConsole/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/irfan_usuf/.nuget/NuGet/NuGet.Config"
