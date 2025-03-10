@@ -42,6 +42,7 @@ namespace WebApI.Controllers
 
                     return Ok(new
                     {
+                        success = true,
                         message = "User Created Succesfully"
                     });
                 }
@@ -49,6 +50,7 @@ namespace WebApI.Controllers
                 {
                     return BadRequest(new
                     {
+                        success = false,
                         message = "User Already Exists!"
                     });
                 }

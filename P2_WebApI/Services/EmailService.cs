@@ -22,16 +22,21 @@ public class EmailService : IMailService
     public EmailService()
     {
         // Load environment variables
-        DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
+        // DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
 
-        smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? throw new InvalidOperationException("SMTP_HOST is not configured.");
+        // smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? throw new InvalidOperationException("SMTP_HOST is not configured.");
 
-        smtpPort = int.TryParse(Environment.GetEnvironmentVariable("SMTP_PORT"), out var port) ? port : 587;
+        // smtpPort = int.TryParse(Environment.GetEnvironmentVariable("SMTP_PORT"), out var port) ? port : 587;
 
-        smtpUsername = Environment.GetEnvironmentVariable("SMTP_USERNAME") ?? throw new InvalidOperationException("SMTP_USERNAME is not configured.");
+        // smtpUsername = Environment.GetEnvironmentVariable("SMTP_USERNAME") ?? throw new InvalidOperationException("SMTP_USERNAME is not configured.");
 
-        smtpPassword = Environment.GetEnvironmentVariable("SMTP_PASSWORD") ?? throw new InvalidOperationException("SMTP_PASSWORD is not configured.");
+        // smtpPassword = Environment.GetEnvironmentVariable("SMTP_PASSWORD") ?? throw new InvalidOperationException("SMTP_PASSWORD is not configured.");
 
+
+        smtpPassword = "";
+        smtpPort = 587;
+        smtpUsername = "irfanusuf33@gmail.com";
+        smtpHost = "smtp.gmail.com" ;
 
     }
 

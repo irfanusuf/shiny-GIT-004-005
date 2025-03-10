@@ -19,30 +19,6 @@
 
 // console.log(myArr);
 
-// document.getElementById("Submit").addEventListener("click", async (event) => {
-//   try {
-//     event.preventDefault();
-
-//     const username = document.getElementById("Username").value;
-//     const email = document.getElementById("Email").value;
-//     const password = document.getElementById("Email").value;
-
-//     const formBody = { username, email, password };
-
-//     const response = await fetch("http://localhost:5080/api/user/regsiter", {
-//       method: "POST",
-//       body: formBody,
-//     });
-
-//     const data = await response.json();
-
-//     window.alert(data.message)
-
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
-
 
 
 

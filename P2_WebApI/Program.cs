@@ -14,13 +14,12 @@ var builder = WebApplication.CreateBuilder(args);       // container
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddCors(Options => {Options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());});
+
 
 builder.Services.AddSingleton<ISqlService , SqlService>();    // dependency injection 
 builder.Services.AddSingleton<ITokenService , TokenService>();    // dependency injection 
 builder.Services.AddSingleton<IMailService , EmailService>();    // dependency injection 
-
-
-
 
 
 var app = builder.Build();     // msil
@@ -36,7 +35,7 @@ if (app.Environment.IsDevelopment())
 //middle ware 
 app.UseHttpsRedirection();
 app.MapControllers();
-
+app.UseCors("AllowAll");
 
 
 

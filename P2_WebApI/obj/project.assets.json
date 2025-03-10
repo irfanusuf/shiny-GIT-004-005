@@ -2212,11 +2212,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfan_usuf/coding/GIT08/P2_WebApI/WebApI.csproj",
+      "projectUniqueName": "/home/irfan_usuf/ILS/GIT008/P2_WebApI/WebApI.csproj",
       "projectName": "WebApI",
-      "projectPath": "/home/irfan_usuf/coding/GIT08/P2_WebApI/WebApI.csproj",
+      "projectPath": "/home/irfan_usuf/ILS/GIT008/P2_WebApI/WebApI.csproj",
       "packagesPath": "/home/irfan_usuf/.nuget/packages/",
-      "outputPath": "/home/irfan_usuf/coding/GIT08/P2_WebApI/obj/",
+      "outputPath": "/home/irfan_usuf/ILS/GIT008/P2_WebApI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/irfan_usuf/.nuget/NuGet/NuGet.Config"

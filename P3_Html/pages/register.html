@@ -46,16 +46,20 @@
         </div>
       </div>
     </header>
+
+
+
+
     <div class="form-container">
       <h1>Sign Up</h1>
 
       <form>
-        <input placeholder="Enter your Username" type="text" name="Username"  id="Username"/>
-        <input placeholder="Enter your Email" type="email" name="Email" id="Email" />
+        <input placeholder="Enter your Username" type="text" id="username"/>
+        <input placeholder="Enter your Email" type="email"  id="email" />
         <input
           placeholder="Enter your Password"
           type="password"
-          name="Password"
+          id="password"
         />
 
         <p>
@@ -71,23 +75,15 @@
           >
         </div>
 
-        <button id="Submit">Submit</button>
+        <button type="submit" id="submit">Submit</button>
       </form>
     </div>
 
 
   <!-- external javascript -->
 
-    <script src="../js/script.js" > 
-    </script>
-
-    <!-- internal javascript -->
-
-    <script>
-      console.log("Someone is viewing register page ");
-    </script>
-
-
+    <script src="../js/script.js" defer>  </script>
+    <script src="../js/register.js" defer>  </script>
 
   </body>
 </html>
