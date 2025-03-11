@@ -35,9 +35,10 @@
             <li><a href="/pages/about.html"> About Us </a></li>
           </ul>
           <div class="icons-list">
-            <i class="fa fa-shopping-cart"></i>
-            <i class="fa fa-search"></i>
-            <i class="fa fa-user"></i>
+           <a> <i class="fa fa-shopping-cart"></i></a> 
+           <a> <i class="fa fa-search"></i></a> 
+           <a href="/pages/profile.html"> <i class="fa fa-user"></i>  </a> 
+           <a id="logout"> Logout </a> 
           </div>
         </div>
 
@@ -58,5 +59,14 @@
       <p>All Rights Reserved 2025</p>
       <p>RoboKids</p>
     </footer>
+
+
+
+    <script>
+      document.getElementById("logout").addEventListener("click" , ()=>{
+        localStorage.removeItem("WebApiToken")
+
+      })
+    </script>
   </body>
 </html>

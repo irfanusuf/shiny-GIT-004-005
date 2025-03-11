@@ -75,29 +75,28 @@ namespace WebApI.Controllers
                 {
                     return StatusCode(400, new
                     {
+                        success = false,
                         message = "No User Found"
                     });
                 }
                 else
                 {
                     var checkPass = BCrypt.Net.BCrypt.Verify(user.Password, existingUser.Password);
-
                     if (checkPass)
                     {
-
                         var token = tokenService.CreateToken(existingUser.UserId, existingUser.Email, existingUser.Username, 60*24);
-
                         return StatusCode(200, new
                         {
+                            success = true,
                             message = "Logged In SuccesfullY!",
                             token
                         });
-
                     }
                     else
                     {
                         return StatusCode(400, new
                         {
+                             success = false,
                             message = "PassWord Incorrect!"
                         });
                     }

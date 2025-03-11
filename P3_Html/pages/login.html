@@ -11,6 +11,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
   <script src="../js/script.js" defer></script>
+  <script src="../js/login.js" defer></script>
  
     <title>register</title>
   </head>
@@ -49,20 +50,21 @@
     </header>
 
     <div class="form-container">
-      <h1>Sign Up</h1>
+      <h1>Login</h1>
 
-      <form>
-        <input placeholder="Enter your Username" type="text" name="Username"  id="Username"/>
-        <input placeholder="Enter your Email" type="email" name="Email" id="Email" />
+      <form id="loginForm">
+
+        <input placeholder="Enter your Email" type="email"  id="email" required />
         <input
           placeholder="Enter your Password"
           type="password"
-          name="Password"
+          id="password"
+          required
         />
 
         <p>
-          If u already have an account kindly
-          <a href="/login.html"> login </a> here
+          If u dont have an account Kindly
+          <a href="/pages/register.html"> Register here </a> 
         </p>
 
         <div class="check-box">
@@ -73,22 +75,9 @@
           >
         </div>
 
-        <button id="Submit">Submit</button>
+        <button type="submit" id="login">Login</button>
       </form>
     </div>
-
-
-  <!-- external javascript -->
-
-    <script src="../js/script.js" > 
-    </script>
-
-    <!-- internal javascript -->
-
-    <script>
-      console.log("Someone is viewing register page ");
-    </script>
-
 
 
   </body>

@@ -38,20 +38,17 @@
 }
 
 .nav-links {
-
-width: 100%;
-display: flex;
-justify-content: space-around;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 
   > ul {
     list-style-type: none;
     display: flex;
-  
-   
 
     > li {
       transition: all 0.3s ease;
-      &:hover{
+      &:hover {
         transform: scale(1.15);
       }
 
@@ -63,30 +60,28 @@ justify-content: space-around;
         cursor: pointer;
         text-decoration: none;
       }
-    
     }
   }
 }
 
 .icons-list {
   cursor: pointer;
-  >i{
-    color: rgb(130, 134, 134);
-    font-size: 28px;
-    margin-right: 15px;
-    transition: all 0.3s ease;
-  
-    &:hover{
-      color: rgb(101, 101, 225);
-      transform: scale(1.15);
+  > a {
+    > i {
+      color: rgb(130, 134, 134);
+      font-size: 28px;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: rgb(101, 101, 225);
+        transform: scale(1.15);
+      }
     }
   }
- 
 }
 
 @media only screen and (max-width: 1050px) {
-
-
   .nav-right {
     justify-content: flex-end;
     padding-right: 50px;
@@ -108,28 +103,25 @@ justify-content: space-around;
     left: 0px;
     width: 100%;
 
-    >ul{
+    > ul {
       display: block;
       padding-left: 0px;
-      padding-bottom: 10px; 
-      >li{
+      padding-bottom: 10px;
+      > li {
         padding-left: 10%;
         transition: all 0.2s ease-in;
-  
-        &:hover{
+
+        &:hover {
           background-color: rgb(130, 134, 134);
           transform: scale(1.05);
         }
       }
-    } 
+    }
   }
 
   .icons-list {
-  
     padding-left: 10%;
     padding-bottom: 15px;
-
-
   }
 }
 
@@ -159,10 +151,7 @@ justify-content: space-around;
       color: rgb(90, 91, 92);
     }
   }
-
-
 }
-
 
 .footer {
   background-color: rgb(11, 11, 10);
