@@ -155,11 +155,11 @@ namespace WebApI.Controllers
         }
 
         [HttpPost("Forgot-pass")]
-        public async Task<IActionResult> ForgotPass(string email)
+        public async Task<IActionResult> ForgotPass(Email email)
         {
             try
             {
-                var findUser = await sqlService.FindUser(email);
+                var findUser = await sqlService.FindUser(email.EMail);
 
                 if (findUser == null)
                 {
@@ -168,18 +168,17 @@ namespace WebApI.Controllers
                         message = "User Not Found!"
                     });
                 }
-
-
-                var token = tokenService.CreateToken(findUser.UserId, email, findUser.Username, 1);
+                var token = tokenService.CreateToken(findUser.UserId, email.EMail, findUser.Username, 1);
 
                 string link = $"https://www.algoacademy.in/forgotPass/{token}";
                 // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
                 // but the main thread will not remain blocked for other requests .....
-                await mailService.SendEmailAsync(email, "Forgot password Link ", $"Kindly click here to reset the Password {link}", false);
+                await mailService.SendEmailAsync(email.EMail, "Forgot password Link ", $"Kindly click here to reset the Password {link}", false);
 
                 return Ok(new
                 {
-                    link = "Password reset link is sent to your email"
+                    success = true,
+                    message = "Password reset link is sent to your email"
                 });
             }
             catch (Exception ex)
