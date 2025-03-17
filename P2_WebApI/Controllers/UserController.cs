@@ -23,21 +23,21 @@ namespace WebApI.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register(User user)
+        public async Task<IActionResult> Register(User model)
         {
             try
             {
-                var existingUser = await sqlService.FindUser(user.Email);
+                var existingUser = await sqlService.FindUser(model.Email);
 
                 if (existingUser == null)
                 {
-                    var encryptedPass = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                    var encryptedPass = BCrypt.Net.BCrypt.HashPassword(model.Password);
 
                     // pass encryption updation 
 
-                    user.UserId = Guid.NewGuid();
-                    user.Password = encryptedPass;
-                    await sqlService.CreateUser(user);    
+                    model.UserId = Guid.NewGuid();
+                    model.Password = encryptedPass;
+                    await sqlService.CreateUser(model);    
 
 
                     return Ok(new
@@ -65,11 +65,11 @@ namespace WebApI.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login(Login user)
+        public async Task<IActionResult> Login(Login model)
         {
             try
             {
-                var existingUser = await sqlService.FindUser(user.Email);
+                var existingUser = await sqlService.FindUser(model.Email);
 
                 if (existingUser == null)
                 {
@@ -81,7 +81,7 @@ namespace WebApI.Controllers
                 }
                 else
                 {
-                    var checkPass = BCrypt.Net.BCrypt.Verify(user.Password, existingUser.Password);
+                    var checkPass = BCrypt.Net.BCrypt.Verify(model.Password, existingUser.Password);
                     if (checkPass)
                     {
                         var token = tokenService.CreateToken(existingUser.UserId, existingUser.Email, existingUser.Username, 60*24);
@@ -112,11 +112,11 @@ namespace WebApI.Controllers
         }
 
         [HttpDelete("Delete")]
-        public async Task<IActionResult> DeleteAccount(Login deleteUser)
+        public async Task<IActionResult> DeleteAccount(Login model)
         {
             try
             {
-                var user = await sqlService.FindUser(deleteUser.Email);
+                var user = await sqlService.FindUser(model.Email);
 
                 if (user == null)
                 {
@@ -125,11 +125,11 @@ namespace WebApI.Controllers
                         message = "No User Found"
                     });
                 }
-                var passVerify = BCrypt.Net.BCrypt.Verify(deleteUser.Password, user.Password);
+                var passVerify = BCrypt.Net.BCrypt.Verify(model.Password, user.Password);
 
                 if (passVerify)
                 {
-                    var delete = await sqlService.DeleteUser(deleteUser.Email);
+                    var delete = await sqlService.DeleteUser(model.Email);
 
                     return StatusCode(200, new
                     {
@@ -155,11 +155,11 @@ namespace WebApI.Controllers
         }
 
         [HttpPost("Forgot-pass")]
-        public async Task<IActionResult> ForgotPass(Email email)
+        public async Task<IActionResult> ForgotPass(Email model)
         {
             try
             {
-                var findUser = await sqlService.FindUser(email.EMail);
+                var findUser = await sqlService.FindUser(model.EMail);
 
                 if (findUser == null)
                 {
@@ -168,17 +168,18 @@ namespace WebApI.Controllers
                         message = "User Not Found!"
                     });
                 }
-                var token = tokenService.CreateToken(findUser.UserId, email.EMail, findUser.Username, 1);
+                var token = tokenService.CreateToken(findUser.UserId, model.EMail, findUser.Username, 1);
 
-                string link = $"https://www.algoacademy.in/forgotPass/{token}";
+                string link = $"https://www.robokids.netlify.app/pages/updatePassword.html?token={token}";
                 // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
                 // but the main thread will not remain blocked for other requests .....
-                await mailService.SendEmailAsync(email.EMail, "Forgot password Link ", $"Kindly click here to reset the Password {link}", false);
+                await mailService.SendEmailAsync(model.EMail, "Forgot password Link ", $"Kindly click here to reset the Password {link}", false);
 
                 return Ok(new
                 {
                     success = true,
-                    message = "Password reset link is sent to your email"
+                    message = "Password reset link is sent to your email",
+                    token
                 });
             }
             catch (Exception ex)
