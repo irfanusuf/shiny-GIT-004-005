@@ -170,7 +170,7 @@ namespace WebApI.Controllers
                 }
                 var token = tokenService.CreateToken(findUser.UserId, model.EMail, findUser.Username, 1);
 
-                string link = $"https://www.robokids.netlify.app/pages/updatePassword.html?token={token}";
+                string link = $"http://127.0.0.1:5500/pages/updatePassword.html?token={token}";
                 // this procedure will be offloaded to another thread and when completed (resolved) then return ok 
                 // but the main thread will not remain blocked for other requests .....
                 await mailService.SendEmailAsync(model.EMail, "Forgot password Link ", $"Kindly click here to reset the Password {link}", false);

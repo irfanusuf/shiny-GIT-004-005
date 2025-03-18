@@ -75,6 +75,9 @@
         if (response.ok) {
           window.alert(data.message);
           sessionStorage.setItem("token", data.token);
+
+
+          
         } else if (statusCodeArr.includes(response.status)) {
           window.alert(data.message);
         }

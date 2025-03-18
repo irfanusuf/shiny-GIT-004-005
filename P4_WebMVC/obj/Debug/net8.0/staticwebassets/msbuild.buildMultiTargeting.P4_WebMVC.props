@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/P4_WebMVC.props" />
+</Project>
