@@ -3,3 +3,55 @@
 *@
 @{
 }
+
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+
+
+<div class="w-75 mx-auto pt-5">
+
+
+
+
+
+<h1> Login</h1>
+
+<form method="post">
+
+
+
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email address</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" name="Email">
+    <div class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="Password" class="form-label">Password</label>
+    <input type="password" class="form-control" name="Password">
+  </div>
+
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1"> I agree to the Terms & Conditions And User-agreement policy</label>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Login</button>
+
+  <p class="text-danger pt-3"> @ViewBag.errorMessage  </p>
+    <p class="text-success pt-3"> @ViewBag.successMessage  </p>
+
+</form>
+
+</div>

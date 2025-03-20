@@ -7,11 +7,11 @@ public class User
 {
 
 [Key]
-public required Guid UserId {get; set;} = Guid.NewGuid();
+public  Guid UserId {get; set;} = Guid.NewGuid();
 public required string Username {get; set;}
 public required string Email {get; set;}
 public required string Password {get; set;}
-public required string Avatar {get; set;}
+public string ? Avatar {get; set;}
 
 
 }
