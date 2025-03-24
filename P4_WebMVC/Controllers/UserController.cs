@@ -47,8 +47,6 @@ namespace P4_WebMVC.Controllers
 
             await dbContext.Users.AddAsync(model);
             await dbContext.SaveChangesAsync();
-
-
             return RedirectToAction("Login");
         }
 
