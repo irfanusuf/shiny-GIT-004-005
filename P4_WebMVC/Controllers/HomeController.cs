@@ -8,23 +8,30 @@ namespace P4_WebMVC.Controllers
 
         public IActionResult Index()
         {
-
-            return View();
+           return View();
         }
-
 
         public IActionResult Privacy()
         {
-
             return View();
         }
 
-
-            public IActionResult About()
+        public IActionResult About()
         {
+            return View();
+        }
+
+        public IActionResult Courses (){
 
             return View();
         }
+
+          public IActionResult Events (){
+
+            return View();
+        }
+
+
 
 
 

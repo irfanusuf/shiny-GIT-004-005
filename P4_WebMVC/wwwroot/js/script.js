@@ -13,11 +13,26 @@
     });
 
     // Background-images
-    $('[data-background]').each(function () {
-        $(this).css({
-            'background-image': 'url(' + $(this).data('background') + ')'
-        });
+//  $('[data-background]').each(function () {
+//     var bgUrl = $(this).data('background');
+//     $(this).css({
+//         'background-image': "url('~" + bgUrl + "')"
+//     });
+// });
+
+
+
+$('[data-background]').each(function () {
+    var bgUrl = $(this).data('background');
+    $(this).css({
+        'background-image': "url('~" + bgUrl + "')"
     });
+});
+
+
+
+
+
 
     //Hero Slider
     $('.hero-slider').slick({
