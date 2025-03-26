@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7D53D4z89gay0cTDFXWCOAlc4VWHYIkBef50Nd3/AGo=",
+  "Hash": "EJWRwTuQqLsVCI8uqx+yjTB8GkjmPBDuJjmKKxf11bA=",
   "Source": "P4_WebMVC",
   "BasePath": "_content/P4_WebMVC",
   "Mode": "Default",
@@ -946,25 +946,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/script.js"
-    },
-    {
-      "Identity": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/js/site.js",
-      "SourceId": "P4_WebMVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/",
-      "BasePath": "_content/P4_WebMVC",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
       "Identity": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

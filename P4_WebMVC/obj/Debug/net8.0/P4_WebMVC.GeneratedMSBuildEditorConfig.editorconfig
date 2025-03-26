@@ -26,8 +26,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/irfan_usuf/ILS/GIT008/P4_WebMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/irfan_usuf/ILS/GIT008/P4_WebMVC/Views/Blog/CreateBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmxvZy9DcmVhdGVCbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfan_usuf/ILS/GIT008/P4_WebMVC/Views/Blog/GetBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmxvZy9HZXRCbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/irfan_usuf/ILS/GIT008/P4_WebMVC/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfan_usuf/ILS/GIT008/P4_WebMVC/Views/Home/Blogs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9CbG9ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/irfan_usuf/ILS/GIT008/P4_WebMVC/Views/Home/Courses.cshtml]

@@ -31,7 +31,10 @@ namespace P4_WebMVC.Controllers
             return View();
         }
 
+            public IActionResult Blogs (){
 
+            return View();
+        }
 
 
 

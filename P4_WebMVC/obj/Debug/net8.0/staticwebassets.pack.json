@@ -193,10 +193,6 @@
       "PackagePath": "staticwebassets/js/script.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/js/site.js",
-      "PackagePath": "staticwebassets/js/site.js"
-    },
-    {
       "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },
