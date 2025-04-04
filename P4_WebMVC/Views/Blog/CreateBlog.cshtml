@@ -4,16 +4,26 @@
 
 
 
-<div class="container" style="min-height: 90vh; margin-top: 300px;">
+<div class="container" style="min-height: 90vh; margin-top: 200px;">
 
 
     <h2> Write a blog here</h2>
 
 
-    <form>
+    <form method="post"> 
 
+
+        <input placeholder="Blog title Goes Here "  name="BlogTitle">
+        <input placeholder="Blog Image  "  name="BlogImage">
+        <input placeholder="Blog Short Description  "  name="ShortDesc">
+     
+        <textarea id="description" name="Description"> Blog Description </textarea>
+
+        <button class="btn btn-primary"> Publish </button>
 
         
+        <p class="text-danger"> @ViewBag.errorMessage   </p>
+
     </form>
 
 </div>

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using P4_WebMVC.Data;
 using P4_WebMVC.Interfaces;
 using P4_WebMVC.Models.DomainModels;
+using P4_WebMVC.Models.ViewModels;
 
 namespace P4_WebMVC.Controllers
 {
@@ -58,7 +59,7 @@ namespace P4_WebMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login(User model)
+        public async Task<ActionResult> Login(Login model)
         {
             if (string.IsNullOrEmpty(model.Email))
             {
