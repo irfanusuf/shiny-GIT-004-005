@@ -3,6 +3,13 @@
 }
 
 
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet"
+  type="text/css" />
+
+<script src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+
+
+
 
 <div class="container" style="min-height: 90vh; margin-top: 200px;">
 
@@ -17,7 +24,7 @@
         <input placeholder="Blog Image  "  name="BlogImage">
         <input placeholder="Blog Short Description  "  name="ShortDesc">
      
-        <textarea id="description" name="Description"> Blog Description </textarea>
+        <textarea id="description" name="Description"> Write Your Blog Here... </textarea>
 
         <button class="btn btn-primary"> Publish </button>
 
@@ -27,3 +34,14 @@
     </form>
 
 </div>
+
+
+<script>
+
+
+const editor = new FroalaEditor("#description" , {
+    height : 400
+})
+
+    
+</script>

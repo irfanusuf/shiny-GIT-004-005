@@ -40,49 +40,53 @@ namespace P4_WebMVC.Controllers
         public async Task<ActionResult> CreateBlog(Blog model)
         {
 
-            if (string.IsNullOrEmpty(model.BlogTitle) ||
-                string.IsNullOrEmpty(model.Description) ||
-                string.IsNullOrEmpty(model.ShortDesc) ||
-                string.IsNullOrEmpty(model.BlogImage))
+            try
             {
+                if (string.IsNullOrEmpty(model.BlogTitle) ||
+               string.IsNullOrEmpty(model.Description) ||
+               string.IsNullOrEmpty(model.ShortDesc) ||
+               string.IsNullOrEmpty(model.BlogImage))
+                {
+                    ViewBag.errorMessage = "All details are necessary";
+                    return View();
+                }
 
-                ViewBag.errorMessage = "All details are necessary";
-                return View();
+                // fetch token from cookies 
+                // get id from token \
+                // fetch user from db 
+
+                var token = HttpContext.Request.Cookies["GradSchoolAuthToken"];
+
+                if (string.IsNullOrEmpty(token))
+                {
+                    return RedirectToAction("login", "User");
+                }
+
+                var id = tokenService.VerifyTokenAndGetId(token);
+
+                var user = await dbContext.Users.FindAsync(id);
+
+                if (user == null)
+                {
+                    return RedirectToAction("register", "User");
+                }
+                model.Author= user;            // Efcore Automatic tracking   // equivalent code model.authorUserId = user.UserId
+                model.DateCreated = DateTime.UtcNow;
+                model.DateModified = DateTime.UtcNow;
+
+                await dbContext.Blogs.AddAsync(model);
+                await dbContext.SaveChangesAsync();
+
+                return RedirectToAction("blogs", "home");
             }
-
-            // fetch token from cookies 
-            // get id from token \
-            // fetch user from db 
-            var token = HttpContext.Request.Cookies["GradSchoolAuthToken"];
-
-            if (string.IsNullOrEmpty(token))
+            catch (Exception ex)
             {
-                return RedirectToAction("login", "User");
+                ViewBag.ex = ex.Message;
+                ViewBag.errorMessage = "Something Went Wrong . Kindly try again after Some time";
+                return View("Error");
             }
 
-            var id = tokenService.VerifyTokenAndGetId(token);
 
-            var user = await dbContext.Users.FindAsync(id);
-
-            if (user == null)
-            {
-                return RedirectToAction("register", "User");
-            }
-
-            model.Author = user;
-            model.DateCreated =  DateTime.UtcNow;
-            model.DateModified = DateTime.UtcNow;
-
-            var createblog = await dbContext.Blogs.AddAsync(model);
-
-
-            if(createblog == null){
-                ViewBag.errorMessage = "some Error , try again after sometimr ";
-                return View();
-
-            }
-
-            return RedirectToAction("blogs" , "home");
         }
 
     }
