@@ -1,4 +1,5 @@
-﻿@model P4_WebMVC.Models.HybridModels.HybridViewModel
+﻿@using P4_WebMVC.Types
+@model P4_WebMVC.Models.HybridModels.HybridViewModel
 
 @{
   ViewData["Title"] = "Blogs";
@@ -19,6 +20,7 @@
       </div>
     </div>
   </div>
+    
 </section>
 <!-- /page title -->
 
@@ -28,8 +30,12 @@
 
 <div class="container mt-5">
 
+  @if(Model?.User?.Role == Role.Editor){
+     <a asp-controller="blog" asp-action="createblog" class="btn btn-primary"> Create Blog</a>
+  }
 
-  <a asp-controller="blog" asp-action="createblog" class="btn btn-primary"> Create Blog</a>
+
+
 
 </div>
 
@@ -53,7 +59,7 @@
               
                 <li class="list-inline-item mr-3 ml-0">@blog.DateCreated</li>
            
-                <li class="list-inline-item mr-3 ml-0">@blog.Author </li>
+                <li class="list-inline-item mr-3 ml-0">By : @blog.Author.Username</li>
               </ul>
               <a href="blog-single.html">
                 <h4 class="card-title">@blog.BlogTitle</h4>
