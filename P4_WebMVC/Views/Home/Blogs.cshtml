@@ -1,5 +1,5 @@
 ﻿@using P4_WebMVC.Types
-@model P4_WebMVC.Models.HybridModels.HybridViewModel
+@model P4_WebMVC.Models.ViewModels.HybridViewModel
 
 @{
   ViewData["Title"] = "Blogs";
@@ -27,19 +27,6 @@
 
 
 
-
-<div class="container mt-5">
-
-  @if(Model?.User?.Role == Role.Editor){
-     <a asp-controller="blog" asp-action="createblog" class="btn btn-primary"> Create Blog</a>
-  }
-
-
-
-
-</div>
-
-
 <!-- blogs -->
 <section class="section">
   <div class="container">
@@ -48,8 +35,7 @@
     <div class="row">
 
 
-      @foreach (var blog in Model.Blogs)
-      {
+       @foreach (var blog in Model?.Blogs){
         <article class="col-lg-4 col-sm-6 mb-5">
           <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
             <img class="card-img-top rounded-0" src="~/images/blog/post-1.jpg" alt="Post thumb">
@@ -71,25 +57,10 @@
             </div>
           </div>
         </article>
-
-
-      }
-
-
-
-
-
-
-
-
-
+}    
 
 
     </div>
-
-
-
-
   </div>
 </section>
 <!-- /blogs -->

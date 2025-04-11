@@ -1,11 +1,10 @@
 
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P4_WebMVC.Data;
 using P4_WebMVC.Interfaces;
 using P4_WebMVC.Models.DomainModels;
-using P4_WebMVC.Models.HybridModels;
+using P4_WebMVC.Models.ViewModels;
 using P4_WebMVC.Types;
 
 
@@ -68,10 +67,10 @@ namespace P4_WebMVC.Controllers
 
                 var user = await dbContext.Users.FindAsync(id);
 
-                if(user?.Role ==Role.Editor){
+                if(user?.Role ==Role.Editor || user?.Role == Role.Admin)   {
                         return View();
                 }else{
-                  return  RedirectToAction("blogs" , "home");
+                  return  RedirectToAction("Login" , "User");
                 }
          
         }

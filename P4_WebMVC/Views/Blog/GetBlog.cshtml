@@ -1,4 +1,4 @@
-﻿@model P4_WebMVC.Models.HybridModels.HybridViewModel
+﻿@* @model P4_WebMVC.Models.ViewModels *@
 
 @{
     ViewData["Title"] = "Blog";
@@ -32,7 +32,7 @@
       <div class="col-12">
         <ul class="list-inline">
           <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">Post:</span>Somrat</li>
-          <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light">@Model.Blog.DateCreated</li>
+          @* <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light">@Model.Blog.DateCreated</li> *@
           <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i class="ti-book mr-2"></i>Read 289</li>
           <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i class="ti-share mr-2"></i>289</li>
           <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><a class="text-light" href="#"><i class="ti-comments mr-2"></i>265</a></li>
@@ -44,15 +44,15 @@
       </div>
       <!-- blog contect -->
       <div class="col-12 mb-5">
+@* 
+        <h2>@Model.Blog.BlogTitle</h2> *@
 
-        <h2>@Model.Blog.BlogTitle</h2>
 
 
-
-      <p>
+      @* <p>
         @Model.Blog.Description
 
-      </p>
+      </p> *@
        
       </div>
       <!-- comment box -->
@@ -149,4 +149,3 @@
 </div>
   </div>
 </section>
-<!-- /recommended post -->

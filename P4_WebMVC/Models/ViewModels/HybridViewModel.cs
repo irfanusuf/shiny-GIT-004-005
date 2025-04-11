@@ -1,7 +1,7 @@
 using System;
 using P4_WebMVC.Models.DomainModels;
 
-namespace P4_WebMVC.Models.HybridModels;
+namespace P4_WebMVC.Models.ViewModels;
 
 public class HybridViewModel
 {

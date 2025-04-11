@@ -61,3 +61,6 @@ datatyes autommatically given to the columns
 
 
 
+ms-dotnettools.csdevkit requested to download the .NET ASP.NET Runtime.
+Downloading .NET version(s) 9.0.4~x64~aspnetcore ............................................................................................................................................ Done!
+.NET 9.0.4~x64~aspnetcore executable path: /home/irfan_usuf/.config/Code/User/globalStorage/ms-dotnettools.vscode-dotnet-runtime/.dotnet/9.0.4~x64~aspnetcore/dotnet
