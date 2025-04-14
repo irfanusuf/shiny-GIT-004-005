@@ -13,41 +13,48 @@ namespace P4_WebMVC.Controllers
         private readonly SqlDbContext dbContext;
         private readonly ITokenService tokenService;
 
-        public ContentController(ITokenService tokenService , SqlDbContext dbContext)
+        public ContentController(ITokenService tokenService, SqlDbContext dbContext)
         {
-                this.dbContext = dbContext;
-                this.tokenService = tokenService;
+            this.dbContext = dbContext;
+            this.tokenService = tokenService;
         }
+
+        [HttpGet]
         public async Task<ActionResult> DashBoard()
         {
 
-               var token = HttpContext.Request.Cookies["GradSchoolAuthToken"];
+            var token = HttpContext.Request.Cookies["GradSchoolAuthToken"];
 
-                if (string.IsNullOrEmpty(token))
-                {
-                    return RedirectToAction("login", "user");
-                }
+            if (string.IsNullOrEmpty(token))
+            {
+                return RedirectToAction("login", "user");
+            }
 
-                var id = tokenService.VerifyTokenAndGetId(token);
+            var id = tokenService.VerifyTokenAndGetId(token);
 
-                if (id == Guid.Empty)
-                {
-                    return RedirectToAction("login", "user");
-                }
+            if (id == Guid.Empty)
+            {
+                return RedirectToAction("login", "user");
+            }
 
-                var user = await dbContext.Users.FindAsync(id);
+            var user = await dbContext.Users.FindAsync(id);
 
-                if(user==null){
-                    return RedirectToAction("login" , "User");
-                }
+            if (user == null)
+            {
+                return RedirectToAction("login", "User");
+            }
 
-                if(user?.Role ==Role.Editor || user?.Role == Role.Admin)   {
-                        return View();
-                }else{
-                  return  RedirectToAction("login" , "user");
-                }
-   
+            if (user?.Role == Role.Editor || user?.Role == Role.Admin)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("login", "user");
+            }
+
         }
+       
 
     }
 }

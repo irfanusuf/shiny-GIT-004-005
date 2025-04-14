@@ -56,19 +56,19 @@ namespace P4_WebMVC.Controllers
             try
             {
 
-                // var token = HttpContext.Request.Cookies["GradSchoolAuthToken"];
+                // var token = HttpContext.Request.Cookies["GradSchoolAuthToken"];   // needs login
 
                 // if (string.IsNullOrEmpty(token))
                 // {
-                //     return View();
+                //     return View();     // view model is not pushed here 
                 // }
 
                 // var id = tokenService.VerifyTokenAndGetId(token);
 
-                // var user = await dbContext.Users.FindAsync(id);   // db se fetch kerhay jhai logged in  user
+                // var user = await dbContext.Users.FindAsync(id);   // db se fetch kerhay jhai logged in  user ko ....it means author username is always logged in username
 
 
-                 var blogs =   await dbContext.Blogs.Where(b =>b.Publised == true ).ToListAsync();
+                var blogs =   await dbContext.Blogs.Where(b =>b.Publised == true ).Include(b => b.Author).ToListAsync();
 
                 var viewModel = new HybridViewModel
                 {
@@ -77,7 +77,7 @@ namespace P4_WebMVC.Controllers
                 };
 
 
-                return View();
+                return View(viewModel);
             }
             catch (Exception ex)
             {

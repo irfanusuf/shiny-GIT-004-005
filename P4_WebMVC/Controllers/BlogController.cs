@@ -31,7 +31,7 @@ namespace P4_WebMVC.Controllers
         {
             try
             {
-                var blog = await dbContext.Blogs.FirstOrDefaultAsync(b => b.BlogId == BlogId);
+                var blog = await dbContext.Blogs.Include(b => b.Author).FirstOrDefaultAsync(b => b.BlogId == BlogId);
                 // var viewModel = new Blog{
                 //     BlogTitle = blog.BlogTitle,
                 //     BlogImage = blog.BlogImage,

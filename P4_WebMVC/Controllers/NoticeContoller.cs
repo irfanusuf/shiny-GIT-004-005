@@ -3,12 +3,12 @@ using P4_WebMVC.Models.DomainModels;
 
 namespace P4_WebMVC.Controllers
 {
-    public class NoticeContoller : Controller
+    public class NoticeController : Controller
     {
         // GET: NoticeContoller
 
         [HttpGet]
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
@@ -16,7 +16,7 @@ namespace P4_WebMVC.Controllers
 
         [HttpGet]
 
-          public ActionResult CreateNotice()
+          public IActionResult CreateNotice()
         {
             return View();
         }
