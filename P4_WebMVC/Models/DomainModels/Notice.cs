@@ -14,7 +14,7 @@ public class Notice
     public required string Description { get; set; }
 
     public  bool IsPublished { get; set; } = true;
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow.AddMinutes(330);
 
 
 }

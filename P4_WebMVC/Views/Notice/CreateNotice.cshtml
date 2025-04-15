@@ -1,10 +1,6 @@
-﻿
+﻿@{
+  ViewData["Title"] = "Create Notice";
 
-
-
-@{
-    ViewData["Title"] = "Create Notice";
- 
 }
 
 
@@ -14,12 +10,55 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Create Notice</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Create Notice</a>
+          </li>
           <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
         </ul>
-        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some
+          universities and the emphasis placed on final exams by others.</p>
       </div>
     </div>
   </div>
 </section>
 <!-- /page title -->
+
+
+
+
+<div class="container pt-5">
+
+  <div class="row">
+    <div class="col-md-8">
+      <h3> Create Notice </h3>
+      <p>Fill in the form below to create a new notice.</p>
+    </div>
+  </div>
+
+  @if (ViewBag.successMessage != null)
+  {
+    <div class="alert alert-success">@ViewBag.successMessage</div>
+  }
+  @if (ViewBag.errorMessage != null)
+  {
+    <div class="alert alert-danger">@ViewBag.errorMessage</div>
+  }
+
+
+  <form method="post">
+
+
+
+
+    <input placeholder="Notice Title *" name="Title" type="text" class="form-control mb-3" />
+
+    <input placeholder="Notice Description *" name="Description" type="text" class="form-control mb-3" />
+
+
+    <button class="btn btn-primary" type="submit"> Publish </button>
+    <a asp-controller="content" asp-action="dashboard" class="btn btn-primary-outline"> Back To Dashboard  </a>
+
+  </form>
+
+
+
+</div>
