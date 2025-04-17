@@ -11,13 +11,20 @@ public class SqlDbContext : DbContext
 
 
    // entities
-
-
     public DbSet<User> Users {get; set;}
     public DbSet<Blog> Blogs {get; set;}
     public DbSet<Notice> Notices {get; set;}
 
 
+    // configure fleunt api model builder
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
 
-
+        modelBuilder.Entity<Blog>()
+        .HasOne(b => b.Author)
+        .WithMany(a =>a.Blogs)
+        .HasForeignKey(b => b.AuthorId)
+        .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete    
+    }
 }

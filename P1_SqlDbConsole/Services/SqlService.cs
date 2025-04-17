@@ -15,13 +15,11 @@ public class SqlService : ISqlService
 {
     private readonly string _connectionString;     // feild   // encapsulation // class ki state ko store kertay hai 
 
-
     // constructorr
     public SqlService(string connectionStringParam)
     {
         _connectionString = connectionStringParam;
     }
-
 
     public void CreateUser(string username, string email, string password)
     {

@@ -14,6 +14,10 @@ public required string Email {get; set;}
 public required string Password {get; set;}
 public required Role Role {get;set;} = Role.User;
 public string ? Avatar {get; set;}
+public ICollection<Blog> Blogs {get; set;} =[]  ;   // navigation property to fetch  all the blogs of user
+public required DateTime DateCreated {get; set;} = DateTime.UtcNow;
+public required DateTime DateModified {get; set;} = DateTime.UtcNow;
+
 
 
 }

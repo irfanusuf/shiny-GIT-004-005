@@ -73,7 +73,6 @@ class Program
 
             // logic of edit User
 
-
             Console.WriteLine("Enter your email to find user");
             string email = Console.ReadLine();
 
