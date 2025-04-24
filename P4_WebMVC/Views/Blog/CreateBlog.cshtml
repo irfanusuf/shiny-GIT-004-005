@@ -17,12 +17,12 @@
     <h2> Write a blog here</h2>
 
 
-    <form method="post"> 
+    <form method="post" enctype="multipart/form-data"> 
 
 
-        <input placeholder="Blog title Goes Here "  name="BlogTitle">
-        <input placeholder="Blog Image  "  name="BlogImage">
-        <input placeholder="Blog Short Description  "  name="ShortDesc">
+        <input placeholder="Blog title Goes Here "  name="BlogTitle" type="text">
+        <input placeholder="Blog Image  "  name="file" type="file" >
+        <input placeholder="Blog Short Description  "  name="ShortDesc" type="text">
      
         <textarea id="description" name="Description"> Write Your Blog Here... </textarea>
 

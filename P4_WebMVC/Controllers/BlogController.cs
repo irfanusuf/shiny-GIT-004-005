@@ -17,11 +17,13 @@ namespace P4_WebMVC.Controllers
 
         private readonly SqlDbContext dbContext;
         private readonly ITokenService tokenService;
+        private readonly ICloudinaryService cloudinaryService;
 
-        public BlogController(SqlDbContext dbContext, ITokenService tokenService)
+        public BlogController(SqlDbContext dbContext, ITokenService tokenService ,ICloudinaryService cloudinaryService)
         {
             this.dbContext = dbContext;
             this.tokenService = tokenService;
+            this.cloudinaryService = cloudinaryService;
         }
 
 
@@ -77,7 +79,7 @@ namespace P4_WebMVC.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> CreateBlog(Blog model)
+        public async Task<ActionResult> CreateBlog(Blog model , IFormFile file)
         {
 
             try
@@ -91,12 +93,12 @@ namespace P4_WebMVC.Controllers
 
                 var id = tokenService.VerifyTokenAndGetId(token);
 
-                var user = await dbContext.Users.FindAsync(id);
+                // var user = await dbContext.Users.FindAsync(id);
 
                 if (string.IsNullOrEmpty(model.BlogTitle) ||
                string.IsNullOrEmpty(model.Description) ||
-               string.IsNullOrEmpty(model.ShortDesc) ||
-               string.IsNullOrEmpty(model.BlogImage))
+               string.IsNullOrEmpty(model.ShortDesc))
+            //    string.IsNullOrEmpty(model.BlogImage))
                 {
                     ViewBag.errorMessage = "All details are necessary";
                     return View();
@@ -106,8 +108,11 @@ namespace P4_WebMVC.Controllers
                 // get id from token \
                 // fetch user from db 
 
+                // upload image 
+                var imageUrl =  await  cloudinaryService.UploadImageAsync(file);
 
-                model.Author = user;            // Efcore Automatic tracking   // equivalent code model.authorUserId = user.UserId
+                model.BlogImage = imageUrl;
+                model.AuthorId= id;            // Efcore Automatic tracking   // equivalent code model.authorUserId = user.UserId
                 model.DateCreated = DateTime.UtcNow;
                 model.DateModified = DateTime.UtcNow;
 

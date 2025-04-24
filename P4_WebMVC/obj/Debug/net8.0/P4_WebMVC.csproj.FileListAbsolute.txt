@@ -170,3 +170,5 @@
 /home/irfan_usuf/ILS/GIT008/P4_WebMVC/obj/Debug/net8.0/P4_WebMVC.pdb
 /home/irfan_usuf/ILS/GIT008/P4_WebMVC/obj/Debug/net8.0/P4_WebMVC.genruntimeconfig.cache
 /home/irfan_usuf/ILS/GIT008/P4_WebMVC/obj/Debug/net8.0/ref/P4_WebMVC.dll
+/home/irfan_usuf/ILS/GIT008/P4_WebMVC/bin/Debug/net8.0/CloudinaryDotNet.dll
+/home/irfan_usuf/ILS/GIT008/P4_WebMVC/bin/Debug/net8.0/Newtonsoft.Json.dll

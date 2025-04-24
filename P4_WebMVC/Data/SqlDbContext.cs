@@ -26,5 +26,22 @@ public class SqlDbContext : DbContext
         .WithMany(a =>a.Blogs)
         .HasForeignKey(b => b.AuthorId)
         .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete    
+
+
+        modelBuilder.Entity<Course>()
+        .HasOne(c => c.Teacher)
+        .WithMany(a => a.Courses)
+        .HasForeignKey( c => c.TeacherUserId)
+        .OnDelete(DeleteBehavior.Restrict);
+
+
+        modelBuilder.Entity<Course>().HasMany(c => c.EnlistedStudents);
+
+
+
     }
+
+
+
+
 }
