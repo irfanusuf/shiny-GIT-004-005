@@ -113,8 +113,7 @@ namespace P4_WebMVC.Controllers
 
                 model.BlogImage = imageUrl;
                 model.AuthorId= id;            // Efcore Automatic tracking   // equivalent code model.authorUserId = user.UserId
-                model.DateCreated = DateTime.UtcNow;
-                model.DateModified = DateTime.UtcNow;
+                
 
                 await dbContext.Blogs.AddAsync(model);
                 await dbContext.SaveChangesAsync();

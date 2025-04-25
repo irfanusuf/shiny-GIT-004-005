@@ -14,6 +14,8 @@ public class SqlDbContext : DbContext
     public DbSet<User> Users {get; set;}
     public DbSet<Blog> Blogs {get; set;}
     public DbSet<Notice> Notices {get; set;}
+    public DbSet<Course> Courses { get; set; }
+
 
 
     // configure fleunt api model builder
@@ -35,7 +37,10 @@ public class SqlDbContext : DbContext
         .OnDelete(DeleteBehavior.Restrict);
 
 
-        modelBuilder.Entity<Course>().HasMany(c => c.EnlistedStudents);
+        // table join
+        modelBuilder.Entity<Course>()
+        .HasMany(c => c.EnlistedStudents)
+        .WithMany(s => s.EnlistedInCourses);
 
 
 
