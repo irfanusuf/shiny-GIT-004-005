@@ -100,7 +100,7 @@ namespace P4_WebMVC.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult> CreateNotice(Notice notice)
+        public async Task<ActionResult> CreateNotice(Notice notice , IFormFile file)
         {
             // Validate the notice object
             if (ModelState.IsValid)

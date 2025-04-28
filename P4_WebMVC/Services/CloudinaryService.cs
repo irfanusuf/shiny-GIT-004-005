@@ -21,29 +21,64 @@ public class CloudinaryService : ICloudinaryService
     }
 
 
-    public async Task<string> UploadImageAsync(IFormFile file)
+    public async Task<string> UploadImageAsync(IFormFile image, string folder)
     {
-        if (file == null || file.Length == 0)
+        if (image == null || image.Length == 0)
         {
             throw new ArgumentNullException("File is null");
         }
 
-        using var stream = file.OpenReadStream();
+        using var stream = image.OpenReadStream();
 
 
-        var  uploadParams = new ImageUploadParams(){
+        var uploadParams = new ImageUploadParams()
+        {
 
-            File = new FileDescription(file.FileName , stream),
+            File = new FileDescription(image.FileName, stream),
             UseFilename = true,
             UniqueFilename = false,
-            Overwrite = true
+            Overwrite = true,
+            Folder = folder
         };
 
-       var uploadResult =  await cloudinary.UploadAsync(uploadParams);
+        var uploadResult = await cloudinary.UploadAsync(uploadParams);
 
         return uploadResult.SecureUrl.ToString();
 
 
 
+    }
+
+    public async Task<string> UploadVideoAsync(IFormFile video, string folder)
+    {
+        try
+        {
+            if (video == null || video.Length == 0)
+            {
+                throw new ArgumentNullException("File is null");
+            }
+
+            using var stream = video.OpenReadStream();
+
+            var uploadParams = new VideoUploadParams
+            {
+                File = new FileDescription(video.FileName, stream),
+                UseFilename = true,
+                UniqueFilename = false,
+                Overwrite = true,
+                Folder = folder
+
+            };
+            var uploadResult = await cloudinary.UploadAsync(uploadParams);
+
+            return uploadResult.SecureUrl.ToString();
+
+
+        }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
     }
 }

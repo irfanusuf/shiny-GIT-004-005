@@ -6,7 +6,9 @@ public interface ICloudinaryService
 {
 
 
-public Task <string> UploadImageAsync (IFormFile file);
+public Task <string> UploadImageAsync (IFormFile image , string folder);
+
+public Task <string> UploadVideoAsync(IFormFile video , string folder);
 
 
 }

@@ -79,7 +79,7 @@ namespace P4_WebMVC.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> CreateBlog(Blog model , IFormFile file)
+        public async Task<ActionResult> CreateBlog(Blog model , IFormFile image)
         {
 
             try
@@ -109,7 +109,7 @@ namespace P4_WebMVC.Controllers
                 // fetch user from db 
 
                 // upload image 
-                var imageUrl =  await  cloudinaryService.UploadImageAsync(file);
+                var imageUrl =  await  cloudinaryService.UploadImageAsync(image , "AlgoAcademyBlogs");
 
                 model.BlogImage = imageUrl;
                 model.AuthorId= id;            // Efcore Automatic tracking   // equivalent code model.authorUserId = user.UserId
