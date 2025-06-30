@@ -3,7 +3,8 @@
 >img{
 
     border-radius: 10px;
-    transition: all ease-in 0.3s;
+    transition: all ease-in 0.2s;
+    /* width: 500px; */
     &:hover{
         transform: scale(1.05);
     }

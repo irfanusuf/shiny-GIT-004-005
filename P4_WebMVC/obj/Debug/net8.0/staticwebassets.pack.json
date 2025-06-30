@@ -1,555 +1,555 @@
 {
   "Files": [
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/obj/Debug/net8.0/scopedcss/projectbundle/P4_WebMVC.bundle.scp.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/obj/Debug/net8.0/scopedcss/projectbundle/P4_WebMVC.bundle.scp.css",
       "PackagePath": "staticwebassets/P4_WebMVC.bundle.scp.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/css/maps/style.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/css/maps/style.css.map",
       "PackagePath": "staticwebassets/css/maps/style.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/css/site.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/css/style.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/css/style.css",
       "PackagePath": "staticwebassets/css/style.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/favicon.ico",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/fonts/Futura-Bold.woff",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/fonts/Futura-Bold.woff",
       "PackagePath": "staticwebassets/fonts/Futura-Bold.woff"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/about/about-page.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/about/about-page.jpg",
       "PackagePath": "staticwebassets/images/about/about-page.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/about/about-us.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/about/about-us.jpg",
       "PackagePath": "staticwebassets/images/about/about-us.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/about/video-thumb.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/about/video-thumb.jpg",
       "PackagePath": "staticwebassets/images/about/video-thumb.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/backgrounds/page-title.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/backgrounds/page-title.jpg",
       "PackagePath": "staticwebassets/images/backgrounds/page-title.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/backgrounds/success-story.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/backgrounds/success-story.jpg",
       "PackagePath": "staticwebassets/images/backgrounds/success-story.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/banner/banner-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/banner/banner-1.jpg",
       "PackagePath": "staticwebassets/images/banner/banner-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/banner/banner-feature.png",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/banner/banner-feature.png",
       "PackagePath": "staticwebassets/images/banner/banner-feature.png"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/blog/blog-single.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/blog/blog-single.jpg",
       "PackagePath": "staticwebassets/images/blog/blog-single.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/blog/post-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/blog/post-1.jpg",
       "PackagePath": "staticwebassets/images/blog/post-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/blog/post-2.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/blog/post-2.jpg",
       "PackagePath": "staticwebassets/images/blog/post-2.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/blog/post-3.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/blog/post-3.jpg",
       "PackagePath": "staticwebassets/images/blog/post-3.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/courses/course-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/courses/course-1.jpg",
       "PackagePath": "staticwebassets/images/courses/course-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/courses/course-2.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/courses/course-2.jpg",
       "PackagePath": "staticwebassets/images/courses/course-2.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/courses/course-3.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/courses/course-3.jpg",
       "PackagePath": "staticwebassets/images/courses/course-3.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/courses/course-4.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/courses/course-4.jpg",
       "PackagePath": "staticwebassets/images/courses/course-4.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/courses/course-5.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/courses/course-5.jpg",
       "PackagePath": "staticwebassets/images/courses/course-5.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/courses/course-6.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/courses/course-6.jpg",
       "PackagePath": "staticwebassets/images/courses/course-6.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/courses/course-single.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/courses/course-single.jpg",
       "PackagePath": "staticwebassets/images/courses/course-single.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-1.jpg",
       "PackagePath": "staticwebassets/images/event-speakers/speaker-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-2.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-2.jpg",
       "PackagePath": "staticwebassets/images/event-speakers/speaker-2.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-3.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-3.jpg",
       "PackagePath": "staticwebassets/images/event-speakers/speaker-3.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-4.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/event-speakers/speaker-4.jpg",
       "PackagePath": "staticwebassets/images/event-speakers/speaker-4.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/events/event-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/events/event-1.jpg",
       "PackagePath": "staticwebassets/images/events/event-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/events/event-2.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/events/event-2.jpg",
       "PackagePath": "staticwebassets/images/events/event-2.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/events/event-3.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/events/event-3.jpg",
       "PackagePath": "staticwebassets/images/events/event-3.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/events/event-single.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/events/event-single.jpg",
       "PackagePath": "staticwebassets/images/events/event-single.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/logo.png",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/logo.png",
       "PackagePath": "staticwebassets/images/logo.png"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/research/research-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/research/research-1.jpg",
       "PackagePath": "staticwebassets/images/research/research-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/research/research-2.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/research/research-2.jpg",
       "PackagePath": "staticwebassets/images/research/research-2.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/research/research-3.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/research/research-3.jpg",
       "PackagePath": "staticwebassets/images/research/research-3.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/research/research-4.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/research/research-4.jpg",
       "PackagePath": "staticwebassets/images/research/research-4.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/research/research-5.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/research/research-5.jpg",
       "PackagePath": "staticwebassets/images/research/research-5.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/research/research-6.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/research/research-6.jpg",
       "PackagePath": "staticwebassets/images/research/research-6.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship-item-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship-item-1.jpg",
       "PackagePath": "staticwebassets/images/scholarship/scholarship-item-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship-item-2.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship-item-2.jpg",
       "PackagePath": "staticwebassets/images/scholarship/scholarship-item-2.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship-item-3.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship-item-3.jpg",
       "PackagePath": "staticwebassets/images/scholarship/scholarship-item-3.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/scholarship/scholarship.jpg",
       "PackagePath": "staticwebassets/images/scholarship/scholarship.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/teacher.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/teacher.jpg",
       "PackagePath": "staticwebassets/images/teacher.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/teachers/teacher-1.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/teachers/teacher-1.jpg",
       "PackagePath": "staticwebassets/images/teachers/teacher-1.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/teachers/teacher-2.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/teachers/teacher-2.jpg",
       "PackagePath": "staticwebassets/images/teachers/teacher-2.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/images/teachers/teacher-3.jpg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/images/teachers/teacher-3.jpg",
       "PackagePath": "staticwebassets/images/teachers/teacher-3.jpg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/js/script.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/js/script.js",
       "PackagePath": "staticwebassets/js/script.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/LICENSE",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/LICENSE.md",
       "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery/LICENSE.txt",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery/dist/jquery.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery/dist/jquery.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery/dist/jquery.min.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/animate/animate.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/animate/animate.css",
       "PackagePath": "staticwebassets/plugins/animate/animate.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/aos/aos.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/aos/aos.css",
       "PackagePath": "staticwebassets/plugins/aos/aos.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/aos/aos.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/aos/aos.js",
       "PackagePath": "staticwebassets/plugins/aos/aos.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/bootstrap/bootstrap.min.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/plugins/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/bootstrap/bootstrap.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/bootstrap/bootstrap.min.js",
       "PackagePath": "staticwebassets/plugins/bootstrap/bootstrap.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/google-map/gmap.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/google-map/gmap.js",
       "PackagePath": "staticwebassets/plugins/google-map/gmap.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/google-map/images/marker.png",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/google-map/images/marker.png",
       "PackagePath": "staticwebassets/plugins/google-map/images/marker.png"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/jQuery/jquery.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/jQuery/jquery.min.js",
       "PackagePath": "staticwebassets/plugins/jQuery/jquery.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/mixitup/mixitup.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/mixitup/mixitup.min.js",
       "PackagePath": "staticwebassets/plugins/mixitup/mixitup.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/slick/ajax-loader.gif",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/slick/ajax-loader.gif",
       "PackagePath": "staticwebassets/plugins/slick/ajax-loader.gif"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.eot",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.eot",
       "PackagePath": "staticwebassets/plugins/slick/fonts/slick.eot"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.svg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.svg",
       "PackagePath": "staticwebassets/plugins/slick/fonts/slick.svg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.ttf",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.ttf",
       "PackagePath": "staticwebassets/plugins/slick/fonts/slick.ttf"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.woff",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/slick/fonts/slick.woff",
       "PackagePath": "staticwebassets/plugins/slick/fonts/slick.woff"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/slick/slick.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/slick/slick.css",
       "PackagePath": "staticwebassets/plugins/slick/slick.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/slick/slick.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/slick/slick.min.js",
       "PackagePath": "staticwebassets/plugins/slick/slick.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.eot",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.eot",
       "PackagePath": "staticwebassets/plugins/themify-icons/fonts/themify.eot"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.svg",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.svg",
       "PackagePath": "staticwebassets/plugins/themify-icons/fonts/themify.svg"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.ttf",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.ttf",
       "PackagePath": "staticwebassets/plugins/themify-icons/fonts/themify.ttf"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.woff",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/fonts/themify.woff",
       "PackagePath": "staticwebassets/plugins/themify-icons/fonts/themify.woff"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/themify-icons.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/themify-icons/themify-icons.css",
       "PackagePath": "staticwebassets/plugins/themify-icons/themify-icons.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/venobox/venobox.css",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/venobox/venobox.css",
       "PackagePath": "staticwebassets/plugins/venobox/venobox.css"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/plugins/venobox/venobox.min.js",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/plugins/venobox/venobox.min.js",
       "PackagePath": "staticwebassets/plugins/venobox/venobox.min.js"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/_buttons.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/_buttons.scss",
       "PackagePath": "staticwebassets/scss/_buttons.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/_common.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/_common.scss",
       "PackagePath": "staticwebassets/scss/_common.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/_mixins.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/_mixins.scss",
       "PackagePath": "staticwebassets/scss/_mixins.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/_typography.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/_typography.scss",
       "PackagePath": "staticwebassets/scss/_typography.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/_variables.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/_variables.scss",
       "PackagePath": "staticwebassets/scss/_variables.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/style.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/style.scss",
       "PackagePath": "staticwebassets/scss/style.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/templates/_homepage.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/templates/_homepage.scss",
       "PackagePath": "staticwebassets/scss/templates/_homepage.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/templates/_navigation.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/templates/_navigation.scss",
       "PackagePath": "staticwebassets/scss/templates/_navigation.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/templates/_otherspage.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/templates/_otherspage.scss",
       "PackagePath": "staticwebassets/scss/templates/_otherspage.scss"
     },
     {
-      "Id": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/wwwroot/scss/templates/_slider.scss",
+      "Id": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/wwwroot/scss/templates/_slider.scss",
       "PackagePath": "staticwebassets/scss/templates/_slider.scss"
     },
     {

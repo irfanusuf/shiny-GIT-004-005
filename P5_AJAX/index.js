@@ -15,13 +15,17 @@ const fetchData = async (page) => {
 
     if (res.ok) {
       const page = document.getElementById("page");
-      page.value = data.page;
-      displayImages(data.photos);
+      page.value = data.page;   // 1
+      
+      displayImages(data.photos);  // data.photos is an  array 
     }
   } catch (error) {
     console.error(error);
   }
 };
+
+
+
 
 const displayImages = (dataArr) => {
   try {
@@ -50,17 +54,18 @@ const displayImages = (dataArr) => {
 };
 
 
-
-
-
 fetchData(1);
+
+
+
+
 
 const handleNext = () => {
   console.log("next button clicked");
 
   const pageNum = document.getElementById("page").value;
 
-  const nextPage = parseInt(pageNum) + 1;
+  const nextPage = parseInt(pageNum) + 1;    // 2
 
   fetchData(nextPage);
 };
@@ -69,7 +74,7 @@ const handlePrev = () => {
   const pageNum = document.getElementById("page").value;
 
 
-  const prevPage = parseInt(pageNum) - 1;
+  const prevPage = parseInt(pageNum) - 1;    // 0
 
   if(prevPage > 0){
     fetchData(prevPage);

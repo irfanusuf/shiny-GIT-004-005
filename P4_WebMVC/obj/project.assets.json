@@ -7494,11 +7494,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/P4_WebMVC.csproj",
+      "projectUniqueName": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/P4_WebMVC.csproj",
       "projectName": "P4_WebMVC",
-      "projectPath": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/P4_WebMVC.csproj",
+      "projectPath": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/P4_WebMVC.csproj",
       "packagesPath": "/home/irfan_usuf/.nuget/packages/",
-      "outputPath": "/home/irfan_usuf/ILS/GIT008/P4_WebMVC/obj/",
+      "outputPath": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/irfan_usuf/.nuget/NuGet/NuGet.Config"
