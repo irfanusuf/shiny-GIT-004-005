@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YCOt7bG6dVKbOYNlc+V6BKJVmvJS1gdKJ4NOXHv2I9aMGSWeTy0LV3qCxfYoKFXy2E9mvg9ZOy9EefeAuJnkzA==",
+  "dgSpecHash": "RLk2daOf/r98OYSCeSMDk0I+AzXD5C8MkSQAMfz6/LPyCDTQpqx3QD9ay/vDr3Ll4LJTA3dKLKnLg0VBYegN4A==",
   "success": true,
   "projectFilePath": "/home/irfan_usuf/Coding/GIT008/P4_WebMVC/P4_WebMVC.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "/home/irfan_usuf/.nuget/packages/cloudinarydotnet/1.27.2/cloudinarydotnet.1.27.2.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/dotenv.net/3.2.1/dotenv.net.3.2.1.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/irfan_usuf/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.3.0/microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
+    "/home/irfan_usuf/.nuget/packages/microsoft.aspnetcore.http.features/2.3.0/microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/microsoft.bcl.memory/9.0.0/microsoft.bcl.memory.9.0.0.nupkg.sha512",
     "/home/irfan_usuf/.nuget/packages/microsoft.build.framework/17.8.3/microsoft.build.framework.17.8.3.nupkg.sha512",

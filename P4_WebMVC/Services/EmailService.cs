@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using P4_WebMVC.Interfaces;
 
 
-namespace WebApI.Services;
+namespace P4_WebMVC.Services;
 
 public class EmailService : IMailService
 {

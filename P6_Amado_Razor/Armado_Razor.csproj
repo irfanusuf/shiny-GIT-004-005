@@ -16,11 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces/" />
-    <Folder Include="Services/" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\P0_ClassLibrary\P0_ClassLibrary.csproj" />
   </ItemGroup>
 

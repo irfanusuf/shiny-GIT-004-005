@@ -11,6 +11,9 @@ builder.Services.AddRazorPages();
 // options.UseSqlServer(builder.Configuration.GetConnectionString("main")));
 
 
+// builder.Services.AddSingleton<ICloudinaryService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

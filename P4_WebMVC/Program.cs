@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using P4_WebMVC.Data;
 using P4_WebMVC.Interfaces;
 using P4_WebMVC.Services;
-using WebApI.Services;
+
 // container
 var builder = WebApplication.CreateBuilder(args);
 

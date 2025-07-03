@@ -13,7 +13,7 @@ public class CloudinaryService : ICloudinaryService
 
     private readonly Cloudinary cloudinary;
 
-    public CloudinaryService(string cloudinaryUrl)
+    public CloudinaryService( string cloudinaryUrl)
     {
 
         this.cloudinary = new Cloudinary(cloudinaryUrl);

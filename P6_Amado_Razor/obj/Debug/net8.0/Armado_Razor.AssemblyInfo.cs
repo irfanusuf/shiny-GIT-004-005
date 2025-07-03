@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Armado_Razor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d572aff04e797aa37801cd43b0bc4c25261e8c0e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bcdc34ef568f1696cb84a783c5e91264d0cf7e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Armado_Razor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Armado_Razor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
