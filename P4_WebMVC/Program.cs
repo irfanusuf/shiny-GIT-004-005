@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+
 using P4_WebMVC.Data;
 using P4_WebMVC.Interfaces;
 using P4_WebMVC.Services;
@@ -17,6 +18,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ITokenService , TokenService>();    // dependency injection 
 builder.Services.AddSingleton<IMailService , EmailService>();  
 builder.Services.AddSingleton<ICloudinaryService , CloudinaryService>(); 
+
 
 var app = builder.Build();
 

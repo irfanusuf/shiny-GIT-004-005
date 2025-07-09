@@ -17,6 +17,7 @@ public class CloudinaryService : ICloudinaryService
     {
 
         this.cloudinary = new Cloudinary(cloudinaryUrl);
+
         cloudinary.Api.Secure = true;
     }
 
