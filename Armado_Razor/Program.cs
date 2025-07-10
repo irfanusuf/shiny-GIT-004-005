@@ -19,8 +19,6 @@ builder.Services.AddDbContext<SqlDbContext>(options =>options.UseSqlServer(build
 builder.Services.AddSingleton<ICalculatorService, CalculatorService>();   // striaght forward 
 
 
-
-
 var cloudinaryurl = builder.Configuration["CloudinarySettings:CloudinaryUrl"] ?? throw new InvalidOperationException("cloudinary url config is missing!");
 
 
@@ -30,7 +28,7 @@ builder.Services.AddSingleton<ICloudinaryService>(options => new CloudinaryServi
 
 
 
-// regsiter the settings // hard way bbut necessary
+// regsiter the settings // hard way but necessary
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 // register the service as we would have done very simple looking but overly abstarcted behnd the scenes 
