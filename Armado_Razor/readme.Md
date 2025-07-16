@@ -69,3 +69,14 @@ Downloading .NET version(s) 9.0.4~x64~aspnetcore ...............................
 
 
  dotnet add reference ../P0_ClassLibrary/P0_ClassLibrary.csproj
+
+
+
+
+
+npm init -y      package.json
+
+npm install tailwindcss
+npm install @tailwind/cli
+
+ npx @tailwindcss/cli -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --watch

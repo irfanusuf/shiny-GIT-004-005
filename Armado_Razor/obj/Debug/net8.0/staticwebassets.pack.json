@@ -9,10 +9,6 @@
       "PackagePath": "staticwebassets/css/input.css"
     },
     {
-      "Id": "/home/irfan_usuf/Coding/GIT008/Armado_Razor/wwwroot/css/output.css",
-      "PackagePath": "staticwebassets/css/output.css"
-    },
-    {
       "Id": "/home/irfan_usuf/Coding/GIT008/Armado_Razor/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },

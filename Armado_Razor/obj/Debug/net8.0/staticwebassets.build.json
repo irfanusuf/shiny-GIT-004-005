@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u55ozt2cRxzIkP0YJoT3tEzuPzhl8CDJu1yDm29JoXs=",
+  "Hash": "CILeCH4a5D90ALlIRQoGXj1wWvdyJlcMri9AH5+RSzY=",
   "Source": "Armado_Razor",
   "BasePath": "_content/Armado_Razor",
   "Mode": "Default",
@@ -72,25 +72,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/input.css"
-    },
-    {
-      "Identity": "/home/irfan_usuf/Coding/GIT008/Armado_Razor/wwwroot/css/output.css",
-      "SourceId": "Armado_Razor",
-      "SourceType": "Discovered",
-      "ContentRoot": "/home/irfan_usuf/Coding/GIT008/Armado_Razor/wwwroot/",
-      "BasePath": "_content/Armado_Razor",
-      "RelativePath": "css/output.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/output.css"
     },
     {
       "Identity": "/home/irfan_usuf/Coding/GIT008/Armado_Razor/wwwroot/favicon.ico",
