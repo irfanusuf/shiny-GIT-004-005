@@ -2270,19 +2270,19 @@
     ]
   },
   "packageFolders": {
-    "/home/irfan_usuf/.nuget/packages/": {}
+    "/home/irfanyousuf/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfan_usuf/ILS/GIT008/P1_SqlDbConsole/SqlDbConsole.csproj",
+      "projectUniqueName": "/home/irfanyousuf/Coding/shiny-GIT-008/P1_SqlDbConsole/SqlDbConsole.csproj",
       "projectName": "SqlDbConsole",
-      "projectPath": "/home/irfan_usuf/ILS/GIT008/P1_SqlDbConsole/SqlDbConsole.csproj",
-      "packagesPath": "/home/irfan_usuf/.nuget/packages/",
-      "outputPath": "/home/irfan_usuf/ILS/GIT008/P1_SqlDbConsole/obj/",
+      "projectPath": "/home/irfanyousuf/Coding/shiny-GIT-008/P1_SqlDbConsole/SqlDbConsole.csproj",
+      "packagesPath": "/home/irfanyousuf/.nuget/packages/",
+      "outputPath": "/home/irfanyousuf/Coding/shiny-GIT-008/P1_SqlDbConsole/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/irfan_usuf/.nuget/NuGet/NuGet.Config"
+        "/home/irfanyousuf/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2339,7 +2339,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

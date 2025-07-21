@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/P7_WebApi.props" />
+</Project>

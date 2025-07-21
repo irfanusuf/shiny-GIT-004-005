@@ -11,3 +11,16 @@
 /home/irfan_usuf/Coding/GIT008/P0_ClassLibrary/obj/Debug/net8.0/refint/P0_ClassLibrary.dll
 /home/irfan_usuf/Coding/GIT008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.pdb
 /home/irfan_usuf/Coding/GIT008/P0_ClassLibrary/obj/Debug/net8.0/ref/P0_ClassLibrary.dll
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/bin/Debug/net8.0/P0_ClassLibrary.deps.json
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/bin/Debug/net8.0/P0_ClassLibrary.dll
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/bin/Debug/net8.0/P0_ClassLibrary.pdb
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.csproj.AssemblyReference.cache
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.AssemblyInfoInputs.cache
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.AssemblyInfo.cs
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.csproj.CoreCompileInputs.cache
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.sourcelink.json
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.dll
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/refint/P0_ClassLibrary.dll
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/P0_ClassLibrary.pdb
+/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/obj/Debug/net8.0/ref/P0_ClassLibrary.dll
