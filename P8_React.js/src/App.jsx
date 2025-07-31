@@ -6,6 +6,8 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
 import { useState } from "react";
+import Account from "./components/pages/Account";
+import 'animate.css';
 
 const App = () => {
   // jsx fragmentation
@@ -22,13 +24,14 @@ const App = () => {
         <Navbar username = {username} darkMode = {darkMode} setDarkMode = {setDarkMode}/>   
 
 
-        <div className={darkMode ? "bg-neutral-900 h-150 text-white" : "bg-neutral-400 h-150"}>
+        <div className={darkMode ? "bg-neutral-900  text-white" : "bg-neutral-400 "}>
 
 
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home username = {username}/>} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/user/account" element={<Account darkMode ={darkMode} setDarkMode={setDarkMode}/>} />
           </Routes>
         </div>
 

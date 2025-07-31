@@ -29,7 +29,7 @@ export default function Navbar(props) {
         <ul className=" gap-4 hidden sm:flex">
           <li> <Link to="/">Home </Link> </li>
           <li>  <Link to="/about">  About </Link>  </li>
-          <li> Contact</li>
+          <li> <Link to="/user/Account">  Account </Link> </li>
           <li> <Link to="/services">Services </Link> </li>
         </ul>
       </div>
