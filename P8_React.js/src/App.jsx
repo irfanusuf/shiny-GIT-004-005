@@ -5,39 +5,49 @@ import Footer from "./components/shared/Footer";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import Account from "./components/pages/Account";
 import 'animate.css';
+
+
+export const Context = createContext()
 
 const App = () => {
   // jsx fragmentation
 
 
-  const [username  , setUsername] = useState("tehleem")
-  const [darkMode, setDarkMode] = useState(false);
 
+  const [SSOT , setSSOT] = useState({
+    username : "tehleem",
+    darkMode : false ,
+    loading : false
+  })
+
+
+  function setDarkMode (){
+    setSSOT((prevState) => ({...prevState , darkMode : !SSOT.darkMode}))
+  }
 
   return (
     <>
       <BrowserRouter>
-       {/* // passed username as a prop */}
-        <Navbar username = {username} darkMode = {darkMode} setDarkMode = {setDarkMode}/>   
+ 
+        <Context.Provider value={{...SSOT , setDarkMode}}>
 
-
-        <div className={darkMode ? "bg-neutral-900  text-white" : "bg-neutral-400 "}>
-
-
+         <Navbar/>       
+        <div className={SSOT.darkMode ? "bg-neutral-900  text-white" : "bg-neutral-400 "}>
           <Routes>
-            <Route path="/" element={<Home username = {username}/>} />
+            <Route path="/" element={<Home/>}/>
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/user/account" element={<Account darkMode ={darkMode} setDarkMode={setDarkMode}/>} />
+            <Route path="/user/account" element={<Account/>} />
           </Routes>
         </div>
-
-
-
         <Footer />
+
+        </Context.Provider>
+
+
       </BrowserRouter>
     </>
   );

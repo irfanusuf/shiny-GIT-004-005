@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import HeroSection from '../molecules/HeroSection';
 
-const Home = ({username}) =>  {
+const Home = () =>  {
+
+
+
   const [count, setCount] = useState(40);
   const [explosionCounter, SetEXplosionCounter] = useState(10)
 
@@ -28,12 +31,12 @@ const Home = ({username}) =>  {
     <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", width: "50%", margin: "auto" }}>
  
       <h1>
-        Bomb planted by  {username}
+        Bomb diffused!
       </h1>
 
 
 
-      <HeroSection username={username}/>
+      <HeroSection/>
 
     </div>
   );

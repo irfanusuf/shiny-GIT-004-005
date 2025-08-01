@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LoginForm = ({setShowRegister , darkMode , setDarkMode }) => {
+const LoginForm = ({setShowRegister}) => {
 
 
 

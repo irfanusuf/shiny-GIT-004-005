@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GiNightSleep } from "react-icons/gi";
 import { RiSunLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { Context } from "../../App";
 
-export default function Navbar(props) {
+export default function Navbar() {
 
 
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const{ username , darkMode , setDarkMode } = useContext(Context)
 
 
 
   return (
     <nav
       className={
-        props.darkMode
+        darkMode
           ? `bg-indigo-950 text-white px-6 py-4 flex items-center justify-between`
           : `bg-indigo-100 text-black px-6 py-4 flex items-center justify-between`
       }
@@ -33,25 +36,20 @@ export default function Navbar(props) {
           <li> <Link to="/services">Services </Link> </li>
         </ul>
       </div>
-
-
-
-
-
       <div>
 
 
-        <p> Welcome {props.username}</p>
+        <p> Welcome {username}</p>
 
 
         <button
           className="mx-7 hidden sm:block "
           onClick={() => {
-            props.setDarkMode(!props.darkMode);
+            setDarkMode();
             // console.log("dark mode" + " : " + darkMode);
           }}
         >
-           <span className="text-xl">{props.darkMode ? <RiSunLine/> : <GiNightSleep/>}  </span>  
+           <span className="text-xl">{darkMode ? <RiSunLine/> : <GiNightSleep/>}  </span>  
         </button>
 
 

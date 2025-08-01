@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../../App'
 
-const Testimonials = ({username}) => {
+const Testimonials = () => {
+
+
+
+ const {username} = useContext(Context)
+
+
+
   return (
     <div>Testimonials by  {username} </div>
   )

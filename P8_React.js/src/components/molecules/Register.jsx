@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-const RegisterForm = ({setShowRegister , darkMode , setDarkMode}) => {
+import  { useState } from 'react';
 
 
-    const navigate = useNavigate()
+const RegisterForm = ({setShowRegister }) => {
+
 
   const [form, setForm] = useState({
     name: '',
@@ -41,10 +39,6 @@ const RegisterForm = ({setShowRegister , darkMode , setDarkMode}) => {
   };
 
   return (
-
-
-
-
 
 
     <div className="min-h-screen flex items-center justify-center bg-gray-100">

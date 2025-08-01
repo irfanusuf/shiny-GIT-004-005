@@ -1,7 +1,7 @@
 import React from 'react'
 import Testimonials from './Testimonials'
 
-const HeroSection = ({username}) => {
+const HeroSection = () => {
   return (
     <div>
         
@@ -12,7 +12,7 @@ const HeroSection = ({username}) => {
 
 
 
-        <Testimonials username={username}/>
+        <Testimonials/>
     
     
     </div>
