@@ -3,7 +3,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GiNightSleep } from "react-icons/gi";
 import { RiSunLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { Context } from "../../App";
+import { Context } from "../../context/Store";
+
 
 export default function Navbar() {
 
@@ -24,10 +25,7 @@ export default function Navbar() {
       }
     >
 
-
-
       <div className="text-2xl font-bold">MyBrand</div>
-
       <div>
         <ul className=" gap-4 hidden sm:flex">
           <li> <Link to="/">Home </Link> </li>

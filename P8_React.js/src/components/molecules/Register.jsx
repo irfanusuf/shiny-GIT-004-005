@@ -1,70 +1,79 @@
-import  { useState } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 
 
-const RegisterForm = ({setShowRegister }) => {
+const RegisterForm = ({ setShowRegister }) => {
 
 
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  });
+
   const [error, setError] = useState('');
+  const [message, setMessage] = useState("")
+
+
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
 
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setError('');
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleRegister = async () => {
 
-    const { name, email, password, confirmPassword } = form;
+    try {
+      const formData = { username, email, password }
+      const url = "http://localhost:5095/api/User/Register"
+      const response = await axios.post(url, formData)
 
-    if (!name || !email || !password || !confirmPassword) {
-      setError('All fields are required');
-      return;
+      if (response.status === 200) {
+        setMessage(response.data.message)
+      }
+
+
+    } catch (error) {
+      console.error(error)
     }
 
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
 
-    // Simulate registration logic
-    console.log('Registering user:', form);
-  };
+
+
+
+  }
+
+
+
+
 
   return (
 
 
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInDown"
-      >
+      <form className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInDown" >
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Register</h2>
 
         {error && (
           <div className="mb-4 text-red-500 text-sm">{error}</div>
         )}
 
+
+
+
         <div className="mb-4">
           <label className="block text-gray-700 mb-1" htmlFor="name">
-            Full Name
+            Username
           </label>
+
           <input
             type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
+            value={username}
+            onChange={(event) => { setUsername(event.target.value) }}
             className="w-full px-4 py-2 border  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter your name"
           />
         </div>
+
+
+
+
 
         <div className="mb-4">
           <label className="block text-gray-700 mb-1" htmlFor="email">
@@ -72,13 +81,15 @@ const RegisterForm = ({setShowRegister }) => {
           </label>
           <input
             type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(event) => { setEmail(event.target.value) }}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter your email"
           />
         </div>
+
+
+
 
         <div className="mb-4">
           <label className="block text-gray-700 mb-1" htmlFor="password">
@@ -86,35 +97,29 @@ const RegisterForm = ({setShowRegister }) => {
           </label>
           <input
             type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(event) => { setPassword(event.target.value) }}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter a password"
           />
         </div>
 
-        <div className="mb-6">
-          <label className="block text-gray-700 mb-1" htmlFor="confirmPassword">
-            Confirm Password
-          </label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={form.confirmPassword}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Re-enter your password"
-          />
-        </div>
 
-            <p className='text-black py-3'> already have an account go to <span style={{color : "blue"}} onClick={()=>{setShowRegister(false)}}> Login  </span> </p>
 
+
+        <p className='text-black py-3'> already have an account go to <span style={{ color: "blue" }} onClick={() => { setShowRegister(false) }}> Login  </span> </p>
+
+
+
+        <p>  {message} </p>
 
         <button
-          type="submit"
+          onClick={handleRegister}
+          type="button"
           className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
         >
+
+
           Register
         </button>
       </form>
