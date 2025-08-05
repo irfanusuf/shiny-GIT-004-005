@@ -23,13 +23,13 @@ namespace P7_WebApi.Controllers
         {
 
 
-            if (string.IsNullOrEmpty(req.Email))
+            if (string.IsNullOrEmpty(req.Email) )
             {
-                return StatusCode( 400 , new{message = "All details Are required!"});
+                return StatusCode( 404, new{message = "All details Are required !"});
             }
 
 
-            return Ok(new { message = "Register Succesfull" });
+            return Ok(new { message = "Register SuccessFull !" });
 
         }
 

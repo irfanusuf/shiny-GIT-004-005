@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 
 const RegisterForm = ({ setShowRegister }) => {
@@ -22,15 +23,28 @@ const RegisterForm = ({ setShowRegister }) => {
     try {
       const formData = { username, email, password }
       const url = "http://localhost:5095/api/User/Register"
+
+
       const response = await axios.post(url, formData)
 
       if (response.status === 200) {
-        setMessage(response.data.message)
+        toast.success(response.data.message)
       }
 
 
     } catch (error) {
-      console.error(error)
+
+      const statCodesArr = [400, 401, 403, 404 , 500]
+      if (error.status) {
+        if (statCodesArr.includes(error.status)) {
+          toast.error(error.response.data.message)
+        }else{
+          toast.error("Some Network Error!")
+        }
+      }
+
+
+      // toast.error("Some Error!")
     }
 
 
