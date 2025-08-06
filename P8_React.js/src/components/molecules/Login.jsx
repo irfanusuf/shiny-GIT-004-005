@@ -1,42 +1,66 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const LoginForm = ({setShowRegister}) => {
+const LoginForm = ({ setShowRegister }) => {
 
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  })
 
-
-  const [form, setForm] = useState({ email: '', password: '' });
-  const [error, setError] = useState('');
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setError('');
-  };
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    if (!form.email || !form.password) {
-      setError('Please fill in all fields');
-      return;
+  const handleLogin = async (e) => {
+
+    e.preventDefault()
+
+    try {
+      const url = "http://localhost:5095/api/User/Login"
+      const res = await axios.post(url, form)
+
+      if (res.status === 200) {
+        toast.success(res.data.message)
+
+
+        setTimeout(() => {
+          navigate("/user/dashboard")
+        }, 2000)
+      }
+
+    } catch (error) {
+      const statCodesArr = [400, 401, 403, 404, 500]
+      
+      if (error.status) {
+        if (statCodesArr.includes(error.status)) {
+          toast.error(error.response.data.message)
+        } else {
+          toast.error("Some Network Error!")
+        }
+      }
     }
 
-    // Simulate login logic
-    console.log('Logging in with:', form);
-  };
+  }
+
+
+
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
 
-      <form 
-        onSubmit={handleSubmit}
+      <form onSubmit={handleLogin}
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInUp"
       >
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Login</h2>
 
-        {error && (
-          <div className="mb-4 text-red-500 text-sm">{error}</div>
-        )}
 
         <div className="mb-4">
           <label className="block text-gray-700 mb-1" htmlFor="email">
@@ -68,7 +92,7 @@ const LoginForm = ({setShowRegister}) => {
 
 
 
-     <p className='text-black py-3'> Dont have an account Go to  <span style={{color : "blue"}} onClick={()=>{setShowRegister(true)}}> Register  </span> </p>
+        <p className='text-black py-3'> Dont have an account Go to  <span style={{ color: "blue" }} onClick={() => { setShowRegister(true) }}> Register  </span> </p>
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"

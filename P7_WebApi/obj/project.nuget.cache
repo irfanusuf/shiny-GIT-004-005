@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "tY2peWl4Gw2snXvbSU+Em6n0xr4LKSgEISYaBroc/lI1+qLwbEcrRefUK3BU9OzppOeyXJO/toOYZCWg4yVOKg==",
+  "dgSpecHash": "VG8sQdIHp7bFZgBYZ42As6Ub+W9DYR1zVNb/6kLk9LRPxmQAbLva8JZdTo9Wg9aAIBZ5hjyQEs9dprbpVKNseA==",
   "success": true,
   "projectFilePath": "/home/irfanyousuf/Coding/shiny-GIT-008/P7_WebApi/P7_WebApi.csproj",
   "expectedPackageFiles": [
     "/home/irfanyousuf/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/irfanyousuf/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
+    "/home/irfanyousuf/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/irfanyousuf/.nuget/packages/cloudinarydotnet/1.27.2/cloudinarydotnet.1.27.2.nupkg.sha512",
     "/home/irfanyousuf/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/irfanyousuf/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.3.0/microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",

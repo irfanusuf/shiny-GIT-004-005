@@ -6,15 +6,9 @@ import { toast } from 'react-toastify';
 const RegisterForm = ({ setShowRegister }) => {
 
 
-
-  const [error, setError] = useState('');
-  const [message, setMessage] = useState("")
-
-
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
 
 
 
@@ -29,6 +23,12 @@ const RegisterForm = ({ setShowRegister }) => {
 
       if (response.status === 200) {
         toast.success(response.data.message)
+
+
+        setTimeout(()=>{
+          setShowRegister(false)
+        } , 2000 )
+
       }
 
 
@@ -54,22 +54,11 @@ const RegisterForm = ({ setShowRegister }) => {
   }
 
 
-
-
-
   return (
-
-
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      
       <form className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInDown" >
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Register</h2>
-
-        {error && (
-          <div className="mb-4 text-red-500 text-sm">{error}</div>
-        )}
-
-
-
 
         <div className="mb-4">
           <label className="block text-gray-700 mb-1" htmlFor="name">
@@ -85,10 +74,6 @@ const RegisterForm = ({ setShowRegister }) => {
           />
         </div>
 
-
-
-
-
         <div className="mb-4">
           <label className="block text-gray-700 mb-1" htmlFor="email">
             Email
@@ -101,8 +86,6 @@ const RegisterForm = ({ setShowRegister }) => {
             placeholder="Enter your email"
           />
         </div>
-
-
 
 
         <div className="mb-4">
@@ -118,22 +101,13 @@ const RegisterForm = ({ setShowRegister }) => {
           />
         </div>
 
-
-
-
         <p className='text-black py-3'> already have an account go to <span style={{ color: "blue" }} onClick={() => { setShowRegister(false) }}> Login  </span> </p>
-
-
-
-        <p>  {message} </p>
 
         <button
           onClick={handleRegister}
           type="button"
           className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
         >
-
-
           Register
         </button>
       </form>

@@ -1,5 +1,7 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using P7_WebApi.Data;
 using P7_WebApi.Models;
 
@@ -19,17 +21,65 @@ namespace P7_WebApi.Controllers
 
 
         [HttpPost("Register")]
-        public IActionResult Register(User req)
+        public async Task<IActionResult> Register(User req)
         {
-
-
-            if (string.IsNullOrEmpty(req.Email) )
+            if (string.IsNullOrEmpty(req.Username) || string.IsNullOrEmpty(req.Email) || string.IsNullOrEmpty(req.Password))
             {
-                return StatusCode( 404, new{message = "All details Are required !"});
+                return StatusCode(404, new { message = "All details Are required !" });
+            }
+
+            var user = await sqlDb.Users.FirstOrDefaultAsync(user => user.Email == req.Email);
+
+            if (user != null)
+            {
+                return StatusCode(400, new { message = "User already exists" });
             }
 
 
-            return Ok(new { message = "Register SuccessFull !" });
+            var encryptPass = BCrypt.Net.BCrypt.HashPassword(req.Password);
+
+            req.Password = encryptPass;
+
+
+            var newUser = await sqlDb.Users.AddAsync(req);
+
+            await sqlDb.SaveChangesAsync();
+
+            return Ok(new { message = "Register SuccessFull !"});
+
+        }
+
+
+        [HttpPost("Login")]
+
+
+          public async Task<IActionResult> Login(User req)
+        {
+            if ( string.IsNullOrEmpty(req.Email) || string.IsNullOrEmpty(req.Password))
+            {
+                return StatusCode(400, new { message = "All details Are required !" });
+            }
+
+            var user = await sqlDb.Users.FirstOrDefaultAsync(user => user.Email == req.Email);
+
+            if (user == null)
+            {
+                return StatusCode(404, new { message = "User not Found !" });
+            }
+
+            var verify = BCrypt.Net.BCrypt.Verify(req.Password , user.Password);
+
+            if (verify)
+            {
+                return Ok(new { message = "Login SuccessFull !", payload = user });
+            }
+            else
+            {
+             return StatusCode(400, new { message = "Password incorrect!" });
+            }
+
+
+            
 
         }
 
