@@ -1,9 +1,8 @@
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P7_WebApi.Data;
-using P7_WebApi.Models;
+using P7_WebApi.Models.DomainModels;
 
 namespace P7_WebApi.Controllers
 {

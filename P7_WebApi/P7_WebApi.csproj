@@ -22,4 +22,8 @@
     <ProjectReference Include="..\P0_ClassLibrary\P0_ClassLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Types/" />
+  </ItemGroup>
+
 </Project>
