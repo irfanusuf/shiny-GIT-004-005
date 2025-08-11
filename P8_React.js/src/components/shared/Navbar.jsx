@@ -12,7 +12,7 @@ export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const{ username , darkMode , setDarkMode } = useContext(Context)
+  const{ user , darkMode , setDarkMode } = useContext(Context)
 
 
 
@@ -37,7 +37,7 @@ export default function Navbar() {
       <div>
 
 
-        <p> Welcome {username}</p>
+        <p> Welcome {user.username}</p>
 
 
         <button

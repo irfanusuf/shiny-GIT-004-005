@@ -1,62 +1,25 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
+
+import { useContext, useState } from 'react';
+import { Context } from '../../context/Store';
 
 
 const RegisterForm = ({ setShowRegister }) => {
 
+
+  const { handleRegister } = useContext(Context)
 
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
 
+  const formData = { username, email, password }
 
-  const handleRegister = async () => {
-
-    try {
-      const formData = { username, email, password }
-      const url = "http://localhost:5095/api/User/Register"
-
-
-      const response = await axios.post(url, formData)
-
-      if (response.status === 200) {
-        toast.success(response.data.message)
-
-
-        setTimeout(()=>{
-          setShowRegister(false)
-        } , 2000 )
-
-      }
-
-
-    } catch (error) {
-
-      const statCodesArr = [400, 401, 403, 404 , 500]
-      if (error.status) {
-        if (statCodesArr.includes(error.status)) {
-          toast.error(error.response.data.message)
-        }else{
-          toast.error("Some Network Error!")
-        }
-      }
-
-
-      // toast.error("Some Error!")
-    }
-
-
-
-
-
-  }
 
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      
+
       <form className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInDown" >
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Register</h2>
 
@@ -104,7 +67,12 @@ const RegisterForm = ({ setShowRegister }) => {
         <p className='text-black py-3'> already have an account go to <span style={{ color: "blue" }} onClick={() => { setShowRegister(false) }}> Login  </span> </p>
 
         <button
-          onClick={handleRegister}
+          onClick={async () => {
+            const register = await handleRegister(formData)
+            if (register) {
+              setShowRegister(false)
+            }
+          }}
           type="button"
           className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
         >

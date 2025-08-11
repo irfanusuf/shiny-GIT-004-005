@@ -1,7 +1,6 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
+import { useContext, useState } from 'react';
+import { Context } from '../../context/Store';
 
 const LoginForm = ({ setShowRegister }) => {
 
@@ -10,44 +9,13 @@ const LoginForm = ({ setShowRegister }) => {
     password: ""
   })
 
-  const navigate = useNavigate()
+
+  const {handleLogin} = useContext(Context)
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
-
-
-  const handleLogin = async (e) => {
-
-    e.preventDefault()
-
-    try {
-      const url = "http://localhost:5095/api/User/Login"
-      const res = await axios.post(url, form)
-
-      if (res.status === 200) {
-        toast.success(res.data.message)
-
-
-        setTimeout(() => {
-          navigate("/user/dashboard")
-        }, 2000)
-      }
-
-    } catch (error) {
-      const statCodesArr = [400, 401, 403, 404, 500]
-      
-      if (error.status) {
-        if (statCodesArr.includes(error.status)) {
-          toast.error(error.response.data.message)
-        } else {
-          toast.error("Some Network Error!")
-        }
-      }
-    }
-
-  }
-
 
 
 
@@ -56,7 +24,7 @@ const LoginForm = ({ setShowRegister }) => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
 
-      <form onSubmit={handleLogin}
+      <form onSubmit={ (e)=>{ handleLogin(e , form)  }  }
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInUp"
       >
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Login</h2>
