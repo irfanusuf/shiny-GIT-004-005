@@ -4,6 +4,7 @@ import { GiNightSleep } from "react-icons/gi";
 import { RiSunLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Store";
+import { setDarkMode } from "../../context/Actions";
 
 
 export default function Navbar() {
@@ -12,7 +13,7 @@ export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const{ user , darkMode , setDarkMode } = useContext(Context)
+  const{state ,  dispatch  } = useContext(Context)
 
 
 
@@ -37,13 +38,13 @@ export default function Navbar() {
       <div>
 
 
-        <p> Welcome {user.username}</p>
+        <p> Welcome {state.user.username}</p>
 
 
         <button
           className="mx-7 hidden sm:block "
           onClick={() => {
-            setDarkMode();
+            setDarkMode(dispatch);
             // console.log("dark mode" + " : " + darkMode);
           }}
         >

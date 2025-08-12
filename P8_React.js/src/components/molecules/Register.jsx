@@ -1,12 +1,13 @@
 
-import { useContext, useState } from 'react';
-import { Context } from '../../context/Store';
+import {  useState } from 'react';
+
+import { handleRegister } from '../../context/Actions';
 
 
 const RegisterForm = ({ setShowRegister }) => {
 
 
-  const { handleRegister } = useContext(Context)
+
 
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -68,7 +69,9 @@ const RegisterForm = ({ setShowRegister }) => {
 
         <button
           onClick={async () => {
+
             const register = await handleRegister(formData)
+
             if (register) {
               setShowRegister(false)
             }

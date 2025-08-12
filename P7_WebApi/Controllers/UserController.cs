@@ -50,8 +50,6 @@ namespace P7_WebApi.Controllers
 
 
         [HttpPost("Login")]
-
-
           public async Task<IActionResult> Login(User req)
         {
             if ( string.IsNullOrEmpty(req.Email) || string.IsNullOrEmpty(req.Password))

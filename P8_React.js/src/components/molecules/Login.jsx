@@ -1,6 +1,7 @@
 
 import { useContext, useState } from 'react';
 import { Context } from '../../context/Store';
+import { handleLogin } from '../../context/Actions';
 
 const LoginForm = ({ setShowRegister }) => {
 
@@ -10,7 +11,7 @@ const LoginForm = ({ setShowRegister }) => {
   })
 
 
-  const {handleLogin} = useContext(Context)
+  const {dispatch} = useContext(Context)
 
 
   const handleChange = (e) => {
@@ -24,7 +25,7 @@ const LoginForm = ({ setShowRegister }) => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
 
-      <form onSubmit={ (e)=>{ handleLogin(e , form)  }  }
+      <form onSubmit={ (e)=>{ handleLogin(e , form , dispatch)  }  }
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInUp"
       >
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Login</h2>
