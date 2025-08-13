@@ -1,7 +1,7 @@
 
 import {  useState } from 'react';
 
-import { handleRegister } from '../../context/Actions';
+
 
 
 const RegisterForm = ({ setShowRegister }) => {
@@ -66,14 +66,8 @@ const RegisterForm = ({ setShowRegister }) => {
         <p className='text-black py-3'> already have an account go to <span style={{ color: "blue" }} onClick={() => { setShowRegister(false) }}> Login  </span> </p>
 
         <button
-          onClick={async () => {
-
-            const register = await handleRegister(formData)
-
-            if (register) {
-              setShowRegister(false)
-            }
-          }}
+          onClick={async () => {}
+          }
           type="button"
           className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
         >

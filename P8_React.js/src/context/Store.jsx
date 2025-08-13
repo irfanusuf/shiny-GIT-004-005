@@ -1,8 +1,7 @@
-import React, { createContext, useReducer, useState } from 'react'
+import { createContext, useReducer } from 'react'
 import App from '../App';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+
+
 import Reducer from './Reducer';
 
 
@@ -10,9 +9,6 @@ import Reducer from './Reducer';
 export const Context = createContext();
 
 const Store = () => {
-
-
-  const navigate = useNavigate()
 
   // state 
 
