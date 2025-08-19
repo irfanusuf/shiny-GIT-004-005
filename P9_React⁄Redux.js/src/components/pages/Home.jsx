@@ -1,42 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import HeroSection from '../molecules/HeroSection';
+import { useDispatch } from "react-redux";
+import { handlGetProduct } from "../../Redux/Actions";
+
 
 const Home = () =>  {
 
-
-
-  const [count, setCount] = useState(40);
-  const [explosionCounter, SetEXplosionCounter] = useState(10)
-
-  function handleIncrement() {
-    setCount((count) => count + 1);
-  }
-
-  function handleDecrement() {
-    if (count > 0) {
-      setCount((count) => count - 1);
-    }
-  }
-
-
-  useEffect(() => {
-
-    SetEXplosionCounter((explosionCounter) => explosionCounter - 1)
-
-  } , [] )
-
+ const dispatch = useDispatch()
 
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", width: "50%", margin: "auto" }}>
+    <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", width: "50%", margin: "auto" , minHeight:"90vh" }}>
  
-      <h1>
-        Bomb diffused!
-      </h1>
+
+      <button onClick={()=>{
+
+        
+           dispatch( handlGetProduct()) 
+
+
+      }} className="bg-gray-600"> SIMULATE PRODUCT API CALL</button>
 
 
 
-      <HeroSection/>
 
     </div>
   );

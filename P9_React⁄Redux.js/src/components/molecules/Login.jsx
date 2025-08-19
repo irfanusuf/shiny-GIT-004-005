@@ -1,16 +1,18 @@
 
-import {  useState } from 'react';
+import { useState } from 'react';
+import { handlLogin } from '../../Redux/Actions';
+import { useDispatch } from 'react-redux';
 
 
 const LoginForm = ({ setShowRegister }) => {
+
+
+  const dispatch = useDispatch()
 
   const [form, setForm] = useState({
     email: "",
     password: ""
   })
-
-
-
 
 
   const handleChange = (e) => {
@@ -19,12 +21,13 @@ const LoginForm = ({ setShowRegister }) => {
 
 
 
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
 
-      <form onSubmit={ (e)=>{   }  }
+      <form onSubmit={(e) => { dispatch(handlLogin(e, form)) }}
+
+
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInUp"
       >
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Login</h2>
