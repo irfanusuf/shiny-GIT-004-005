@@ -1,6 +1,8 @@
 import { createReducer } from "@reduxjs/toolkit";
 
+
 const userIntialState = {
+  users : [],
   user: {},
   orders: [],
   order: {},
@@ -9,6 +11,7 @@ const userIntialState = {
   address: {},
   darkMode: false,
   loading: false,
+  message : ""
 };
 
 const productIntialState = {
@@ -28,6 +31,11 @@ export const userReducer = createReducer(userIntialState, (builder) => {
     state.user = action.payload;
   });
 
+
+
+
+  // generic cases 
+
   builder.addCase("REQ_API", (state, action) => {
     state.loading = true
   });
@@ -38,10 +46,12 @@ export const userReducer = createReducer(userIntialState, (builder) => {
   });
 
 
+
   builder.addCase("LOGIN_API_SUCCESS", (state, action) => {
     state.loading = false
     state.user = action.payload
   });
+
 });
 
 

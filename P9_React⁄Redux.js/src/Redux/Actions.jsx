@@ -1,9 +1,13 @@
+
 import axios from "axios"
 
 
 
 
 
+
+
+// simple double paramed function which is equivalent to redux thunk action+
 
 export const handlGetProduct = () => async (action) => {
 
@@ -53,3 +57,9 @@ export const handlLogin = (e, formBody) => async (action) => {
 
 
 }
+
+
+
+
+
+

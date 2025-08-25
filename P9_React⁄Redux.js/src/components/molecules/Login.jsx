@@ -25,7 +25,7 @@ const LoginForm = ({ setShowRegister }) => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
 
-      <form onSubmit={(e) => { dispatch(handlLogin(e, form)) }}
+      <form onSubmit={(e) => { dispatch(handlLogin(e , form))}}
 
 
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md animate__animated animate__backInUp"

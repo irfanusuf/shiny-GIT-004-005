@@ -12,7 +12,7 @@ const RegisterForm = ({ setShowRegister }) => {
   const [password, setPassword] = useState('')
 
 
-  const formData = { username, email, password }
+  // const formData = { username, email, password } 
 
 
 
