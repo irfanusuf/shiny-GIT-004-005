@@ -11,6 +11,10 @@ export const fetchAllUsers = createAsyncThunk("/user/fetch",
     }
 )
 
+
+
+
+
 const initialState = {
   users: [],
   errorMessage: "",
@@ -19,12 +23,14 @@ const initialState = {
 
 
 
-const fetchAllUsersSlice = createSlice({
+export const fetchAllUsersSlice = createSlice({
     name: "extra",
     initialState,
     reducers: {
         resetUsers: () => initialState,
     },
+
+    
     extraReducers: (builder) => {
         builder.addCase(fetchAllUsers.rejected, (state, action) => {
             state.errorMessage = "NEtwork Errore !"
@@ -40,4 +46,3 @@ const fetchAllUsersSlice = createSlice({
 
 
 
-export default fetchAllUsersSlice.reducer

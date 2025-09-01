@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import Services from "./components/pages/Services";
 import Account from "./components/pages/Account";
 import { ToastContainer } from "react-toastify";
+import Pokemon from "./components/pages/Pokemon";
 
 
 
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/user/account" element={<Account />} />
+          <Route path="/pokemon" element={<Pokemon/>}/>
         </Routes>
         <Footer />
 
