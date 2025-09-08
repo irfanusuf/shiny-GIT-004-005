@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "q5s6uDkhL3HlskUUdQwTneziVj+N/W4oKW4pngkf61o=",
+  "Hash": "ha2bwVgIlydvY7s/s9//B2EaurjNycldjLOBD/JutUA=",
   "Source": "P7_WebApi",
   "BasePath": "_content/P7_WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

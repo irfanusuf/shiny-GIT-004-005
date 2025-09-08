@@ -10,6 +10,8 @@ export const handleRegister = async (formData) => {
   try {
 
     const url = "http://localhost:5095/api/User/Register"
+
+    
     const response = await axios.post(url, formData)
     if (response.status === 200) {
       toast.success(response.data.message)

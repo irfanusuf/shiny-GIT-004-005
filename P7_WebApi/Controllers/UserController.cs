@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using P0_ClassLibrary.Interfaces;
 using P7_WebApi.Data;
 using P7_WebApi.Models.DomainModels;
 
@@ -12,10 +13,12 @@ namespace P7_WebApi.Controllers
     {
 
         private readonly SqlDbContext sqlDb;
+        private readonly ITokenService tokenService;
 
-        public UserController(SqlDbContext dbContext)
+        public UserController(SqlDbContext dbContext , ITokenService tokenService)
         {
             sqlDb = dbContext;
+            this.tokenService = tokenService;
         }
 
 
@@ -68,18 +71,16 @@ namespace P7_WebApi.Controllers
 
             if (verify)
             {
-                return Ok(new { message = "Login SuccessFull !", payload = user });
+
+                var token = tokenService.CreateToken(user.UserId , user.Email , user.Username ?? "John ", 60*24*7 );
+
+                return Ok(new { message = "Login SuccessFull !", payload = user , token });
             }
             else
             {
              return StatusCode(400, new { message = "Password incorrect!" });
             }
 
-
-            
-
         }
-
-
     }
 }

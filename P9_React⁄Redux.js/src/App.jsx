@@ -7,6 +7,8 @@ import Services from "./components/pages/Services";
 import Account from "./components/pages/Account";
 import { ToastContainer } from "react-toastify";
 import Pokemon from "./components/pages/Pokemon";
+import JsonDemo from "./components/pages/JsonDemo";
+import SinglePost from "./components/pages/SinglePost";
 
 
 
@@ -28,6 +30,9 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/user/account" element={<Account />} />
           <Route path="/pokemon" element={<Pokemon/>}/>
+
+            <Route path="/json-api" element={<JsonDemo/>}/>
+            <Route path ="/post/:postId" element = {<SinglePost/>}/>
         </Routes>
         <Footer />
 

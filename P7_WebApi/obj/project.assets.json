@@ -8019,11 +8019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfanyousuf/Coding/shiny-GIT-008/P7_WebApi/P7_WebApi.csproj",
+      "projectUniqueName": "/home/irfanyousuf/coding/shiny-GIT-005/P7_WebApi/P7_WebApi.csproj",
       "projectName": "P7_WebApi",
-      "projectPath": "/home/irfanyousuf/Coding/shiny-GIT-008/P7_WebApi/P7_WebApi.csproj",
+      "projectPath": "/home/irfanyousuf/coding/shiny-GIT-005/P7_WebApi/P7_WebApi.csproj",
       "packagesPath": "/home/irfanyousuf/.nuget/packages/",
-      "outputPath": "/home/irfanyousuf/Coding/shiny-GIT-008/P7_WebApi/obj/",
+      "outputPath": "/home/irfanyousuf/coding/shiny-GIT-005/P7_WebApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/irfanyousuf/.nuget/NuGet/NuGet.Config"
@@ -8032,14 +8032,15 @@
         "net8.0"
       ],
       "sources": {
+        "/usr/lib64/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/P0_ClassLibrary.csproj": {
-              "projectPath": "/home/irfanyousuf/Coding/shiny-GIT-008/P0_ClassLibrary/P0_ClassLibrary.csproj"
+            "/home/irfanyousuf/coding/shiny-GIT-005/P0_ClassLibrary/P0_ClassLibrary.csproj": {
+              "projectPath": "/home/irfanyousuf/coding/shiny-GIT-005/P0_ClassLibrary/P0_ClassLibrary.csproj"
             }
           }
         }
@@ -8048,7 +8049,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -8092,6 +8099,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.19, 8.0.19]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -8100,7 +8113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

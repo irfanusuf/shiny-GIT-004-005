@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VG8sQdIHp7bFZgBYZ42As6Ub+W9DYR1zVNb/6kLk9LRPxmQAbLva8JZdTo9Wg9aAIBZ5hjyQEs9dprbpVKNseA==",
+  "dgSpecHash": "qZblzrPQ3vg=",
   "success": true,
-  "projectFilePath": "/home/irfanyousuf/Coding/shiny-GIT-008/P7_WebApi/P7_WebApi.csproj",
+  "projectFilePath": "/home/irfanyousuf/coding/shiny-GIT-005/P7_WebApi/P7_WebApi.csproj",
   "expectedPackageFiles": [
     "/home/irfanyousuf/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/irfanyousuf/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
@@ -138,7 +138,8 @@
     "/home/irfanyousuf/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
     "/home/irfanyousuf/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/home/irfanyousuf/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "/home/irfanyousuf/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
+    "/home/irfanyousuf/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
+    "/home/irfanyousuf/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.19/microsoft.netcore.app.host.linux-x64.8.0.19.nupkg.sha512"
   ],
   "logs": []
 }

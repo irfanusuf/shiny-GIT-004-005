@@ -15,7 +15,7 @@ public class Product
     public required string ProductImage { get; set; }
     public required decimal ProductPrice { get; set; }
     public required int ProductStock { get; set; }
-    public required ProductCategory Category { get; set; } = ProductCategory.General;
+    public  ProductCategory Category { get; set; } = ProductCategory.General;
         // seller data // in future 
     public string? Size { get; set; }
     public string? Color { get; set; }

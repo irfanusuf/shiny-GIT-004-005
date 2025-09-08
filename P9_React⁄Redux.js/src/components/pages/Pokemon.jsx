@@ -31,7 +31,7 @@ const Pokemon = () =>  {
                   <p> {data &&  data.species.name}  </p>
 
 
-                    <img src={data && data.sprites.front_shiny} alt={data.species.name} width={300} />
+                    <img src={data && data.sprites.front_shiny}  width={300} />
 
 
         </div>

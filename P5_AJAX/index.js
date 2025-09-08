@@ -81,3 +81,6 @@ const handlePrev = () => {
   }
   console.log("prev button clicked");
 };
+
+
+

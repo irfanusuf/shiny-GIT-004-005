@@ -30,6 +30,9 @@ export default function Navbar() {
           <li>  <Link to="/about">  About </Link>  </li>
           <li> <Link to="/user/Account">  Account </Link> </li>
           <li> <Link to="/services">Services </Link> </li>
+
+              <li> <Link to="/pokemon">  pokemon </Link> </li>
+          <li> <Link to="/json-api">JSON API </Link> </li>
         </ul>
       </div>
       <div>
