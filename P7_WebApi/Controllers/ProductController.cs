@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using P7_WebApi.Data;
 using P7_WebApi.Models.DomainModels;
 
@@ -115,22 +116,79 @@ namespace P7_WebApi.Controllers
         }
 
 
-        [HttpPut("edit")]
+        [HttpPut("update")]
 
 
-        public ActionResult EditProduct(Guid productId , Product product)
+        public async Task<ActionResult> UpdateProduct(Guid productId, Product product)
         {
-            
+
             try
             {
-                return Ok();
-                
+
+                var existingproduct = await sqlDb.Products.FindAsync(productId);
+
+                if (existingproduct == null)
+                {
+                    return NotFound(new { message = "Product not found!", productId });
+                }
+
+                existingproduct.ProductName = product.ProductName;
+                existingproduct.ProductDescription = product.ProductDescription;
+                existingproduct.ProductImage = product.ProductImage;
+                existingproduct.ProductStock = product.ProductStock;
+                existingproduct.ProductPrice = product.ProductPrice;
+                existingproduct.Size = product.Size;
+                existingproduct.Color = product.Color;
+                existingproduct.Weight = product.Weight;
+                existingproduct.Category = product.Category;
+                existingproduct.UpdatedAt = DateTime.Now;
+
+
+                await sqlDb.SaveChangesAsync();
+
+                return Ok(new { message = "Product updated successfully!", payload = existingproduct });
+
             }
             catch (System.Exception)
             {
-                
+
                 throw;
             }
+
+        }
+
+
+
+
+        [HttpGet("getAll")]
+
+
+        public async Task<ActionResult> GetProducts()
+        {
+
+
+            var products = await sqlDb.Products.Where(p => p.IsAvailable == true).ToListAsync();
+
+
+            return Ok(new { message = $"{products.Count} products found !", payload = products });
+
+
+        }
+
+        
+
+        [HttpGet("getbyId")]
+
+
+        public async Task<ActionResult> GetProductbyId(Guid productId)
+        {
+
+
+            var product = await sqlDb.Products.FindAsync(productId);
+
+
+            return Ok(new {message = "product found !" , payload = product});
+
 
         }
 
