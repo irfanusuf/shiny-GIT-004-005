@@ -178,18 +178,10 @@ namespace P7_WebApi.Controllers
         
 
         [HttpGet("getbyId")]
-
-
         public async Task<ActionResult> GetProductbyId(Guid productId)
         {
-
-
             var product = await sqlDb.Products.FindAsync(productId);
-
-
             return Ok(new {message = "product found !" , payload = product});
-
-
         }
 
 
