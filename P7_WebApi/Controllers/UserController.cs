@@ -74,7 +74,15 @@ namespace P7_WebApi.Controllers
 
                 var token = tokenService.CreateToken(user.UserId , user.Email , user.Username ?? "John ", 60*24*7 );
 
-                return Ok(new { message = "Login SuccessFull !", payload = user , token });
+                HttpContext.Response.Cookies.Append("P7WebApi_Auth_Token" , token , new CookieOptions
+                {
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    HttpOnly = false,
+                    Expires = DateTime.Now.AddDays(7)
+                } );
+
+                return Ok(new { message = "Login SuccessFull !", payload = user, token });
             }
             else
             {

@@ -2,8 +2,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using P0_ClassLibrary.Interfaces;
 using P7_WebApi.Data;
 using P7_WebApi.Models.DomainModels;
+using P7_WebApi.Models.JunctionModels;
 
 namespace P7_WebApi.Controllers
 {
@@ -13,10 +15,12 @@ namespace P7_WebApi.Controllers
     {
 
         private readonly SqlDbContext sqlDb;
+        private readonly ITokenService tokenService;
 
-        public ProductController(SqlDbContext dbContext)
+        public ProductController(SqlDbContext dbContext, ITokenService tokenService)
         {
             sqlDb = dbContext;
+            this.tokenService = tokenService;
         }
 
 
@@ -42,7 +46,6 @@ namespace P7_WebApi.Controllers
             }
 
         }
-
 
         [HttpGet("archive")]
 
@@ -81,7 +84,6 @@ namespace P7_WebApi.Controllers
 
 
         [HttpGet("Unarchive")]
-
         public async Task<ActionResult> UnArchiveProduct(Guid productId)
         {
             try
@@ -117,8 +119,6 @@ namespace P7_WebApi.Controllers
 
 
         [HttpPut("update")]
-
-
         public async Task<ActionResult> UpdateProduct(Guid productId, Product product)
         {
 
@@ -158,11 +158,7 @@ namespace P7_WebApi.Controllers
         }
 
 
-
-
         [HttpGet("getAll")]
-
-
         public async Task<ActionResult> GetProducts()
         {
 
@@ -175,15 +171,87 @@ namespace P7_WebApi.Controllers
 
         }
 
-        
 
         [HttpGet("getbyId")]
         public async Task<ActionResult> GetProductbyId(Guid productId)
         {
             var product = await sqlDb.Products.FindAsync(productId);
-            return Ok(new {message = "product found !" , payload = product});
+            return Ok(new { message = "product found !", payload = product });
         }
 
+
+        [HttpPost("addtocart")]
+
+        public async Task<ActionResult> AddtoCart(Guid productId, int qty)
+        {
+            try
+            {
+                var token = HttpContext.Request.Cookies["P7WebApi_Auth_Token"];
+                if (token == null)
+                {
+                    return StatusCode(401, new { message = "Session Expired ! Kindly Login Again !" });
+                }
+                var userId = tokenService.VerifyTokenAndGetId(token);
+
+                var product = await sqlDb.Products.FindAsync(productId);
+
+
+                // var user = await sqlDb.Users.FindAsync(userId);
+
+                var cart = await sqlDb.Carts
+                    .Include(c => c.CartProducts)
+                    .FirstOrDefaultAsync(cart => cart.UserId == userId);
+
+
+
+                if (product == null)
+                {
+                    return StatusCode(404, new { message = "Items not found !" });
+                }
+
+                if (cart == null)
+                {
+                    var newCart = new Cart
+                    {
+                        UserId = userId,
+                        CartTotal = 0
+                    };
+
+                    var cartProduct = new CartProduct
+                    {
+                        CartId = newCart.CartId,
+                        ProductId = productId,
+                        Quantity = qty
+                    };
+
+                    newCart.CartTotal = product.ProductPrice * qty;
+                    await sqlDb.Carts.AddAsync(newCart);
+                    await sqlDb.CartProducts.AddAsync(cartProduct);
+                }
+                else
+                {
+                    var cartProduct = new CartProduct
+                    {
+                        CartId = cart.CartId,
+                        ProductId = productId,
+                        Quantity = qty
+                    };
+                    cart.CartTotal += product.ProductPrice * qty;
+
+                    await sqlDb.CartProducts.AddAsync(cartProduct);
+                }
+
+                await sqlDb.SaveChangesAsync();
+                return Ok(new { messsage = "Product added to the cart succesfully !", payload = cart });
+            }
+            catch (System.Exception ex)
+            {
+
+                // return StatusCode(500, new { message = ex.Message });
+                throw;
+            }
+
+        }
 
     }
 }
