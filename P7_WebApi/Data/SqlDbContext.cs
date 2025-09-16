@@ -68,14 +68,14 @@ public class SqlDbContext : DbContext
         .HasOne(cp => cp.Cart)
         .WithMany(c => c.CartProducts) // cart can have many products
         .HasForeignKey(cp => cp.CartId)
-        .OnDelete(DeleteBehavior.Cascade); // Prevent cascade delete
+        .OnDelete(DeleteBehavior.Cascade); //  cascade delete
 
 
         modelBuilder.Entity<CartProduct>()
         .HasOne(cp => cp.Product)       // every carTproduct is having product with many carts having the same product
         .WithMany(p => p.ProductInCarts)
         .HasForeignKey(cp => cp.ProductId)
-        .OnDelete(DeleteBehavior.Cascade); // Prevent cascade delete
+        .OnDelete(DeleteBehavior.Cascade); //  cascade delete
 
 
 

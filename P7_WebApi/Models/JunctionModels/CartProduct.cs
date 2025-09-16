@@ -13,15 +13,12 @@ public class CartProduct
 
     public required Guid CartId { get; set; } // Fk
     [ForeignKey("CartId")]
-
     [JsonIgnore]
     public Cart? Cart { get; set; } // navigation property //  belonging to a cart
 
 
     public required Guid ProductId { get; set; } // Fk
     [ForeignKey("ProductId")]
-
-
     [JsonIgnore]
     public Product? Product { get; set; } // navigation property //  belonging to a product
 

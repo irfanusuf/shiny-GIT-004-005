@@ -195,19 +195,17 @@ namespace P7_WebApi.Controllers
 
                 var product = await sqlDb.Products.FindAsync(productId);
 
-
-                // var user = await sqlDb.Users.FindAsync(userId);
-
-                var cart = await sqlDb.Carts
-                    .Include(c => c.CartProducts)
-                    .FirstOrDefaultAsync(cart => cart.UserId == userId);
-
-
-
                 if (product == null)
                 {
+                    
                     return StatusCode(404, new { message = "Items not found !" });
                 }
+
+
+                // var user = await sqlDb.Users.Include(user => user.Cart).ThenInclude(cart => cart.CartProducts).FirstOrDefaultAsync(user => user.UserId == userId);
+
+                var cart = await sqlDb.Carts.Include(c => c.CartProducts).FirstOrDefaultAsync(cart => cart.UserId == userId);
+
 
                 if (cart == null)
                 {
@@ -230,15 +228,31 @@ namespace P7_WebApi.Controllers
                 }
                 else
                 {
-                    var cartProduct = new CartProduct
-                    {
-                        CartId = cart.CartId,
-                        ProductId = productId,
-                        Quantity = qty
-                    };
-                    cart.CartTotal += product.ProductPrice * qty;
 
-                    await sqlDb.CartProducts.AddAsync(cartProduct);
+                    var existingCartProduct = await sqlDb.CartProducts
+                    .FirstOrDefaultAsync(cp => cp.CartId == cart.CartId && cp.ProductId == productId);
+
+                    if (existingCartProduct == null)
+                    {
+                        var cartProduct = new CartProduct
+                        {
+                            CartId = cart.CartId,
+                            ProductId = productId,
+                            Quantity = qty
+                        };
+                      
+                        await sqlDb.CartProducts.AddAsync(cartProduct);
+                    }
+                    else
+                    {
+
+                        existingCartProduct.Quantity += qty;
+                    }
+
+                   
+                      cart.CartTotal += product.ProductPrice * qty;
+
+                   
                 }
 
                 await sqlDb.SaveChangesAsync();
@@ -246,12 +260,8 @@ namespace P7_WebApi.Controllers
             }
             catch (System.Exception ex)
             {
-
-                // return StatusCode(500, new { message = ex.Message });
-                throw;
+                return StatusCode(500, new { message = ex.Message });
             }
-
         }
-
     }
 }
