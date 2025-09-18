@@ -192,18 +192,12 @@ namespace P7_WebApi.Controllers
                     return StatusCode(401, new { message = "Session Expired ! Kindly Login Again !" });
                 }
                 var userId = tokenService.VerifyTokenAndGetId(token);
-
                 var product = await sqlDb.Products.FindAsync(productId);
-
                 if (product == null)
                 {
-                    
                     return StatusCode(404, new { message = "Items not found !" });
                 }
-
-
                 // var user = await sqlDb.Users.Include(user => user.Cart).ThenInclude(cart => cart.CartProducts).FirstOrDefaultAsync(user => user.UserId == userId);
-
                 var cart = await sqlDb.Carts.Include(c => c.CartProducts).FirstOrDefaultAsync(cart => cart.UserId == userId);
 
 
@@ -219,7 +213,8 @@ namespace P7_WebApi.Controllers
                     {
                         CartId = newCart.CartId,
                         ProductId = productId,
-                        Quantity = qty
+                        Quantity = qty,
+                        ProductPrice = product.ProductPrice
                     };
 
                     newCart.CartTotal = product.ProductPrice * qty;
@@ -238,9 +233,10 @@ namespace P7_WebApi.Controllers
                         {
                             CartId = cart.CartId,
                             ProductId = productId,
-                            Quantity = qty
+                            Quantity = qty,
+                            ProductPrice = product.ProductPrice
                         };
-                      
+
                         await sqlDb.CartProducts.AddAsync(cartProduct);
                     }
                     else
@@ -249,10 +245,10 @@ namespace P7_WebApi.Controllers
                         existingCartProduct.Quantity += qty;
                     }
 
-                   
-                      cart.CartTotal += product.ProductPrice * qty;
 
-                   
+                    cart.CartTotal += product.ProductPrice * qty;
+
+
                 }
 
                 await sqlDb.SaveChangesAsync();
@@ -263,5 +259,69 @@ namespace P7_WebApi.Controllers
                 return StatusCode(500, new { message = ex.Message });
             }
         }
+
+
+
+        [HttpPost("RemoveFromCart")]
+
+        public async Task<ActionResult> RemoveFromCart(Guid productId)
+        {
+
+            try
+            {
+                var token = HttpContext.Request.Cookies["P7WebApi_Auth_Token"];
+                if (token == null)
+                {
+                    return StatusCode(401, new { message = "Session Expired ! Kindly Login Again !" });
+                }
+                var userId = tokenService.VerifyTokenAndGetId(token);
+
+
+                var cart = await sqlDb.Carts
+                .Include(cart => cart.CartProducts)
+                .FirstOrDefaultAsync(c => c.UserId == userId);     // O(n)   // o(1)
+
+                // var product = await sqlDb.Products.FindAsync(productId);   // 0(1)
+
+                if (cart == null)
+                {
+                    return NotFound(new { message = "Not Found ! Something Went Wrong ! " });
+                }
+
+                // cart products are already in buffer  it means no time complexity 
+                var cartProduct = cart.CartProducts.FirstOrDefault(cp => cp.CartId == cart.CartId && cp.ProductId == productId);
+
+
+                // o(n)
+                // var cartProduct = await sqlDb.CartProducts
+                // .FirstOrDefaultAsync(cp => cp.CartId == cart.CartId && cp.ProductId == productId);
+
+                if (cartProduct == null)
+                {
+                    return NotFound(new { message = "Item not Found !" });
+                }
+
+                var remove = sqlDb.CartProducts.Remove(cartProduct);
+                if (remove != null)
+                {
+
+                    cart.CartTotal -= cartProduct.Quantity * cartProduct.ProductPrice;
+                    await sqlDb.SaveChangesAsync();
+                }
+
+                return Ok(new { message = "Cart item Removed !", payload = cart });
+
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+
+
     }
 }

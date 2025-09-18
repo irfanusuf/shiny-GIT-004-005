@@ -25,6 +25,8 @@ public class CartProduct
 
     public required int Quantity { get; set; } = 1;
 
+    public  required decimal ProductPrice { get; set; }    // unique product price at that particualar instant of time when it was added
+
     public string? Size { get; set; }
     public string? Color { get; set; }
     public string? Weight { get; set; }

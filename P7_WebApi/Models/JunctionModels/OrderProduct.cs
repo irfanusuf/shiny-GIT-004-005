@@ -23,6 +23,7 @@ public class OrderProduct
     public Product? Product { get; set; } // navigation property //  belonging to a product
 
 
+    public  required decimal ProductPrice { get; set; } 
     public required int Quantity { get; set; } = 1;
 
 
