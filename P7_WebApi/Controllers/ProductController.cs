@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P0_ClassLibrary.Interfaces;
 using P7_WebApi.Data;
+using P7_WebApi.Middlewares;
 using P7_WebApi.Models.DomainModels;
 using P7_WebApi.Models.JunctionModels;
 
@@ -11,16 +12,18 @@ namespace P7_WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
+    [Authorize]
     public class ProductController : ControllerBase
     {
 
         private readonly SqlDbContext sqlDb;
-        private readonly ITokenService tokenService;
+   
 
-        public ProductController(SqlDbContext dbContext, ITokenService tokenService)
+        public ProductController(SqlDbContext dbContext)
         {
             sqlDb = dbContext;
-            this.tokenService = tokenService;
+
         }
 
 
@@ -163,11 +166,9 @@ namespace P7_WebApi.Controllers
         {
 
 
+
             var products = await sqlDb.Products.Where(p => p.IsAvailable == true).ToListAsync();
-
-
             return Ok(new { message = $"{products.Count} products found !", payload = products });
-
 
         }
 
@@ -180,18 +181,16 @@ namespace P7_WebApi.Controllers
         }
 
 
+
+
         [HttpPost("addtocart")]
 
         public async Task<ActionResult> AddtoCart(Guid productId, int qty)
         {
             try
             {
-                var token = HttpContext.Request.Cookies["P7WebApi_Auth_Token"];
-                if (token == null)
-                {
-                    return StatusCode(401, new { message = "Session Expired ! Kindly Login Again !" });
-                }
-                var userId = tokenService.VerifyTokenAndGetId(token);
+                var userId = Guid.Parse(HttpContext.Items["userId"].ToString());
+
                 var product = await sqlDb.Products.FindAsync(productId);
                 if (product == null)
                 {
@@ -266,22 +265,14 @@ namespace P7_WebApi.Controllers
 
         public async Task<ActionResult> RemoveFromCart(Guid productId)
         {
-
             try
-            {
-                var token = HttpContext.Request.Cookies["P7WebApi_Auth_Token"];
-                if (token == null)
-                {
-                    return StatusCode(401, new { message = "Session Expired ! Kindly Login Again !" });
-                }
-                var userId = tokenService.VerifyTokenAndGetId(token);
-
-
+            {  
+                Guid? userId = HttpContext.Items["UserId"] as Guid?;
                 var cart = await sqlDb.Carts
                 .Include(cart => cart.CartProducts)
-                .FirstOrDefaultAsync(c => c.UserId == userId);     // O(n)   // o(1)
+                .FirstOrDefaultAsync(c => c.UserId == userId);     // O(n)   // O(1)
 
-                // var product = await sqlDb.Products.FindAsync(productId);   // 0(1)
+                // var product = await sqlDb.Products.FindAsync(productId);   // O(1)
 
                 if (cart == null)
                 {

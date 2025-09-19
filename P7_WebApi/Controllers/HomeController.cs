@@ -7,13 +7,9 @@ namespace P7_WebApi.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-
-
         [HttpGet("test")]
-
         public ActionResult Test()
         {
-
             return Ok(new { message = "Server is Working" });
         }
     }
