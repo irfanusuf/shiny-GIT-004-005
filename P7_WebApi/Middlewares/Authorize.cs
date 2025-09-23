@@ -11,6 +11,8 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
 
     public void OnAuthorization(AuthorizationFilterContext context)
     {
+
+
         var token = context.HttpContext.Request.Cookies["P7WebApi_Auth_Token"];
 
         if (token == null)
@@ -22,7 +24,12 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
             return;
         }
         var tokenService = context.HttpContext.RequestServices.GetService(typeof(ITokenService)) as ITokenService;
+
+
+
         var userId = tokenService?.VerifyTokenAndGetId(token);
+        
+        
         if (userId == Guid.Empty)
         {
             context.Result = new JsonResult(new { message = "Forbidden ! Can't access the Resources !" })
@@ -33,9 +40,8 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
         }
         else
         {
-            context.HttpContext.Items["userId"] = userId;   
+            context.HttpContext.Items["userId"] = userId;    // session 
         }
     }
-
-
+  
 }

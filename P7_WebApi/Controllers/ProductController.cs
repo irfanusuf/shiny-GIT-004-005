@@ -180,9 +180,6 @@ namespace P7_WebApi.Controllers
             return Ok(new { message = "product found !", payload = product });
         }
 
-
-
-
         [HttpPost("addtocart")]
 
         public async Task<ActionResult> AddtoCart(Guid productId, int qty)
