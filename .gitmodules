@@ -1,0 +1,3 @@
+[submodule "P12_Swashbuckle"]
+	path = P12_Swashbuckle
+	url = https://github.com/irfanusuf/swashBuckle.git
