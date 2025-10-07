@@ -8019,11 +8019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfanyousuf/coding/shiny-GIT-005/P7_WebApi/P7_WebApi.csproj",
+      "projectUniqueName": "/home/irfanyousuf/coding/GIT_004_005/P7_WebApi/P7_WebApi.csproj",
       "projectName": "P7_WebApi",
-      "projectPath": "/home/irfanyousuf/coding/shiny-GIT-005/P7_WebApi/P7_WebApi.csproj",
+      "projectPath": "/home/irfanyousuf/coding/GIT_004_005/P7_WebApi/P7_WebApi.csproj",
       "packagesPath": "/home/irfanyousuf/.nuget/packages/",
-      "outputPath": "/home/irfanyousuf/coding/shiny-GIT-005/P7_WebApi/obj/",
+      "outputPath": "/home/irfanyousuf/coding/GIT_004_005/P7_WebApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/irfanyousuf/.nuget/NuGet/NuGet.Config"
@@ -8039,8 +8039,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/irfanyousuf/coding/shiny-GIT-005/P0_ClassLibrary/P0_ClassLibrary.csproj": {
-              "projectPath": "/home/irfanyousuf/coding/shiny-GIT-005/P0_ClassLibrary/P0_ClassLibrary.csproj"
+            "/home/irfanyousuf/coding/GIT_004_005/P0_ClassLibrary/P0_ClassLibrary.csproj": {
+              "projectPath": "/home/irfanyousuf/coding/GIT_004_005/P0_ClassLibrary/P0_ClassLibrary.csproj"
             }
           }
         }

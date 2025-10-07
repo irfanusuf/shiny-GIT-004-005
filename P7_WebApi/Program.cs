@@ -14,7 +14,7 @@ builder.Services.AddControllers();
 // builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(Options => {Options.AddPolicy("AllowFrontend", policy => 
-policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod().AllowCredentials());});
+policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials());});
 
 
 

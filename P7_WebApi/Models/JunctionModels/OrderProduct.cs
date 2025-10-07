@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using P7_WebApi.Models.DomainModels;
 
 namespace P7_WebApi.Models.JunctionModels;
@@ -15,6 +16,7 @@ public class OrderProduct
 
     public required Guid OrderId { get; set; } // Fk
     [ForeignKey("OrderId")]
+       [JsonIgnore]
     public Order? Order { get; set; } // navigation property //  belonging to an order
 
 

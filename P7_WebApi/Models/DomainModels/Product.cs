@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using P7_WebApi.Models.JunctionModels;
 using P7_WebApi.Types;
 
@@ -15,13 +16,15 @@ public class Product
     public required string ProductImage { get; set; }
     public required decimal ProductPrice { get; set; }
     public required int ProductStock { get; set; }
-    public  ProductCategory Category { get; set; } = ProductCategory.General;
-        // seller data // in future 
+    public ProductCategory Category { get; set; } = ProductCategory.General;
+    // seller data // in future 
     public string? Size { get; set; }
     public string? Color { get; set; }
     public string? Weight { get; set; }
 
+    [JsonIgnore]
     public ICollection<CartProduct> ProductInCarts { get; set; } = [];   // navigation property //  collection of products in the cart
+    [JsonIgnore]
     public ICollection<OrderProduct> ProductInOrders { get; set; } = []; //  collection of products in the order
     public bool IsAvailable { get; set; } = true;
     public bool IsArchived { get; set; } = false;

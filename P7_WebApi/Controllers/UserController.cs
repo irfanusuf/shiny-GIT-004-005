@@ -27,7 +27,7 @@ namespace P7_WebApi.Controllers
         {
             if (string.IsNullOrEmpty(req.Username) || string.IsNullOrEmpty(req.Email) || string.IsNullOrEmpty(req.Password))
             {
-                return StatusCode(404, new { message = "All details Are required !" });
+                return StatusCode(400, new { message = "All details Are required !" });
             }
 
             var user = await sqlDb.Users.FirstOrDefaultAsync(user => user.Email == req.Email);
@@ -47,7 +47,18 @@ namespace P7_WebApi.Controllers
 
             await sqlDb.SaveChangesAsync();
 
-            return Ok(new { message = "Register SuccessFull !"});
+            var token = tokenService.CreateToken(req.UserId , req.Email , req.Username, 60*24*7 );
+
+                HttpContext.Response.Cookies.Append("P7WebApi_Auth_Token" , token , new CookieOptions
+                {
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    HttpOnly = false,
+                    Expires = DateTime.Now.AddDays(7)
+                } );
+            
+
+            return Ok(new { message = "Register SuccessFull !", payload = newUser.Entity });
 
         }
 

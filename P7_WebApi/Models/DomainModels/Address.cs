@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace P7_WebApi.Models.DomainModels;
 
@@ -22,8 +23,11 @@ public class Address
     public required Guid UserId { get; set; } // Fk 
 
     [ForeignKey("UserId")]
+
+    [JsonIgnore]
     public User? Buyer { get; set; } // Navigation property
 
 
+    [JsonIgnore]
     public ICollection<Order> Orders { get; set; } = [];// naviagtion property
 }
