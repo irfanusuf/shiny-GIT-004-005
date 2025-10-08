@@ -1,8 +1,10 @@
 
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P0_ClassLibrary.Interfaces;
 using P7_WebApi.Data;
+using P7_WebApi.Middlewares;
 using P7_WebApi.Models.DomainModels;
 
 namespace P7_WebApi.Controllers
@@ -15,7 +17,7 @@ namespace P7_WebApi.Controllers
         private readonly SqlDbContext sqlDb;
         private readonly ITokenService tokenService;
 
-        public UserController(SqlDbContext dbContext , ITokenService tokenService)
+        public UserController(SqlDbContext dbContext, ITokenService tokenService)
         {
             sqlDb = dbContext;
             this.tokenService = tokenService;
@@ -47,16 +49,16 @@ namespace P7_WebApi.Controllers
 
             await sqlDb.SaveChangesAsync();
 
-            var token = tokenService.CreateToken(req.UserId , req.Email , req.Username, 60*24*7 );
+            var token = tokenService.CreateToken(req.UserId, req.Email, req.Username, 60 * 24 * 7);
 
-                HttpContext.Response.Cookies.Append("P7WebApi_Auth_Token" , token , new CookieOptions
-                {
-                    Secure = true,
-                    SameSite = SameSiteMode.None,
-                    HttpOnly = false,
-                    Expires = DateTime.Now.AddDays(7)
-                } );
-            
+            HttpContext.Response.Cookies.Append("P7WebApi_Auth_Token", token, new CookieOptions
+            {
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                HttpOnly = false,
+                Expires = DateTime.Now.AddDays(7)
+            });
+
 
             return Ok(new { message = "Register SuccessFull !", payload = newUser.Entity });
 
@@ -64,9 +66,9 @@ namespace P7_WebApi.Controllers
 
 
         [HttpPost("Login")]
-          public async Task<IActionResult> Login(User req)
+        public async Task<IActionResult> Login(User req)
         {
-            if ( string.IsNullOrEmpty(req.Email) || string.IsNullOrEmpty(req.Password))
+            if (string.IsNullOrEmpty(req.Email) || string.IsNullOrEmpty(req.Password))
             {
                 return StatusCode(400, new { message = "All details Are required !" });
             }
@@ -78,28 +80,54 @@ namespace P7_WebApi.Controllers
                 return StatusCode(404, new { message = "User not Found !" });
             }
 
-            var verify = BCrypt.Net.BCrypt.Verify(req.Password , user.Password);
+            var verify = BCrypt.Net.BCrypt.Verify(req.Password, user.Password);
 
             if (verify)
             {
 
-                var token = tokenService.CreateToken(user.UserId , user.Email , user.Username ?? "John ", 60*24*7 );
+                var token = tokenService.CreateToken(user.UserId, user.Email, user.Username ?? "John ", 60 * 24 * 7);
 
-                HttpContext.Response.Cookies.Append("P7WebApi_Auth_Token" , token , new CookieOptions
+                HttpContext.Response.Cookies.Append("P7WebApi_Auth_Token", token, new CookieOptions
                 {
                     Secure = true,
                     SameSite = SameSiteMode.None,
                     HttpOnly = false,
                     Expires = DateTime.Now.AddDays(7)
-                } );
+                });
 
                 return Ok(new { message = "Login SuccessFull !", payload = user, token });
             }
             else
             {
-             return StatusCode(400, new { message = "Password incorrect!" });
+                return StatusCode(400, new { message = "Password incorrect!" });
             }
 
         }
+
+
+        [Authorize]
+        [HttpGet("Fetch")]
+
+        public async Task<ActionResult> Fetch()
+        {
+            try
+            {
+                Guid? userId = HttpContext.Items["userId"] as Guid?;
+
+                var user = await sqlDb.Users.FindAsync(userId);
+
+                return Ok(new { message = "user verified !", payload = user });
+
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+
     }
 }
