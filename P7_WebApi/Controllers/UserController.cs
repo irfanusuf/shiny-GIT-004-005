@@ -116,7 +116,9 @@ namespace P7_WebApi.Controllers
 
                 var user = await sqlDb.Users.FindAsync(userId);
 
-                return Ok(new { message = "user verified !", payload = user });
+
+                    // ap kuch aisa kero ki ye password kabi server se baher hi na jaye 
+                return Ok(new { message = "user verified !", payload = user });    // figure out how not to send password 
 
             }
             catch (System.Exception)
