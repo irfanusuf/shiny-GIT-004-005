@@ -22,10 +22,8 @@ namespace P12_WebApi.Controllers
         {
             try
             {
-                await mongoDB.Users.InsertOneAsync(user);
+              await mongoDB.Users.InsertOneAsync(user);
               return Ok();
-
-                
             }
             catch (System.Exception)
             {
