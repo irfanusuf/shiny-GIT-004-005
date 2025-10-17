@@ -2207,24 +2207,25 @@
     ]
   },
   "packageFolders": {
-    "/home/irfan_usuf/.nuget/packages/": {}
+    "/home/irfanyousuf/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/irfan_usuf/ILS/GIT008/P2_WebApI/WebApI.csproj",
+      "projectUniqueName": "/home/irfanyousuf/coding/GIT_004_005/P2_WebApI/WebApI.csproj",
       "projectName": "WebApI",
-      "projectPath": "/home/irfan_usuf/ILS/GIT008/P2_WebApI/WebApI.csproj",
-      "packagesPath": "/home/irfan_usuf/.nuget/packages/",
-      "outputPath": "/home/irfan_usuf/ILS/GIT008/P2_WebApI/obj/",
+      "projectPath": "/home/irfanyousuf/coding/GIT_004_005/P2_WebApI/WebApI.csproj",
+      "packagesPath": "/home/irfanyousuf/.nuget/packages/",
+      "outputPath": "/home/irfanyousuf/coding/GIT_004_005/P2_WebApI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/irfan_usuf/.nuget/NuGet/NuGet.Config"
+        "/home/irfanyousuf/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "/usr/lib64/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2237,7 +2238,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -2275,6 +2282,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.19, 8.0.19]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2283,7 +2296,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
