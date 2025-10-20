@@ -13,11 +13,13 @@ namespace P12_WebApi.Models
         public string? Id { get; set; }
         public required string Username { get; set; }
         public required string Email { get; set; }
-        public required string HashedPass { get; set; }
+        public required string Password { get; set; }
         public string Role { get; set; } = "customer";
         public bool IsActive { get; set; } = true;
         public List<Address> Addresses { get; set; } = [];
-        public List<CartItem> CartItems { get; set; } = [];
+
+        //  summesion of individual cartItem's price * qty  
+        public List<CartItem> Cart { get; set; } = [];    // this is our cart 
         public List<Order> Orders { get; set; } = [];
         public List<string> Wishlist { get; set; } = [];
         public DateTime? LastLogin { get; set; }

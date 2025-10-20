@@ -33,7 +33,7 @@ builder.Services.AddSingleton<ITokenService>(_ => new TokenService(SecretKey));
 builder.Services.AddSingleton<IMailService, EmailService>();
 
 
-builder.Services.AddSingleton<MongoDbService>();
+builder.Services.AddSingleton<MongoDbService>();                                         
 
 var app = builder.Build();
 
