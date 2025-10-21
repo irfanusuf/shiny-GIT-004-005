@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using P12_WebApi.Models;
 using P12_WebApi.Services;
 
@@ -11,11 +12,11 @@ namespace P12_WebApi.Controllers
     public class UserController : ControllerBase
     {
 
-        private readonly MongoDbService mongoDB;
+        private readonly MongoDbService db;
 
-        public UserController(MongoDbService dbService)
+        public UserController(MongoDbService dbService )
         {
-            mongoDB = dbService;
+            db = dbService;
         }
 
         [HttpPost("register")]
@@ -23,11 +24,12 @@ namespace P12_WebApi.Controllers
         {
             try
             {
-                var user = await mongoDB.Users.Find(u => u.Email == req.Email).FirstOrDefaultAsync();
+                var user = await db.Users.Find(u => u.IsActive == true).ToListAsync();
+                await db.Users.AsQueryable().FirstOrDefaultAsync(u => u.Email == req.Email);
 
                 if (user == null)
                 {
-                    await mongoDB.Users.InsertOneAsync(req);
+                   db.Users.InsertOne(req);
                     return StatusCode(201, new { message = "User Created Succesfully!", payload = req });
                 }
                 
