@@ -1,6 +1,7 @@
 using P0_ClassLibrary;
 using P0_ClassLibrary.Interfaces;
 using P0_ClassLibrary.Models;
+using P12_WebApi.Middlewares;
 using P12_WebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,10 +33,9 @@ builder.Services.AddSingleton<ITokenService>(_ => new TokenService(SecretKey));
 // regular as usual   // but complexity behind
 builder.Services.AddSingleton<IMailService, EmailService>();
 
-
 builder.Services.AddSingleton<MongoDbService>();                                         
 
-var app = builder.Build();
+var app = builder.Build();   //  ioc
 
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
@@ -45,9 +45,13 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
+
+app.UseMiddleware<CustomRateLimiter>();
+app.UseMiddleware<ErrorHandler>();
 // app.UseAuthentication();
 
 app.UseCors("AllowFrontend");
+
 
 app.MapControllers();
 

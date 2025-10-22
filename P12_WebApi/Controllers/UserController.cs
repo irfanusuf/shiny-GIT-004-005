@@ -25,11 +25,11 @@ namespace P12_WebApi.Controllers
             try
             {
                 var user = await db.Users.Find(u => u.IsActive == true).ToListAsync();
-                await db.Users.AsQueryable().FirstOrDefaultAsync(u => u.Email == req.Email);
+
 
                 if (user == null)
                 {
-                   db.Users.InsertOne(req);
+                    db.Users.InsertOne(req);
                     return StatusCode(201, new { message = "User Created Succesfully!", payload = req });
                 }
                 
