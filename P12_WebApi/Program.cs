@@ -3,12 +3,29 @@ using P0_ClassLibrary.Interfaces;
 using P0_ClassLibrary.Models;
 using P12_WebApi.Middlewares;
 using P12_WebApi.Services;
+using Serilog;
+
+
+
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 // builder.Services.AddOpenApi();
+
+
+// Replace default logging
+builder.Host.UseSerilog();
 
 builder.Services.AddControllers();
 
@@ -27,13 +44,17 @@ var SecretKey = builder.Configuration["Jwt:SecretKey"] ?? throw new InvalidOpera
 
 
 // not regular you have to use lambda expression 
-builder.Services.AddSingleton<ICloudinaryService>(_ => new CloudinaryService(cloudinaryUri));
-builder.Services.AddSingleton<ITokenService>(_ => new TokenService(SecretKey));
+builder.Services.AddTransient<ICloudinaryService>(_ => new CloudinaryService(cloudinaryUri));
+builder.Services.AddTransient<ITokenService>(_ => new TokenService(SecretKey));
 
 // regular as usual   // but complexity behind
 builder.Services.AddSingleton<IMailService, EmailService>();
 
-builder.Services.AddSingleton<MongoDbService>();                                         
+builder.Services.AddScoped<MongoDbService>();   
+
+
+
+
 
 var app = builder.Build();   //  ioc
 
