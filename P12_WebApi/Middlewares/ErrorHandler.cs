@@ -19,7 +19,7 @@ namespace P12_WebApi.Middlewares
         {
             try
             {
-                await _next(context);
+                await _next(context);   // delagate     and transfer the request to B 
             }
             catch (Exception ex)
             {
@@ -32,9 +32,13 @@ namespace P12_WebApi.Middlewares
             }
         }
 
+
+
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            var statusCode = HttpStatusCode.InternalServerError;
+            var statusCode = HttpStatusCode.InternalServerError;   // 500 
+
+                // generic  response to client whenever inner exception 
 
             var response = new
             {

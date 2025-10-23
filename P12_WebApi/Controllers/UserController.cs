@@ -14,7 +14,7 @@ namespace P12_WebApi.Controllers
 
         private readonly MongoDbService db;
 
-        public UserController(MongoDbService dbService )
+        public UserController(MongoDbService dbService)
         {
             db = dbService;
         }
@@ -22,27 +22,20 @@ namespace P12_WebApi.Controllers
         [HttpPost("register")]
         public async Task<ActionResult> CreateUser(User req)
         {
-            try
+
+            var user = await db.Users.Find(u => u.IsActive == true).ToListAsync();
+            
+            if (user == null)
             {
-                var user = await db.Users.Find(u => u.IsActive == true).ToListAsync();
+                db.Users.InsertOne(req);
 
-
-                if (user == null)
-                {
-                    db.Users.InsertOne(req);
-                    return StatusCode(201, new { message = "User Created Succesfully!", payload = req });
-                }
-                
-                 
-                return StatusCode(400 ,  new { message = "User Already Existed !" , payload = user }); 
-
+                return StatusCode(201, new { message = "User Created Succesfully!", payload = req });
             }
-            catch (System.Exception)
-            {
-                
-                throw;
-            }
-         
+
+
+            return StatusCode(400, new { message = "User Already Existed !", payload = user });
+
+
         }
     }
 }

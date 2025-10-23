@@ -7,7 +7,9 @@ using Serilog;
 
 
 
+// default logger disables 
 
+// activates serilog which writes the logs in console and log.txt file 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
@@ -16,7 +18,7 @@ Log.Logger = new LoggerConfiguration()
 
 
 
-
+// container
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -64,11 +66,19 @@ var app = builder.Build();   //  ioc
 //     app.MapOpenApi();
 // }
 
+// middlewares 
+
+
+app.UseMiddleware<ErrorHandler>();
+
+
 app.UseHttpsRedirection();
 
 
 app.UseMiddleware<CustomRateLimiter>();
-app.UseMiddleware<ErrorHandler>();
+
+
+
 // app.UseAuthentication();
 
 app.UseCors("AllowFrontend");
