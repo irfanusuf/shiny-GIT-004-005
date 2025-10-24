@@ -52,7 +52,9 @@ builder.Services.AddTransient<ITokenService>(_ => new TokenService(SecretKey));
 // regular as usual   // but complexity behind
 builder.Services.AddSingleton<IMailService, EmailService>();
 
-builder.Services.AddScoped<MongoDbService>();   
+builder.Services.AddScoped<MongoDbService>();
+
+builder.Services.AddMemoryCache();
 
 
 
@@ -66,16 +68,20 @@ var app = builder.Build();   //  ioc
 //     app.MapOpenApi();
 // }
 
-// middlewares 
+// middlewares  pipeline 
+
+// app.UseSession();
+
+
+app.UseMiddleware<CustomRateLimiter>();
 
 
 app.UseMiddleware<ErrorHandler>();
 
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection();   // http ko https transfer 
 
 
-app.UseMiddleware<CustomRateLimiter>();
 
 
 

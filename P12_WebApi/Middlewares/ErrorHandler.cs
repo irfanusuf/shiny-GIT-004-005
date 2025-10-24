@@ -1,4 +1,6 @@
 
+using Microsoft.VisualBasic;
+using P12_WebApi.Middlewares;
 using Serilog;
 using System.Net;
 using System.Text.Json;
@@ -19,11 +21,12 @@ namespace P12_WebApi.Middlewares
         {
             try
             {
-                await _next(context);   // delagate     and transfer the request to B 
+                await _next(context);   // delagate    middleware A  just transfers the request to B 
             }
             catch (Exception ex)
             {
     
+                          //{response from the controllers}   middleware C to B to A ...... Error handler   
                 Log.Error(ex, "Unhandled exception for request {Method} {Path}",
                     context.Request.Method,
                     context.Request.Path);
@@ -38,7 +41,7 @@ namespace P12_WebApi.Middlewares
         {
             var statusCode = HttpStatusCode.InternalServerError;   // 500 
 
-                // generic  response to client whenever inner exception 
+                // generic  response to client whenever inner exception in controllers happen .................... 
 
             var response = new
             {
@@ -46,12 +49,17 @@ namespace P12_WebApi.Middlewares
                 Message = "An error occurred while processing your request."
             };
 
-            var payload = JsonSerializer.Serialize(response);
+            // var payload = JsonSerializer.Serialize(response);
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)statusCode;
 
-            return context.Response.WriteAsync(payload);
+            return context.Response.WriteAsJsonAsync(response);
         }
     }
 }
+
+
+
+
+

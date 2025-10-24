@@ -8,7 +8,9 @@ namespace P12_WebApi.Middlewares
     {
         private readonly RequestDelegate _next;
         private readonly IMemoryCache _cache;
-        private readonly int _maxRequests = 5;       
+
+
+        private readonly int _maxRequests = 1                                                                                                                  ;       
         private readonly TimeSpan _window = TimeSpan.FromSeconds(10); 
 
         public CustomRateLimiter(RequestDelegate next, IMemoryCache cache)
@@ -20,10 +22,13 @@ namespace P12_WebApi.Middlewares
         public async Task InvokeAsync(HttpContext context)
         {
             var ip = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
-        
+
+
+
             var counter = _cache.GetOrCreate(ip, entry =>
             {
                 entry.AbsoluteExpirationRelativeToNow = _window;
+
                 return new RequestCounter
                 {
                     Count = 0,
@@ -31,22 +36,32 @@ namespace P12_WebApi.Middlewares
                 };
             });
 
-            lock (counter) 
+
+            lock (counter)
             {
-                counter.Count++;    
+                counter.Count++;
             }
 
-            if (counter.Count > _maxRequests)
+
+            if (counter?.Count > _maxRequests)
             {
-                context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
-                context.Response.Headers["Retry-After"] = 
+                context.Response.StatusCode = StatusCodes.Status429TooManyRequests;    // 429
+
+
+                context.Response.Headers["Retry-After"] =
                     (counter.ExpiresAt - DateTime.UtcNow).TotalSeconds.ToString("F0");
+
+
                 await context.Response.WriteAsync("Too many requests. Please try again later.");
                 return;
             }
 
             await _next(context);
         }
+        
+
+
+
 
         private class RequestCounter
         {

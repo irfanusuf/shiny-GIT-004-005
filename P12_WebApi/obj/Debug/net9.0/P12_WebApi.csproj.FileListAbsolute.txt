@@ -49,3 +49,13 @@
 /home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/ZstdSharp.dll
 /home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/P0_ClassLibrary.dll
 /home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/P0_ClassLibrary.pdb
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.AspNetCore.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.Extensions.Hosting.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.Extensions.Logging.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.Formatting.Compact.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.Settings.Configuration.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.Sinks.Console.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.Sinks.Debug.dll
+/home/irfanyousuf/coding/GIT_004_005/P12_WebApi/bin/Debug/net9.0/Serilog.Sinks.File.dll

@@ -23,8 +23,10 @@ namespace P12_WebApi.Controllers
         public async Task<ActionResult> CreateUser(User req)
         {
 
-            var user = await db.Users.Find(u => u.IsActive == true).ToListAsync();
-            
+              var user = await db.Users
+                                    .Find(u => u.Email == req.Email && u.IsActive == true)
+                                    .FirstOrDefaultAsync();
+
             if (user == null)
             {
                 db.Users.InsertOne(req);
@@ -32,6 +34,7 @@ namespace P12_WebApi.Controllers
                 return StatusCode(201, new { message = "User Created Succesfully!", payload = req });
             }
 
+            // throw new Exception("just for test");
 
             return StatusCode(400, new { message = "User Already Existed !", payload = user });
 
