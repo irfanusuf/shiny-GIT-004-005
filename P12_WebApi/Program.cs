@@ -54,7 +54,10 @@ builder.Services.AddSingleton<IMailService, EmailService>();
 
 builder.Services.AddScoped<MongoDbService>();
 
-builder.Services.AddMemoryCache();
+
+builder.Services.AddMemoryCache();  /// for the IMemoryCache we need the service Add Memory Cache
+
+
 
 
 
@@ -79,10 +82,9 @@ app.UseMiddleware<CustomRateLimiter>();
 app.UseMiddleware<ErrorHandler>();
 
 
+
+
 app.UseHttpsRedirection();   // http ko https transfer 
-
-
-
 
 
 // app.UseAuthentication();
@@ -91,6 +93,8 @@ app.UseCors("AllowFrontend");
 
 
 app.MapControllers();
+
+
 
 app.Run();
 

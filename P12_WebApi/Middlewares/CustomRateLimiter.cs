@@ -10,8 +10,10 @@ namespace P12_WebApi.Middlewares
         private readonly IMemoryCache _cache;
 
 
-        private readonly int _maxRequests = 1                                                                                                                  ;       
-        private readonly TimeSpan _window = TimeSpan.FromSeconds(10); 
+        private readonly int _maxRequests = 5                                                                                                                 ;       
+        private readonly TimeSpan _window = TimeSpan.FromSeconds(10);
+
+
 
         public CustomRateLimiter(RequestDelegate next, IMemoryCache cache)
         {
@@ -19,14 +21,22 @@ namespace P12_WebApi.Middlewares
             _cache = cache;
         }
 
+
+
         public async Task InvokeAsync(HttpContext context)
         {
-            var ip = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+            var ip = context.Connection.RemoteIpAddress?.ToString() ?? "unknown"; // e.g 
+
+
+            //   {  key : value}
+
+            // {"197.67.68.90" : {count : 4 , expiresAt :  0s}    }
 
 
 
             var counter = _cache.GetOrCreate(ip, entry =>
             {
+
                 entry.AbsoluteExpirationRelativeToNow = _window;
 
                 return new RequestCounter
@@ -35,7 +45,7 @@ namespace P12_WebApi.Middlewares
                     ExpiresAt = DateTime.UtcNow.Add(_window)
                 };
             });
-
+            
 
             lock (counter)
             {
