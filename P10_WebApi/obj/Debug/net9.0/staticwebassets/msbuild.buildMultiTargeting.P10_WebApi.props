@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/P10_WebApi.props" />
+</Project>
