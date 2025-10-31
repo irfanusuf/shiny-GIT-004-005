@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using P0_ClassLibrary.Interfaces;
 using P10_WebApi.Models;
+using P10_WebApi.Models.Dtos;
 using P10_WebApi.Services;
 
 namespace P10_WebApi.Controllers
@@ -120,32 +121,37 @@ namespace P10_WebApi.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost("forgotpassword")]
         public async Task<ActionResult> ForgotPassword(string email)
         {
             // email per otp send kerna hai ager user hoga 
 
-            var user = await db.Users.Find(user => user.Email == email).FirstOrDefaultAsync();
 
-            if(user == null)
+            var filter = Builders<User>.Filter.Eq(u => u.Email, email);
+
+
+            var user = await db.Users.Find(filter).FirstOrDefaultAsync();
+            
+
+            if (user == null)
             {
                 return BadRequest(new { message = "user not Found !" });
             }
 
-      
-            var otp = "345678"; // to do task  dynamic otp with 5 min valid 
-             
-            var filter = Builders<User>.Filter.Eq(u => u.Email , email );
+            var random = new Random();
 
-            var update = Builders<User>.Update.Set(u => u.OTP, otp );
+            var otp = random.Next(100000, 999999); //  with 5 min valid 
+        
+            var update = Builders<User>.Update
+            .Set(u => u.OTP, otp )
+            .Set(u => u.OTPExpiry , DateTime.UtcNow.AddMinutes(5));
 
-
-           var updateOTP = await db.Users.UpdateOneAsync(filter, update);
+            await db.Users.UpdateOneAsync(filter, update);
 
     
             // email send kerna 
             await mailService.SendEmailAsync(email, "Password Reset Otp ",
-             $"We have accepted your request for password update ,kindly find the OTP  below : {otp}", false);
+             $"We have accepted your request for password update ,kindly find the OTP  below  , Remember only valid for 5 minutes: {otp}", false);
 
 
             return Ok(new { message = "Email  with OTP  sent to you address successfully !" });
@@ -153,41 +159,44 @@ namespace P10_WebApi.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<ActionResult> UpdatePassword(string email, string Password, string ConfirmPassword, string otp)
+        [HttpPost("updatepassword")]
+        public async Task<ActionResult> UpdatePassword(UpdatePass req)
         {
 
-            if (string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword))
+            if (string.IsNullOrEmpty(req.Password) || string.IsNullOrEmpty(req.ConfirmPassword))
             {
                 return BadRequest(new { message = "password & confirmPassword both are required" });
             }
 
-            if (Password != ConfirmPassword)
+            if (req.Password != req.ConfirmPassword)
             {
                 return BadRequest(new { message = "Passwords Does not match" });
             }
 
-            var user = await db.Users.Find(user => user.Email == email).FirstOrDefaultAsync();
+            var filter = Builders<User>.Filter.Eq(u => u.Email , req.Email);
 
-            if (otp != user.OTP )
+            var user = await db.Users.Find(filter).FirstOrDefaultAsync();
+
+            if (req.OTP == user.OTP  && user.OTPExpiry > DateTime.UtcNow)
             {
-                return BadRequest(new { message = "incorrect otp" });
-            }
+              
+            var encryptPass = BCrypt.Net.BCrypt.HashPassword(req.Password);
 
-
-
-            var encryptPass = BCrypt.Net.BCrypt.HashPassword(Password);
-
-
-            var filter = Builders<User>.Filter.Eq(u => u.Email , email);
 
             var update = Builders<User>.Update.Set(u => u.Password, encryptPass);
 
 
             await db.Users.UpdateOneAsync(filter, update);
 
-
             return Ok(new { message = "Password Changed Successfully !" });
+
+            }
+            else
+            {
+                
+            return BadRequest(new { message = "Incorrect otp or otp is  Expired !" });
+            }
+
 
 
 
