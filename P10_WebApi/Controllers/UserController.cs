@@ -126,25 +126,22 @@ namespace P10_WebApi.Controllers
         {
             // email per otp send kerna hai ager user hoga 
 
-
             var filter = Builders<User>.Filter.Eq(u => u.Email, email);
-
-
             var user = await db.Users.Find(filter).FirstOrDefaultAsync();
-            
-
             if (user == null)
             {
                 return BadRequest(new { message = "user not Found !" });
             }
 
-            var random = new Random();
+            var random = new Random();    // security threat 
 
             var otp = random.Next(100000, 999999); //  with 5 min valid 
+
+            var encryptOtp = BCrypt.Net.BCrypt.HashPassword(otp.ToString());
         
             var update = Builders<User>.Update
-            .Set(u => u.OTP, otp )
-            .Set(u => u.OTPExpiry , DateTime.UtcNow.AddMinutes(5));
+            .Set(u => u.OTP, encryptOtp )
+            .Set(u => u.OTPExpiry , DateTime.UtcNow.AddMinutes(30));
 
             await db.Users.UpdateOneAsync(filter, update);
 
@@ -177,13 +174,19 @@ namespace P10_WebApi.Controllers
 
             var user = await db.Users.Find(filter).FirstOrDefaultAsync();
 
-            if (req.OTP == user.OTP  && user.OTPExpiry > DateTime.UtcNow)
+
+            var verifyOtp = BCrypt.Net.BCrypt.Verify(req.OTP, user.OTP);
+
+            if (verifyOtp  && user.OTPExpiry > DateTime.UtcNow)
             {
               
             var encryptPass = BCrypt.Net.BCrypt.HashPassword(req.Password);
 
 
-            var update = Builders<User>.Update.Set(u => u.Password, encryptPass);
+            var update = Builders<User>.Update
+            .Set(u => u.Password, encryptPass)
+            .Set(u => u.OTP , null)
+            .Set(u => u.OTPExpiry , null);
 
 
             await db.Users.UpdateOneAsync(filter, update);

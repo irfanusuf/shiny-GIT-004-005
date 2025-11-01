@@ -12,7 +12,7 @@ public class UpdatePass
     public required string ConfirmPassword { get; set; }
 
 
-    public required int OTP { get; set; } 
+    public required string OTP { get; set; } 
 
 
 

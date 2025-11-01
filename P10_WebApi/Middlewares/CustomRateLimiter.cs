@@ -9,8 +9,7 @@ namespace P10_WebApi.Middlewares
         private readonly RequestDelegate _next;
         private readonly IMemoryCache _cache;
 
-
-        private readonly int _maxRequests = 5                                                                                                                 ;       
+        private readonly int _maxRequests = 100                                                                                                                ;       
         private readonly TimeSpan _window = TimeSpan.FromSeconds(10);
 
 

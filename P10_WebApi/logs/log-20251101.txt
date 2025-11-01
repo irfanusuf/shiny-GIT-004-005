@@ -1,0 +1,41 @@
+2025-11-01 15:13:50.695 +05:30 [INF] Now listening on: http://localhost:5046
+2025-11-01 15:13:50.850 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-01 15:13:50.854 +05:30 [INF] Hosting environment: Development
+2025-11-01 15:13:50.854 +05:30 [INF] Content root path: /home/irfanyousuf/coding/GIT_004_005/P10_WebApi
+2025-11-01 15:14:20.320 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/user/register - application/json 103
+2025-11-01 15:14:20.558 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-11-01 15:14:20.609 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.UserController.Register (P10_WebApi)'
+2025-11-01 15:14:20.706 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Register(P10_WebApi.Models.User) on controller P10_WebApi.Controllers.UserController (P10_WebApi).
+2025-11-01 15:14:24.013 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-01 15:14:24.059 +05:30 [INF] Executed action P10_WebApi.Controllers.UserController.Register (P10_WebApi) in 3340.7279ms
+2025-11-01 15:14:24.084 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.UserController.Register (P10_WebApi)'
+2025-11-01 15:14:24.102 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/user/register - 200 null application/json; charset=utf-8 3785.6348ms
+2025-11-01 15:14:59.380 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/user/forgotpassword?email=irfanusuf33@gmail.com - null 0
+2025-11-01 15:14:59.384 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.UserController.ForgotPassword (P10_WebApi)'
+2025-11-01 15:14:59.402 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] ForgotPassword(System.String) on controller P10_WebApi.Controllers.UserController (P10_WebApi).
+2025-11-01 15:15:08.400 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-01 15:15:08.402 +05:30 [INF] Executed action P10_WebApi.Controllers.UserController.ForgotPassword (P10_WebApi) in 8998.7042ms
+2025-11-01 15:15:08.402 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.UserController.ForgotPassword (P10_WebApi)'
+2025-11-01 15:15:08.403 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/user/forgotpassword?email=irfanusuf33@gmail.com - 200 null application/json; charset=utf-8 9022.8291ms
+2025-11-01 15:17:11.736 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/user/updatepassword - application/json 136
+2025-11-01 15:17:11.738 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi)'
+2025-11-01 15:17:11.744 +05:30 [INF] Route matched with {action = "UpdatePassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdatePassword(P10_WebApi.Models.Dtos.UpdatePass) on controller P10_WebApi.Controllers.UserController (P10_WebApi).
+2025-11-01 15:17:12.121 +05:30 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-01 15:17:12.122 +05:30 [INF] Executed action P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi) in 376.7704ms
+2025-11-01 15:17:12.122 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi)'
+2025-11-01 15:17:12.123 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/user/updatepassword - 400 null application/json; charset=utf-8 386.2446ms
+2025-11-01 15:17:57.897 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/user/updatepassword - application/json 136
+2025-11-01 15:17:57.898 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi)'
+2025-11-01 15:17:57.900 +05:30 [INF] Route matched with {action = "UpdatePassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdatePassword(P10_WebApi.Models.Dtos.UpdatePass) on controller P10_WebApi.Controllers.UserController (P10_WebApi).
+2025-11-01 15:17:58.141 +05:30 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-01 15:17:58.145 +05:30 [INF] Executed action P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi) in 241.9035ms
+2025-11-01 15:17:58.147 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi)'
+2025-11-01 15:17:58.151 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/user/updatepassword - 400 null application/json; charset=utf-8 253.8597ms
+2025-11-01 15:19:06.006 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/user/updatepassword - application/json 136
+2025-11-01 15:19:06.008 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi)'
+2025-11-01 15:19:06.010 +05:30 [INF] Route matched with {action = "UpdatePassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdatePassword(P10_WebApi.Models.Dtos.UpdatePass) on controller P10_WebApi.Controllers.UserController (P10_WebApi).
+2025-11-01 15:19:07.168 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-01 15:19:07.175 +05:30 [INF] Executed action P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi) in 1163.5374ms
+2025-11-01 15:19:07.177 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.UserController.UpdatePassword (P10_WebApi)'
+2025-11-01 15:19:07.178 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/user/updatepassword - 200 null application/json; charset=utf-8 1171.6567ms
+2025-11-01 15:21:55.325 +05:30 [INF] Application is shutting down...

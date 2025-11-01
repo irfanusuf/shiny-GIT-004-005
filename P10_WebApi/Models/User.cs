@@ -19,7 +19,7 @@ public class User : BaseEntity
     public string? ProfilePic { get; set; }
     public string? Bio { get; set; }
 
-    public int? OTP { get; set; }
+    public string? OTP { get; set; }
     
     public DateTime? OTPExpiry { get; set; } 
     public List<string> Posts { get; set; } = [];
