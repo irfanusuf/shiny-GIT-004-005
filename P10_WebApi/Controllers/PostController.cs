@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using P0_ClassLibrary.Interfaces;
+using P10_WebApi.Attributes;
 using P10_WebApi.Models;
 using P10_WebApi.Services;
 
@@ -23,11 +24,15 @@ namespace P10_WebApi.Controllers
         }
 
 
-
+        [Authroize]
         [HttpPost("create")]
 
         public async Task<ActionResult> Create( [FromBody]  Post req ,  IFormFile image)
         {
+
+            string? userId =   HttpContext.Items["userId"] as string;
+
+            req.UserId = userId;
 
             var secureUrl = cloudinaryService.UploadImageAsync(image, "P10WebApi");
            

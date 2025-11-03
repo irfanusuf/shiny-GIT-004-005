@@ -1,0 +1,5 @@
+2025-11-03 15:43:39.311 +05:30 [INF] Now listening on: http://localhost:5046
+2025-11-03 15:43:39.676 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-03 15:43:39.677 +05:30 [INF] Hosting environment: Development
+2025-11-03 15:43:39.679 +05:30 [INF] Content root path: /home/irfanyousuf/coding/GIT_004_005/P10_WebApi
+2025-11-03 16:06:14.919 +05:30 [INF] Application is shutting down...

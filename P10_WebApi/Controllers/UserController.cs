@@ -84,7 +84,7 @@ namespace P10_WebApi.Controllers
             .FirstOrDefaultAsync();
 
 
-            if (existingUser == null)
+            if (existingUser == null || existingUser.UserId == null)
             {
                 return BadRequest(new { message = "No User Found with this Email" });
 
@@ -97,10 +97,12 @@ namespace P10_WebApi.Controllers
             {
                 // session mangement // jwt token then send that to cookies 
 
-                var token = tokenService.CreateToken(Guid.NewGuid(), req.Email, existingUser.Username, 7);
-
+                var token = tokenService.CreateToken(existingUser.UserId, req.Email, existingUser.Username, 7);
+                
+                  
+        
                 // send the token in cookies // tommorow // done 
-                HttpContext.Response.Cookies.Append("authToken", token, new CookieOptions
+                HttpContext.Response.Cookies.Append("P10WebApi_AuthToken", token, new CookieOptions
                 {
                     Secure = false,
                     HttpOnly = true,

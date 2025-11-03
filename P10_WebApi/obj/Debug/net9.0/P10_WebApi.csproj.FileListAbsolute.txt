@@ -5,6 +5,7 @@
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/P10_WebApi.runtimeconfig.json
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/P10_WebApi.dll
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/P10_WebApi.pdb
+/home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/BCrypt.Net-Next.dll
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/CloudinaryDotNet.dll
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/DnsClient.dll
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
@@ -59,4 +60,3 @@
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/obj/Debug/net9.0/P10_WebApi.pdb
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/obj/Debug/net9.0/P10_WebApi.genruntimeconfig.cache
 /home/irfanyousuf/coding/GIT_004_005/P10_WebApi/obj/Debug/net9.0/ref/P10_WebApi.dll
-/home/irfanyousuf/coding/GIT_004_005/P10_WebApi/bin/Debug/net9.0/BCrypt.Net-Next.dll

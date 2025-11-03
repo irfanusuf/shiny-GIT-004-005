@@ -6,8 +6,12 @@ public interface ITokenService
 {
 
 
- public string CreateToken(Guid userId, string email, string username , int time);
+    public string CreateToken(Guid userId, string email, string username, int timeInDays);
 
-public Guid VerifyTokenAndGetId(string token);
+    public string CreateToken(string userId, string email, string username, int timeInDays);
+
+    public string VerifyTokenAndGetId(string token);
+
+    // public string VerifyTokenAndGetId(string token);
 
 }

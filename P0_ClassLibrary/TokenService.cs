@@ -16,7 +16,7 @@ public class TokenService : ITokenService  // inheritance
         _secretKey = SecretKey;
     }
 
-    public string CreateToken(Guid userId, string email, string username, int time)
+    public string CreateToken(Guid userId, string email, string username, int timeInDays)
     {
         var tokenHandler = new JwtSecurityTokenHandler();   // intializing new instance of  JwtSecurityTokenHandler
 
@@ -31,7 +31,31 @@ public class TokenService : ITokenService  // inheritance
                 new Claim(ClaimTypes.Name, username)
             ]),
 
-            Expires = DateTime.UtcNow.AddMinutes(time),
+            Expires = DateTime.UtcNow.AddDays(timeInDays),
+
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        };
+
+        var token = tokenHandler.CreateToken(payload);     // creation of token 
+        return tokenHandler.WriteToken(token);        // returning of token 
+    }
+
+    public string CreateToken(string userId, string email, string username, int timeInDays)
+    {
+          var tokenHandler = new JwtSecurityTokenHandler();   // intializing new instance of  JwtSecurityTokenHandler
+
+        var key = Encoding.ASCII.GetBytes(_secretKey);  /// secret in ascii format 
+
+        var payload = new SecurityTokenDescriptor      // creation of payload
+        {
+            Subject = new ClaimsIdentity(
+            [
+                new Claim(ClaimTypes.NameIdentifier, userId),
+                new Claim(ClaimTypes.Email, email),
+                new Claim(ClaimTypes.Name, username)
+            ]),
+
+            Expires = DateTime.UtcNow.AddDays(timeInDays),
 
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
@@ -42,7 +66,8 @@ public class TokenService : ITokenService  // inheritance
 
 
 
-    public Guid VerifyTokenAndGetId(string token)
+
+    public string VerifyTokenAndGetId(string token)
     {
         try
         {
@@ -51,7 +76,7 @@ public class TokenService : ITokenService  // inheritance
             var key = Encoding.ASCII.GetBytes(_secretKey);
 
 
-            var validationParameters = new TokenValidationParameters   
+            var validationParameters = new TokenValidationParameters
             {
                 ValidateIssuer = false,
                 ValidateAudience = false,
@@ -66,7 +91,7 @@ public class TokenService : ITokenService  // inheritance
 
             if (userId != null)
             {
-                return Guid.Parse(userId.Value);
+                return userId.Value;
             }
             else
             {
@@ -81,7 +106,7 @@ public class TokenService : ITokenService  // inheritance
         {
             throw new Exception("Token validation failed: " + ex.Message);
         }
-       
+
     }
 
 
