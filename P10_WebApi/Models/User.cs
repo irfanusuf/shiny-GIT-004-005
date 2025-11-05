@@ -18,12 +18,10 @@ public class User : BaseEntity
     public required string Password { get; set; }
     public string? ProfilePic { get; set; }
     public string? Bio { get; set; }
-
     public string? OTP { get; set; }
-    
     public DateTime? OTPExpiry { get; set; } 
-    public List<string> Posts { get; set; } = [];
+    public List<string> Posts { get; set; } = [];   // array of postids
     public List<string> Comments { get; set; } = [];
-    public List<string> LikesGiven { get; set; } = [];
+    public List<string> LikesGiven { get; set; } = [];  // array of postIds of those post which are liked by this user
         
 }

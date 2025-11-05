@@ -61,9 +61,11 @@ app.UseMiddleware<ErrorHandler>();
 
 app.UseHttpsRedirection();
 
+// app.UseAuthorization();
+
 app.UseCors("AllowFrontend");
 
 app.MapControllers();
 
-app.Run();
+app.Run();  // next nahi hota 
 

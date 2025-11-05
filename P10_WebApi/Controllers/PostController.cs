@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 using P0_ClassLibrary.Interfaces;
 using P10_WebApi.Attributes;
 using P10_WebApi.Models;
@@ -16,7 +17,7 @@ namespace P10_WebApi.Controllers
         private readonly MongoDbService db;
         private readonly ICloudinaryService cloudinaryService;
 
-        public PostController(MongoDbService mongoDb , ICloudinaryService cloudinaryService)
+        public PostController(MongoDbService mongoDb, ICloudinaryService cloudinaryService)
         {
             db = mongoDb;
             this.cloudinaryService = cloudinaryService;
@@ -24,23 +25,50 @@ namespace P10_WebApi.Controllers
         }
 
 
-        [Authroize]
+        [Authroize]    // filter out unauthorized users 
         [HttpPost("create")]
 
-        public async Task<ActionResult> Create( [FromBody]  Post req ,  IFormFile image)
+        public async Task<ActionResult> Create([FromForm] Post req, IFormFile image)
         {
+            string? userId = HttpContext.Items["userId"] as string;
 
-            string? userId =   HttpContext.Items["userId"] as string;
-
+            
             req.UserId = userId;
 
             var secureUrl = cloudinaryService.UploadImageAsync(image, "P10WebApi");
-           
-            req.PostpicURL = secureUrl.ToString();
+            req.PostpicURL = secureUrl.Result;
 
             await db.Posts.InsertOneAsync(req);
 
+            var filter = Builders<User>.Filter.Eq(u => u.UserId, userId);
+            var update = Builders<User>.Update.Set(u => u.Posts, [req.PostId]);
+
+            await db.Users.UpdateOneAsync(filter, update);
+
+
+
+            return Ok(new
+            {
+                message = "Post uploaded Suyccesfully!",
+                payload = new
+                {
+                    postCaption = req.PostCaption,
+                    secureUrl = secureUrl.Result
+                }
+            });
+        }
+
+
+        [Authroize]
+        [HttpPost("like")]
+
+        public async Task<ActionResult> LikePost(string postId)
+        {
+            
+            // var post = await db.po
+
             return Ok();
+
         }
 
 

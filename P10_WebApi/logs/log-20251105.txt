@@ -1,0 +1,89 @@
+2025-11-05 15:32:25.669 +05:30 [INF] Now listening on: http://localhost:5046
+2025-11-05 15:32:25.995 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-05 15:32:26.000 +05:30 [INF] Hosting environment: Development
+2025-11-05 15:32:26.001 +05:30 [INF] Content root path: /home/irfanyousuf/coding/GIT_004_005/P10_WebApi
+2025-11-05 15:38:34.057 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------234126010154270670321904 479378
+2025-11-05 15:38:34.318 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-11-05 15:38:34.342 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:38:34.455 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:38:34.498 +05:30 [INF] Authorization failed for the request at filter 'P10_WebApi.Attributes.AuthroizeAttribute'.
+2025-11-05 15:38:34.510 +05:30 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-05 15:38:34.684 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 204.5585ms
+2025-11-05 15:38:34.735 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:38:34.746 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 401 null application/json; charset=utf-8 696.4315ms
+2025-11-05 15:41:23.301 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/user/login - application/json 98
+2025-11-05 15:41:23.303 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.UserController.Login (P10_WebApi)'
+2025-11-05 15:41:23.309 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(P10_WebApi.Models.User) on controller P10_WebApi.Controllers.UserController (P10_WebApi).
+2025-11-05 15:41:27.364 +05:30 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-05 15:41:27.381 +05:30 [INF] Executed action P10_WebApi.Controllers.UserController.Login (P10_WebApi) in 4071.6893ms
+2025-11-05 15:41:27.382 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.UserController.Login (P10_WebApi)'
+2025-11-05 15:41:27.390 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/user/login - 400 null application/json; charset=utf-8 4085.4423ms
+2025-11-05 15:41:54.242 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/user/login - application/json 100
+2025-11-05 15:41:54.248 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.UserController.Login (P10_WebApi)'
+2025-11-05 15:41:54.249 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(P10_WebApi.Models.User) on controller P10_WebApi.Controllers.UserController (P10_WebApi).
+2025-11-05 15:41:54.931 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-05 15:41:54.936 +05:30 [INF] Executed action P10_WebApi.Controllers.UserController.Login (P10_WebApi) in 677.5289ms
+2025-11-05 15:41:54.938 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.UserController.Login (P10_WebApi)'
+2025-11-05 15:41:54.939 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/user/login - 200 null application/json; charset=utf-8 696.4734ms
+2025-11-05 15:43:00.303 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------728501953600753458554531 479378
+2025-11-05 15:43:00.304 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:43:00.307 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:43:00.694 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-11-05 15:43:00.780 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 472.4984ms
+2025-11-05 15:43:00.784 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:43:00.788 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 415 null application/problem+json; charset=utf-8 485.7245ms
+2025-11-05 15:46:13.417 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------173383200943947299860490 479378
+2025-11-05 15:46:13.424 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:46:13.453 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:46:14.012 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-05 15:46:14.019 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 562.523ms
+2025-11-05 15:46:14.020 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:46:14.020 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 400 null application/problem+json; charset=utf-8 603.5212ms
+2025-11-05 15:47:46.803 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------105431758655846209930559 479378
+2025-11-05 15:47:46.806 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:47:46.852 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:47:46.986 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-05 15:47:47.031 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 178.9636ms
+2025-11-05 15:47:47.031 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:47:47.045 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 400 null application/problem+json; charset=utf-8 241.9955ms
+2025-11-05 15:48:13.661 +05:30 [INF] Now listening on: http://localhost:5046
+2025-11-05 15:48:13.866 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-05 15:48:13.867 +05:30 [INF] Hosting environment: Development
+2025-11-05 15:48:13.867 +05:30 [INF] Content root path: /home/irfanyousuf/coding/GIT_004_005/P10_WebApi
+2025-11-05 15:48:18.572 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------774803908410723633897242 479378
+2025-11-05 15:48:18.839 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-11-05 15:48:18.846 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:48:18.957 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:48:26.932 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-11-05 15:48:26.965 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 7978.9537ms
+2025-11-05 15:48:27.021 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:48:27.051 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 200 0 null 8488.657ms
+2025-11-05 15:49:39.490 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------062569520859892372551029 479378
+2025-11-05 15:49:39.500 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:49:39.538 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:49:39.847 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[P10_WebApi.Models.Post, P10_WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-05 15:49:40.029 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 488.5936ms
+2025-11-05 15:49:40.030 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:49:40.032 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 200 null application/json; charset=utf-8 542.9899ms
+2025-11-05 15:51:39.428 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------097216920952187026102823 479378
+2025-11-05 15:51:39.432 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:51:39.438 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:51:39.819 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], P10_WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-05 15:51:46.612 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 7173.4842ms
+2025-11-05 15:51:46.627 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:51:46.628 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 200 null application/json; charset=utf-8 7200.1332ms
+2025-11-05 15:54:54.129 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------690719909243041645367940 479378
+2025-11-05 15:54:54.136 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:54:54.152 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:54:59.027 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], P10_WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-05 15:54:59.053 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 4900.1794ms
+2025-11-05 15:54:59.054 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:54:59.054 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 200 null application/json; charset=utf-8 4925.075ms
+2025-11-05 15:55:15.439 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5046/api/post/create - multipart/form-data; boundary=--------------------------196962484204664204265763 479378
+2025-11-05 15:55:15.441 +05:30 [INF] Executing endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:55:15.463 +05:30 [INF] Route matched with {action = "Create", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(P10_WebApi.Models.Post, Microsoft.AspNetCore.Http.IFormFile) on controller P10_WebApi.Controllers.PostController (P10_WebApi).
+2025-11-05 15:55:21.726 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], P10_WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-05 15:55:21.736 +05:30 [INF] Executed action P10_WebApi.Controllers.PostController.Create (P10_WebApi) in 6268.0743ms
+2025-11-05 15:55:21.745 +05:30 [INF] Executed endpoint 'P10_WebApi.Controllers.PostController.Create (P10_WebApi)'
+2025-11-05 15:55:21.747 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5046/api/post/create - 200 null application/json; charset=utf-8 6308.2876ms
+2025-11-05 16:22:19.832 +05:30 [INF] Application is shutting down...

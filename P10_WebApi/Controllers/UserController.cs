@@ -15,11 +15,8 @@ namespace P10_WebApi.Controllers
 
         private readonly MongoDbService db;
         private readonly ICloudinaryService cloudinaryService;
-
         private readonly ITokenService tokenService;
-
         private readonly IMailService mailService;
-
 
         public UserController(MongoDbService mongoDb, ICloudinaryService cloudinaryService, ITokenService tokenService, IMailService mailService)
         {
