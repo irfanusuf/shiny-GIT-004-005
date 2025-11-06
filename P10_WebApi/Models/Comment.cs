@@ -12,7 +12,7 @@ public class Comment : BaseEntity
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public string? CommentId { get; set; } 
+    public ObjectId? CommentId { get; set; } 
     public required string PostId { get; set; }    
     public  required string UserId { get; set; }   
     public required string CommentText { get; set; }

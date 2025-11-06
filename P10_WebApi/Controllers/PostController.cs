@@ -32,16 +32,20 @@ namespace P10_WebApi.Controllers
         {
             string? userId = HttpContext.Items["userId"] as string;
 
-            
-            req.UserId = userId;
 
             var secureUrl = cloudinaryService.UploadImageAsync(image, "P10WebApi");
-            req.PostpicURL = secureUrl.Result;
+            
 
-            await db.Posts.InsertOneAsync(req);
+            req.PostpicURL = secureUrl.Result;   // 
+
+            req.UserId = userId;  // 
+
+
+            await db.Posts.InsertOneAsync(req);    // 
 
             var filter = Builders<User>.Filter.Eq(u => u.UserId, userId);
-            var update = Builders<User>.Update.Set(u => u.Posts, [req.PostId]);
+
+            var update = Builders<User>.Update.Push(u => u.Posts, req.PostId);
 
             await db.Users.UpdateOneAsync(filter, update);
 
@@ -64,14 +68,8 @@ namespace P10_WebApi.Controllers
 
         public async Task<ActionResult> LikePost(string postId)
         {
-            
-            // var post = await db.po
-
+            // var post = await db.poe
             return Ok();
-
         }
-
-
-
     }
 }
